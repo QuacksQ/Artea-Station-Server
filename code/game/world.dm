@@ -132,7 +132,6 @@ GLOBAL_VAR(restart_counter)
 	GLOB.demo_log = "[GLOB.log_directory]/demo.log"
 	GLOB.dynamic_log = "[GLOB.log_directory]/dynamic.log"
 	GLOB.filter_log = "[GLOB.log_directory]/filters.log"
-	GLOB.lua_log = "[GLOB.log_directory]/lua.log"
 	GLOB.query_debug_log = "[GLOB.log_directory]/query_debug.log"
 	GLOB.signals_log = "[GLOB.log_directory]/signals.log"
 	GLOB.sql_error_log = "[GLOB.log_directory]/sql.log"
@@ -296,11 +295,9 @@ GLOBAL_VAR(restart_counter)
 
 	TgsReboot()
 	shutdown_logging() // Past this point, no logging procs can be used, at risk of data loss.
-	AUXTOOLS_FULL_SHUTDOWN(AUXLUA)
 	..()
 
 /world/Del()
-	AUXTOOLS_FULL_SHUTDOWN(AUXLUA)
 	var/debug_server = world.GetConfig("env", "AUXTOOLS_DEBUG_DLL")
 	if (debug_server)
 		call(debug_server, "auxtools_shutdown")()
@@ -318,11 +315,7 @@ GLOBAL_VAR(restart_counter)
 	if(config)
 		var/server_name = CONFIG_GET(string/servername)
 		if (server_name)
-			new_status += "<b>[server_name]</b> "
-		if(!CONFIG_GET(flag/norespawn))
-			features += "respawn"
-		if(!CONFIG_GET(flag/allow_ai))
-			features += "AI disabled"
+			new_status += "<b>[server_name] (<a href=\"[CONFIG_GET(string/discord_link)]\">Discord!</a>)</b> "
 		hostedby = CONFIG_GET(string/hostedby)
 
 	if (CONFIG_GET(flag/station_name_in_hub_entry))
