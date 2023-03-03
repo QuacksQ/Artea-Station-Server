@@ -1,12 +1,94 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aai" = (
+/obj/structure/chair/comfy/black{
+	dir = 8
+	},
+/turf/open/floor/wood/large,
+/area/station/science)
+"aiI" = (
+/obj/structure/railing/corner{
+	dir = 1
+	},
+/turf/open/floor/wood/large,
+/area/station/service/hydroponics)
 "aBe" = (
 /obj/structure/flora/grass/jungle/b/style_random,
 /obj/structure/flora/bush/jungle/a/style_random,
 /turf/open/floor/grass,
 /area/space)
+"aCG" = (
+/obj/structure/chair/office/light{
+	dir = 4
+	},
+/turf/open/floor/wood/large,
+/area/station/science)
+"aPN" = (
+/obj/structure/chair/wood{
+	dir = 8
+	},
+/turf/open/floor/wood/large,
+/area/station/service/hydroponics)
+"aTb" = (
+/obj/structure/chair/sofa/bench/left,
+/obj/effect/turf_decal/tile/dark_blue/opposingcorners{
+	dir = 1
+	},
+/turf/open/floor/iron/cafeteria,
+/area/station/service/hydroponics)
+"aYo" = (
+/obj/structure/chair/sofa/corner{
+	dir = 8
+	},
+/turf/open/floor/carpet/royalblack,
+/area/station/maintenance)
+"bgX" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/turf/open/floor/wood/tile,
+/area/station/service/hydroponics)
+"bqk" = (
+/obj/machinery/vending/dinnerware,
+/turf/open/floor/iron/kitchen,
+/area/station/service/hydroponics)
+"bvb" = (
+/turf/open/floor/carpet/red,
+/area/station/science)
+"byY" = (
+/obj/structure/chair/comfy/brown{
+	color = "#c45c57";
+	dir = 4
+	},
+/turf/open/floor/wood/large,
+/area/station/maintenance)
+"bFr" = (
+/obj/machinery/griddle,
+/turf/open/floor/iron/kitchen,
+/area/station/service/hydroponics)
 "bJt" = (
 /turf/open/space/openspace,
 /area/station/maintenance)
+"bXX" = (
+/turf/open/floor/iron,
+/area/station/service/hydroponics)
+"bZs" = (
+/obj/structure/chair{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/dark_blue/opposingcorners{
+	dir = 1
+	},
+/turf/open/floor/iron/cafeteria,
+/area/station/service/hydroponics)
+"ccD" = (
+/obj/structure/chair/sofa/bench/left{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/dark_blue/opposingcorners{
+	dir = 1
+	},
+/turf/open/floor/iron/cafeteria,
+/area/station/service/hydroponics)
 "cdk" = (
 /obj/structure/flora/grass/jungle/a/style_random,
 /obj/structure/flora/bush/flowers_yw/style_random,
@@ -18,9 +100,16 @@
 	},
 /turf/open/floor/iron,
 /area/space)
+"clZ" = (
+/obj/structure/chair/sofa/bench/right,
+/obj/effect/turf_decal/tile/dark_blue/opposingcorners{
+	dir = 1
+	},
+/turf/open/floor/iron/cafeteria,
+/area/station/service/hydroponics)
 "crR" = (
 /obj/structure/stairs/north,
-/turf/open/space/basic,
+/turf/open/floor/iron/stairs/medium,
 /area/space)
 "cue" = (
 /turf/open/space/openspace,
@@ -32,12 +121,74 @@
 /obj/structure/flora/bush/jungle/a/style_random,
 /turf/open/floor/grass,
 /area/space)
+"dfy" = (
+/obj/structure/chair/stool/directional/east,
+/obj/effect/turf_decal/tile/dark_blue/opposingcorners{
+	dir = 1
+	},
+/turf/open/floor/iron/cafeteria,
+/area/station/service/hydroponics)
+"dpn" = (
+/turf/open/openspace,
+/area/station/service/hydroponics)
 "dwT" = (
 /obj/structure/railing,
 /turf/open/floor/iron,
 /area/space)
+"dxd" = (
+/obj/structure/chair/comfy/beige{
+	dir = 4
+	},
+/turf/open/floor/wood/large,
+/area/station/science)
+"dxi" = (
+/obj/structure/reagent_dispensers/cooking_oil,
+/turf/open/floor/iron/freezer,
+/area/station/service/hydroponics)
+"dzM" = (
+/obj/structure/railing{
+	dir = 5
+	},
+/turf/open/floor/wood/large,
+/area/station/service/hydroponics)
+"dQw" = (
+/obj/machinery/vending/wardrobe/chef_wardrobe,
+/turf/open/floor/iron/kitchen,
+/area/station/service/hydroponics)
+"dUv" = (
+/obj/structure/chair/sofa/left{
+	dir = 4
+	},
+/turf/open/floor/wood/large,
+/area/station/service/hydroponics)
+"dVc" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/iron/kitchen,
+/area/station/service/hydroponics)
+"ebw" = (
+/obj/machinery/door/airlock/public/glass{
+	name = "Library"
+	},
+/turf/open/floor/wood/large,
+/area/station/service/hydroponics)
+"ecE" = (
+/turf/open/floor/wood/parquet,
+/area/station/maintenance)
+"ehD" = (
+/obj/structure/kitchenspike,
+/turf/open/floor/iron/freezer,
+/area/station/service/hydroponics)
 "eie" = (
 /turf/open/space/basic,
+/area/station/service/hydroponics)
+"eEu" = (
+/obj/structure/chair/sofa/bench/right{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/dark_blue/opposingcorners{
+	dir = 1
+	},
+/turf/open/floor/iron/cafeteria,
 /area/station/service/hydroponics)
 "eEW" = (
 /obj/structure/railing/corner{
@@ -45,15 +196,117 @@
 	},
 /turf/open/floor/iron,
 /area/space)
+"eTw" = (
+/obj/structure/chair/stool/directional/south,
+/obj/effect/turf_decal/tile/dark_blue/opposingcorners{
+	dir = 1
+	},
+/turf/open/floor/iron/cafeteria,
+/area/station/service/hydroponics)
+"fbJ" = (
+/obj/structure/chair/sofa/corner,
+/turf/open/floor/carpet/royalblack,
+/area/station/maintenance)
+"fdS" = (
+/obj/structure/closet/secure_closet/freezer/meat,
+/turf/open/floor/iron/freezer,
+/area/station/service/hydroponics)
+"fzG" = (
+/obj/structure/table/wood,
+/obj/structure/table/wood,
+/turf/open/floor/wood/large,
+/area/station/service/hydroponics)
+"gcw" = (
+/obj/structure/closet/secure_closet/freezer/kitchen,
+/obj/item/reagent_containers/condiment/sugar,
+/turf/open/floor/iron/kitchen,
+/area/station/service/hydroponics)
+"glG" = (
+/obj/machinery/button/curtain{
+	pixel_y = 0;
+	name = "privacy curtains";
+	id = "bar_booth";
+	pixel_x = 24
+	},
+/turf/open/floor/wood/parquet,
+/area/station/service/hydroponics)
+"gpL" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/stone,
+/area/station/service/hydroponics)
+"gIi" = (
+/obj/structure/table/reinforced,
+/obj/machinery/reagentgrinder{
+	pixel_x = -4;
+	pixel_y = 5
+	},
+/turf/open/floor/iron/kitchen,
+/area/station/service/hydroponics)
 "gIF" = (
 /obj/structure/railing{
 	dir = 5
 	},
 /turf/open/floor/iron,
 /area/space)
+"gJV" = (
+/turf/open/floor/iron/kitchen,
+/area/station/service/hydroponics)
+"gPn" = (
+/obj/structure/chair/sofa/right{
+	dir = 4
+	},
+/turf/open/floor/wood/large,
+/area/station/service/hydroponics)
+"gSB" = (
+/obj/machinery/deepfryer,
+/turf/open/floor/iron/kitchen,
+/area/station/service/hydroponics)
+"huk" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
+	},
+/turf/open/floor/stone,
+/area/station/service/hydroponics)
 "huz" = (
 /turf/open/space/openspace,
 /area/station/engineering/main)
+"hwR" = (
+/obj/structure/chair/sofa/bench/left{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/dark_blue/opposingcorners{
+	dir = 1
+	},
+/turf/open/floor/iron/cafeteria,
+/area/station/service/hydroponics)
+"hFK" = (
+/obj/machinery/door/airlock{
+	name = "Kitchen"
+	},
+/turf/open/floor/iron/kitchen,
+/area/station/service/hydroponics)
+"hGu" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/stone,
+/area/station/service/hydroponics)
+"hMa" = (
+/obj/structure/chair/sofa/right{
+	dir = 8
+	},
+/turf/open/floor/wood/large,
+/area/station/service/hydroponics)
+"hMM" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/stone,
+/area/station/maintenance)
 "hPX" = (
 /turf/open/floor/iron,
 /area/station/hallway/secondary/exit)
@@ -71,6 +324,21 @@
 "igj" = (
 /turf/open/floor/iron,
 /area/space)
+"ijc" = (
+/obj/structure/chair/office{
+	dir = 8
+	},
+/turf/open/floor/wood/large,
+/area/station/science)
+"iqe" = (
+/obj/structure/chair{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/dark_blue/opposingcorners{
+	dir = 1
+	},
+/turf/open/floor/iron/cafeteria,
+/area/station/service/hydroponics)
 "iDc" = (
 /turf/open/space/openspace,
 /area/station/medical/medbay)
@@ -78,15 +346,100 @@
 /obj/structure/flora/grass/jungle/a/style_random,
 /turf/open/floor/grass,
 /area/space)
+"iMY" = (
+/obj/machinery/microwave{
+	pixel_y = 5
+	},
+/obj/structure/table/reinforced,
+/turf/open/floor/iron/kitchen,
+/area/station/service/hydroponics)
+"iPI" = (
+/obj/structure/railing,
+/turf/open/floor/iron/stairs/medium{
+	dir = 4
+	},
+/area/station/science)
+"iQM" = (
+/obj/machinery/processor{
+	pixel_y = 6
+	},
+/obj/structure/table/reinforced,
+/turf/open/floor/iron/kitchen,
+/area/station/service/hydroponics)
 "jem" = (
 /turf/open/floor/iron,
 /area/station/hallway/secondary/entry)
+"jgg" = (
+/turf/closed/wall,
+/area/station/medical/medbay)
+"jja" = (
+/obj/structure/table/reinforced,
+/obj/structure/desk_bell{
+	pixel_x = -7;
+	pixel_y = 8
+	},
+/turf/open/floor/iron/kitchen,
+/area/station/service/hydroponics)
+"jju" = (
+/obj/machinery/smartfridge/food,
+/turf/closed/wall,
+/area/station/service/hydroponics)
+"jnC" = (
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/station/science)
+"jtE" = (
+/obj/structure/chair/comfy/brown{
+	color = "#c45c57";
+	dir = 8
+	},
+/turf/open/floor/wood/large,
+/area/station/science)
+"jBA" = (
+/turf/open/floor/iron/freezer,
+/area/station/service/hydroponics)
+"jIr" = (
+/obj/structure/chair/office,
+/turf/open/floor/wood/large,
+/area/station/science)
+"jQe" = (
+/turf/closed/wall,
+/area/station/science)
 "jVo" = (
 /obj/structure/railing{
 	dir = 4
 	},
 /turf/open/floor/iron,
 /area/space)
+"jZi" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/wood/large,
+/area/station/service/hydroponics)
+"khW" = (
+/obj/structure/chair/comfy/brown{
+	dir = 4
+	},
+/turf/open/floor/wood/large,
+/area/station/maintenance)
+"krj" = (
+/obj/structure/bookcase/random,
+/turf/open/floor/wood/large,
+/area/station/service/hydroponics)
+"kyh" = (
+/obj/structure/closet/secure_closet/freezer/fridge,
+/turf/open/floor/iron/kitchen,
+/area/station/service/hydroponics)
+"kES" = (
+/obj/structure/chair/comfy/black{
+	dir = 8
+	},
+/turf/open/floor/wood/large,
+/area/station/service/hydroponics)
+"kRs" = (
+/turf/open/floor/wood/large,
+/area/station/science)
 "kSE" = (
 /turf/open/space/openspace,
 /area/station/cargo)
@@ -94,74 +447,374 @@
 /obj/structure/flora/grass/jungle/b/style_random,
 /turf/open/floor/grass,
 /area/space)
+"laF" = (
+/obj/structure/chair/wood{
+	dir = 8
+	},
+/turf/open/floor/wood/parquet,
+/area/station/service/hydroponics)
+"ldI" = (
+/obj/structure/chair/sofa/left{
+	dir = 8
+	},
+/turf/open/floor/wood/large,
+/area/station/service/hydroponics)
+"ldY" = (
+/obj/structure/railing/corner{
+	dir = 4
+	},
+/turf/open/floor/wood/large,
+/area/station/service/hydroponics)
+"lme" = (
+/obj/structure/chair/sofa{
+	dir = 8
+	},
+/turf/open/floor/carpet/royalblack,
+/area/station/maintenance)
+"loV" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/stone,
+/area/station/service/hydroponics)
 "ltS" = (
 /obj/structure/railing/corner,
 /turf/open/floor/iron,
 /area/space)
+"lyC" = (
+/obj/structure/chair/wood{
+	dir = 1
+	},
+/turf/open/floor/wood/large,
+/area/station/service/hydroponics)
+"lGP" = (
+/obj/structure/railing/corner{
+	dir = 8
+	},
+/turf/open/floor/wood/large,
+/area/station/service/hydroponics)
+"lSs" = (
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/station/service/hydroponics)
+"lWm" = (
+/obj/structure/chair/stool/bar/directional/west,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/stone,
+/area/station/maintenance)
+"mcL" = (
+/turf/closed/wall,
+/area/space)
+"muE" = (
+/obj/structure/table,
+/obj/effect/turf_decal/tile/dark_blue/opposingcorners{
+	dir = 1
+	},
+/turf/open/floor/iron/cafeteria,
+/area/station/service/hydroponics)
+"mDX" = (
+/turf/open/floor/wood/large,
+/area/station/maintenance)
+"mQR" = (
+/obj/structure/chair/comfy/brown{
+	dir = 8
+	},
+/turf/open/floor/wood/large,
+/area/station/science)
 "mRI" = (
 /turf/open/space/openspace,
 /area/station/hallway/secondary/exit)
+"mSM" = (
+/turf/open/floor/carpet/red,
+/area/station/service/hydroponics)
 "mVs" = (
 /obj/structure/railing/corner{
 	dir = 4
 	},
 /turf/open/floor/iron,
 /area/space)
+"ncZ" = (
+/obj/structure/chair/comfy/beige{
+	dir = 8
+	},
+/turf/open/floor/wood/large,
+/area/station/science)
+"nfc" = (
+/obj/machinery/door/airlock/public/glass{
+	name = "Bar"
+	},
+/turf/open/floor/wood/large,
+/area/station/service/hydroponics)
+"nmI" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 1
+	},
+/turf/open/floor/stone,
+/area/station/service/hydroponics)
 "npq" = (
 /obj/structure/railing{
 	dir = 10
 	},
 /turf/open/floor/iron,
 /area/space)
+"nvE" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/wood/tile,
+/area/station/maintenance)
 "nBs" = (
 /obj/structure/railing/corner{
 	dir = 8
 	},
 /turf/open/floor/iron,
 /area/space)
+"nCR" = (
+/turf/open/floor/carpet/green,
+/area/station/service/hydroponics)
+"nDZ" = (
+/mob/living/simple_animal/hostile/retaliate/goat{
+	name = "Pete"
+	},
+/turf/open/floor/iron/freezer,
+/area/station/service/hydroponics)
+"nFU" = (
+/obj/structure/chair/stool/directional/west,
+/turf/open/floor/wood/parquet,
+/area/station/service/hydroponics)
 "oer" = (
 /obj/structure/flora/bush/jungle/c/style_random,
 /turf/open/floor/grass,
 /area/space)
+"okc" = (
+/obj/structure/railing/corner,
+/turf/open/floor/wood/large,
+/area/station/service/hydroponics)
+"oos" = (
+/obj/machinery/disposal/bin,
+/turf/open/floor/iron/kitchen,
+/area/station/service/hydroponics)
 "ooD" = (
 /turf/open/space/basic,
 /area/station/maintenance)
+"oyn" = (
+/obj/structure/chair/sofa/bench/right{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/dark_blue/opposingcorners{
+	dir = 1
+	},
+/turf/open/floor/iron/cafeteria,
+/area/station/service/hydroponics)
+"oMK" = (
+/obj/structure/chair/comfy/black{
+	dir = 4
+	},
+/turf/open/floor/wood/large,
+/area/station/service/hydroponics)
 "oMO" = (
 /turf/open/space/basic,
 /area/station/engineering/main)
 "oSK" = (
 /turf/open/space/openspace,
 /area/station/command)
+"oVC" = (
+/obj/structure/chair/sofa/bench/right{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/dark_blue/opposingcorners{
+	dir = 1
+	},
+/turf/open/floor/iron/cafeteria,
+/area/station/service/hydroponics)
+"pnR" = (
+/obj/structure/chair/sofa/bench/left{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/dark_blue/opposingcorners{
+	dir = 1
+	},
+/turf/open/floor/iron/cafeteria,
+/area/station/service/hydroponics)
+"pRG" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/open/floor/wood/large,
+/area/station/service/hydroponics)
 "pVN" = (
 /obj/structure/flora/grass/jungle/b/style_random,
 /obj/structure/flora/bush/flowers_yw/style_random,
 /turf/open/floor/grass,
 /area/space)
+"pWt" = (
+/obj/machinery/oven,
+/turf/open/floor/iron/kitchen,
+/area/station/service/hydroponics)
 "qbE" = (
 /turf/open/openspace,
 /area/space)
 "qek" = (
 /turf/open/space/basic,
 /area/station/medical/medbay)
+"qiW" = (
+/obj/structure/chair/comfy/beige{
+	dir = 8
+	},
+/turf/open/floor/wood/large,
+/area/station/service/hydroponics)
+"qBy" = (
+/obj/structure/chair/wood,
+/turf/open/floor/wood/large,
+/area/station/service/hydroponics)
+"qEV" = (
+/obj/structure/railing,
+/turf/open/floor/iron/stairs/medium{
+	dir = 8
+	},
+/area/station/science)
+"qOu" = (
+/obj/structure/table/wood,
+/turf/open/floor/wood/large,
+/area/station/science)
 "qRb" = (
 /turf/open/space/basic,
+/area/station/science)
+"qRC" = (
+/obj/structure/stairs/east,
+/obj/structure/railing,
+/turf/open/floor/iron/stairs/medium{
+	dir = 8
+	},
+/area/station/maintenance)
+"qSw" = (
+/turf/closed/wall,
+/area/station/service/hydroponics)
+"qWI" = (
+/obj/effect/spawner/random/structure/musician/piano/random_piano,
+/turf/open/floor/wood/parquet,
+/area/station/service/hydroponics)
+"rhX" = (
+/obj/structure/chair/office/light{
+	dir = 8
+	},
+/turf/open/floor/wood/large,
 /area/station/science)
 "rja" = (
 /turf/open/space/openspace,
 /area/station/security)
+"roo" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/wood/large,
+/area/station/service/hydroponics)
+"rBN" = (
+/obj/effect/turf_decal/tile/dark_blue/opposingcorners{
+	dir = 1
+	},
+/obj/machinery/door/airlock/public/glass{
+	name = "Diner"
+	},
+/turf/open/floor/iron/cafeteria,
+/area/station/service/hydroponics)
+"rII" = (
+/obj/machinery/door/airlock/public/glass{
+	name = "Bar"
+	},
+/turf/open/floor/wood/parquet,
+/area/station/service/hydroponics)
 "rZk" = (
 /obj/structure/flora/bush/jungle/b/style_random,
 /turf/open/floor/grass,
 /area/space)
+"say" = (
+/turf/open/floor/wood/tile,
+/area/station/service/hydroponics)
+"sjJ" = (
+/obj/structure/chair{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/dark_blue/opposingcorners{
+	dir = 1
+	},
+/turf/open/floor/iron/cafeteria,
+/area/station/service/hydroponics)
+"slZ" = (
+/obj/structure/table/wood,
+/turf/open/floor/wood/large,
+/area/station/service/hydroponics)
 "ssJ" = (
 /turf/open/floor/grass,
 /area/space)
+"szw" = (
+/turf/open/floor/stone,
+/area/station/science)
+"sCD" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/wood/tile,
+/area/station/maintenance)
+"sUi" = (
+/obj/effect/turf_decal/tile/dark_blue/opposingcorners{
+	dir = 1
+	},
+/turf/open/floor/iron/cafeteria,
+/area/station/service/hydroponics)
 "thH" = (
 /turf/open/space/basic,
 /area/station/hallway/secondary/exit)
+"tGS" = (
+/obj/structure/table/wood/fancy,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/carpet/royalblack,
+/area/station/maintenance)
+"tRB" = (
+/obj/structure/chair/office{
+	dir = 4
+	},
+/turf/open/floor/wood/large,
+/area/station/science)
+"tTx" = (
+/obj/structure/chair/stool/bar/directional/west,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/stone,
+/area/station/service/hydroponics)
+"tXF" = (
+/obj/structure/chair,
+/obj/effect/turf_decal/tile/dark_blue/opposingcorners{
+	dir = 1
+	},
+/turf/open/floor/iron/cafeteria,
+/area/station/service/hydroponics)
 "udi" = (
 /turf/open/space/openspace,
 /area/station/hallway/secondary/entry)
+"ugh" = (
+/turf/open/floor/wood/parquet,
+/area/station/service/hydroponics)
+"upM" = (
+/obj/structure/table,
+/turf/open/floor/wood/large,
+/area/station/science)
+"uwj" = (
+/obj/structure/railing,
+/turf/open/floor/iron/stairs/medium{
+	dir = 8
+	},
+/area/station/maintenance)
 "uDd" = (
 /turf/open/space/basic,
 /area/station/hallway/secondary/entry)
@@ -169,6 +822,26 @@
 /obj/structure/flora/rock/pile/jungle/style_random,
 /turf/open/floor/grass,
 /area/space)
+"vhN" = (
+/obj/machinery/chem_master/condimaster{
+	name = "CondiMaster Neo"
+	},
+/turf/open/floor/iron/kitchen,
+/area/station/service/hydroponics)
+"vjV" = (
+/obj/structure/chair/sofa/left{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/machinery/button/curtain{
+	pixel_y = -20;
+	name = "privacy curtains";
+	id = "bar_booth"
+	},
+/turf/open/floor/carpet/royalblack,
+/area/station/maintenance)
 "vwd" = (
 /obj/structure/flora/tree/jungle/style_random{
 	pixel_y = -10
@@ -184,9 +857,43 @@
 	},
 /turf/open/floor/iron,
 /area/space)
+"vCu" = (
+/obj/machinery/door/airlock/public/glass{
+	name = "Library"
+	},
+/turf/open/space/basic,
+/area/station/science)
+"vDo" = (
+/obj/machinery/gibber,
+/turf/open/floor/iron/freezer,
+/area/station/service/hydroponics)
+"vPn" = (
+/obj/structure/chair/sofa/right,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/machinery/button/curtain{
+	pixel_y = 28;
+	name = "privacy curtains";
+	id = "bar_booth"
+	},
+/turf/open/floor/carpet/royalblack,
+/area/station/maintenance)
+"vQw" = (
+/turf/closed/wall,
+/area/station/maintenance)
+"vTv" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/wood/tile,
+/area/station/service/hydroponics)
 "vXM" = (
 /turf/open/space/openspace,
 /area/space)
+"vYy" = (
+/turf/open/floor/wood/large,
+/area/station/service/hydroponics)
 "wfr" = (
 /obj/structure/railing{
 	dir = 6
@@ -199,14 +906,108 @@
 	},
 /turf/open/floor/iron,
 /area/space)
+"wpJ" = (
+/obj/structure/chair/comfy/black{
+	dir = 2
+	},
+/turf/open/floor/wood/large,
+/area/station/science)
+"wrT" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/stone,
+/area/station/service/hydroponics)
+"wyq" = (
+/obj/effect/turf_decal/siding/wood/corner,
+/turf/open/floor/wood/tile,
+/area/station/service/hydroponics)
+"wzz" = (
+/obj/structure/curtain/cloth/fancy/mechanical{
+	name = "private booth";
+	id = "bar_booth"
+	},
+/turf/open/floor/carpet/royalblack,
+/area/station/service/hydroponics)
+"wAn" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/wood/tile,
+/area/station/service/hydroponics)
+"wAB" = (
+/obj/structure/chair/wood{
+	dir = 4
+	},
+/turf/open/floor/wood/large,
+/area/station/service/hydroponics)
+"wGB" = (
+/obj/structure/chair/wood{
+	dir = 4
+	},
+/turf/open/floor/wood/parquet,
+/area/station/service/hydroponics)
+"wXG" = (
+/obj/structure/table/wood,
+/turf/open/floor/wood/parquet,
+/area/station/service/hydroponics)
+"xwb" = (
+/obj/structure/chair/comfy/beige{
+	dir = 4
+	},
+/turf/open/floor/wood/large,
+/area/station/service/hydroponics)
 "xAW" = (
 /obj/structure/flora/grass/jungle/b/style_random,
 /obj/structure/flora/bush/flowers_pp/style_random,
 /turf/open/floor/grass,
 /area/space)
+"xBc" = (
+/obj/structure/railing{
+	dir = 9
+	},
+/turf/open/floor/wood/large,
+/area/station/service/hydroponics)
+"xBk" = (
+/obj/structure/sign/barsign{
+	pixel_y = 32
+	},
+/turf/open/floor/iron,
+/area/station/service/hydroponics)
+"xCw" = (
+/obj/structure/sign/barsign{
+	pixel_y = 32
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/structure/chair/stool/bar/directional/west,
+/turf/open/floor/stone,
+/area/station/maintenance)
+"xIH" = (
+/obj/structure/chair/comfy/black{
+	dir = 4
+	},
+/turf/open/floor/wood/large,
+/area/station/maintenance)
+"xVX" = (
+/obj/structure/bookcase/random,
+/turf/open/floor/wood/large,
+/area/station/science)
+"xYD" = (
+/turf/open/floor/wood/tile,
+/area/station/maintenance)
 "xYE" = (
 /turf/open/floor/iron,
 /area/station/engineering/main)
+"ybj" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/wood/parquet,
+/area/station/service/hydroponics)
 
 (1,1,1) = {"
 cOq
@@ -28069,17 +28870,17 @@ ooD
 ooD
 ooD
 ooD
-ooD
-ooD
-ooD
-ooD
-ooD
-ooD
-ooD
-eie
-eie
-eie
-eie
+vQw
+vQw
+vQw
+vQw
+vQw
+vQw
+vQw
+qSw
+qSw
+qSw
+qSw
 eie
 eie
 eie
@@ -28326,21 +29127,21 @@ ooD
 ooD
 ooD
 ooD
-ooD
-ooD
-ooD
-ooD
-ooD
-ooD
-ooD
-eie
-eie
-eie
-eie
-eie
-eie
-eie
-eie
+vQw
+xYD
+xYD
+xYD
+vQw
+xYD
+sCD
+wAn
+wAn
+wAn
+qSw
+qSw
+qSw
+qSw
+qSw
 eie
 eie
 eie
@@ -28583,21 +29384,21 @@ ooD
 ooD
 ooD
 ooD
-ooD
-ooD
-ooD
-ooD
-ooD
-ooD
-ooD
-eie
-eie
-eie
-eie
-eie
-eie
-eie
-eie
+vQw
+xYD
+xYD
+xYD
+xYD
+xYD
+xYD
+say
+say
+wyq
+gpL
+huk
+qWI
+ugh
+qSw
 eie
 eie
 eie
@@ -28840,24 +29641,24 @@ ooD
 ooD
 ooD
 ooD
-ooD
-ooD
-ooD
-ooD
-ooD
-ooD
-ooD
-eie
-eie
-eie
-eie
-eie
-eie
-eie
-eie
-eie
-eie
-eie
+vQw
+xYD
+xYD
+xYD
+vQw
+nvE
+nvE
+vTv
+vTv
+bgX
+loV
+wrT
+nFU
+ugh
+qSw
+qSw
+qSw
+qSw
 eie
 igj
 igj
@@ -29097,24 +29898,24 @@ ooD
 ooD
 ooD
 ooD
-ooD
-ooD
-ooD
-ooD
-ooD
-ooD
-ooD
-eie
-eie
-eie
-eie
-eie
-eie
-eie
-eie
-eie
-eie
-eie
+vQw
+xYD
+xYD
+xYD
+vQw
+hMM
+hMM
+loV
+loV
+loV
+loV
+wrT
+ugh
+ugh
+ugh
+ugh
+ugh
+qSw
 eie
 igj
 igj
@@ -29354,24 +30155,24 @@ ooD
 ooD
 ooD
 ooD
-ooD
-ooD
-ooD
-ooD
-ooD
-ooD
-ooD
-eie
-eie
-eie
-eie
-eie
-eie
-eie
-eie
-eie
-eie
-eie
+vQw
+vQw
+vQw
+vQw
+vQw
+xCw
+lWm
+tTx
+tTx
+tTx
+hGu
+nmI
+ugh
+ugh
+ugh
+ugh
+ugh
+qSw
 eie
 igj
 igj
@@ -29615,20 +30416,20 @@ ooD
 ooD
 ooD
 ooD
-ooD
-ooD
-ooD
-eie
-eie
-eie
-eie
-eie
-eie
-eie
-eie
-eie
-eie
-eie
+vQw
+ecE
+ecE
+ugh
+ugh
+ugh
+ugh
+ugh
+ugh
+wGB
+wGB
+wGB
+ugh
+qSw
 eie
 igj
 igj
@@ -29872,20 +30673,20 @@ ooD
 ooD
 ooD
 ooD
-ooD
-ooD
-ooD
-eie
-eie
-eie
-eie
-eie
-eie
-eie
-eie
-eie
-eie
-eie
+vQw
+uwj
+ecE
+ugh
+wGB
+ugh
+wGB
+wGB
+ugh
+wXG
+wXG
+wXG
+ugh
+qSw
 eie
 igj
 igj
@@ -30129,20 +30930,20 @@ ooD
 ooD
 ooD
 ooD
-ooD
-ooD
-ooD
-eie
-eie
-eie
-eie
-eie
-eie
-eie
-eie
-eie
-eie
-eie
+vQw
+qRC
+ecE
+ugh
+wXG
+ugh
+wXG
+wXG
+ugh
+laF
+laF
+laF
+ugh
+qSw
 eie
 igj
 igj
@@ -30386,21 +31187,21 @@ ooD
 ooD
 ooD
 ooD
-ooD
-ooD
-ooD
-eie
-eie
-eie
-eie
-eie
-eie
-eie
-eie
-eie
-eie
-eie
-igj
+vQw
+vQw
+ecE
+ugh
+laF
+ugh
+laF
+laF
+ugh
+ugh
+ugh
+ugh
+ugh
+qSw
+cOq
 igj
 igj
 igj
@@ -30644,24 +31445,24 @@ ooD
 ooD
 ooD
 ooD
-ooD
-ooD
-eie
-eie
-eie
-eie
-eie
-eie
-eie
-eie
-eie
-eie
+vQw
+ecE
+ugh
+glG
+ybj
+ybj
+ybj
+ugh
+qSw
+lSs
+rII
+lSs
+mcL
+mcL
 igj
 igj
 igj
-igj
-igj
-eie
+qSw
 eie
 eie
 eie
@@ -30901,15 +31702,15 @@ ooD
 ooD
 ooD
 ooD
-ooD
-ooD
-eie
-eie
-eie
-eie
-eie
-eie
-eie
+vQw
+vQw
+qSw
+qSw
+wzz
+wzz
+wzz
+qSw
+qSw
 igj
 igj
 igj
@@ -30918,7 +31719,7 @@ igj
 igj
 igj
 igj
-igj
+cOq
 eie
 eie
 eie
@@ -31161,11 +31962,11 @@ ooD
 ooD
 ooD
 ooD
-ooD
-ooD
-ooD
-ooD
-ooD
+vQw
+vPn
+tGS
+vjV
+vQw
 igj
 igj
 igj
@@ -31418,11 +32219,11 @@ ooD
 ooD
 ooD
 ooD
-ooD
-ooD
-ooD
-ooD
-ooD
+vQw
+fbJ
+lme
+aYo
+vQw
 igj
 igj
 ltS
@@ -31675,11 +32476,11 @@ ooD
 ooD
 ooD
 ooD
-ooD
-ooD
-ooD
-ooD
-ooD
+vQw
+vQw
+vQw
+vQw
+vQw
 igj
 ltS
 wfr
@@ -31934,7 +32735,7 @@ ooD
 ooD
 ooD
 ooD
-ooD
+vQw
 crR
 igj
 igj
@@ -32191,7 +32992,7 @@ ooD
 ooD
 ooD
 ooD
-ooD
+vQw
 crR
 igj
 igj
@@ -32448,7 +33249,7 @@ ooD
 ooD
 ooD
 ooD
-ooD
+vQw
 crR
 igj
 igj
@@ -32705,8 +33506,8 @@ ooD
 ooD
 ooD
 ooD
-ooD
-ooD
+vQw
+vQw
 ooD
 igj
 nBs
@@ -32955,15 +33756,15 @@ ooD
 ooD
 ooD
 ooD
+vQw
+vQw
+vQw
+vQw
+vQw
 ooD
 ooD
 ooD
-ooD
-ooD
-ooD
-ooD
-ooD
-ooD
+vQw
 ooD
 igj
 igj
@@ -33212,16 +34013,16 @@ qRb
 qRb
 qRb
 qRb
-qRb
-qRb
-qRb
-ooD
-ooD
-ooD
-ooD
-ooD
-ooD
-ooD
+jQe
+kRs
+kRs
+mDX
+vQw
+vQw
+vQw
+vQw
+vQw
+vQw
 igj
 igj
 igj
@@ -33232,7 +34033,7 @@ igj
 igj
 igj
 igj
-igj
+cOq
 eie
 eie
 eie
@@ -33469,16 +34270,16 @@ qRb
 qRb
 qRb
 qRb
-qRb
-qRb
-qRb
-ooD
-ooD
-ooD
-ooD
-ooD
-ooD
-ooD
+jQe
+kRs
+kRs
+mDX
+mDX
+mDX
+mDX
+mDX
+mDX
+vQw
 igj
 igj
 igj
@@ -33487,8 +34288,8 @@ igj
 igj
 igj
 igj
-igj
-igj
+cOq
+cOq
 eie
 eie
 eie
@@ -33726,24 +34527,24 @@ qRb
 qRb
 qRb
 qRb
-qRb
-qRb
-qRb
-ooD
-ooD
-ooD
-ooD
-ooD
-ooD
-ooD
+jQe
+kRs
+dxd
+xIH
+mDX
+mDX
+khW
+byY
+mDX
+vQw
 igj
 igj
 igj
 igj
 igj
 igj
-igj
-igj
+cOq
+cOq
 eie
 eie
 eie
@@ -33982,23 +34783,23 @@ qRb
 qRb
 qRb
 qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
+jQe
+jQe
+kRs
+qOu
+qOu
+kRs
+kRs
+qOu
+qOu
+kRs
+jQe
 igj
 igj
 igj
 igj
-igj
-igj
+cOq
+cOq
 eie
 eie
 eie
@@ -34239,21 +35040,21 @@ qRb
 qRb
 qRb
 qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
+jQe
+iPI
+kRs
+aai
+ncZ
+kRs
+kRs
+jtE
+mQR
+kRs
+jQe
 igj
 igj
 igj
-igj
+cOq
 eie
 eie
 eie
@@ -34496,21 +35297,21 @@ qRb
 qRb
 qRb
 qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
+jQe
+bvb
+kRs
+kRs
+kRs
+kRs
+kRs
+kRs
+kRs
+kRs
+jnC
 igj
 igj
 igj
-igj
+cOq
 eie
 eie
 eie
@@ -34753,17 +35554,17 @@ qRb
 qRb
 qRb
 qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
+jQe
+bvb
+bvb
+bvb
+bvb
+bvb
+bvb
+bvb
+bvb
+bvb
+vCu
 igj
 igj
 igj
@@ -35010,17 +35811,17 @@ qRb
 qRb
 qRb
 qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
+jQe
+bvb
+kRs
+kRs
+kRs
+kRs
+kRs
+kRs
+kRs
+kRs
+jnC
 igj
 igj
 igj
@@ -35267,17 +36068,17 @@ qRb
 qRb
 qRb
 qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
+jQe
+qEV
+szw
+bvb
+szw
+bvb
+szw
+bvb
+kRs
+kRs
+jQe
 igj
 igj
 igj
@@ -35524,17 +36325,17 @@ qRb
 qRb
 qRb
 qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
+jQe
+jQe
+xVX
+bvb
+xVX
+bvb
+xVX
+bvb
+jIr
+upM
+jQe
 igj
 igj
 igj
@@ -35782,16 +36583,16 @@ qRb
 qRb
 qRb
 qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
+jQe
+xVX
+bvb
+xVX
+bvb
+xVX
+bvb
+kRs
+kRs
+jQe
 igj
 igj
 igj
@@ -36039,16 +36840,16 @@ qRb
 qRb
 qRb
 qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
+jQe
+xVX
+bvb
+xVX
+bvb
+xVX
+bvb
+jIr
+upM
+jQe
 igj
 igj
 igj
@@ -36296,16 +37097,16 @@ qRb
 qRb
 qRb
 qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
+jQe
+xVX
+bvb
+xVX
+bvb
+xVX
+bvb
+kRs
+kRs
+jQe
 igj
 igj
 igj
@@ -36552,17 +37353,17 @@ qRb
 qRb
 qRb
 qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
+jQe
+jQe
+jQe
+kRs
+jQe
+kRs
+jQe
+jQe
+kRs
+kRs
+jQe
 igj
 igj
 igj
@@ -36808,18 +37609,18 @@ qRb
 qRb
 qRb
 qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
+jQe
+jQe
+kRs
+kRs
+kRs
+kRs
+kRs
+kRs
+jQe
+jQe
+jQe
+jQe
 igj
 igj
 igj
@@ -37065,15 +37866,15 @@ qRb
 qRb
 qRb
 qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
+jQe
+kRs
+kRs
+kRs
+tRB
+aCG
+tRB
+kRs
+jQe
 qRb
 qRb
 qRb
@@ -37322,15 +38123,15 @@ qRb
 qRb
 qRb
 qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
+jQe
+kRs
+kRs
+wpJ
+qOu
+qOu
+qOu
+kRs
+jQe
 qRb
 qRb
 qRb
@@ -37579,15 +38380,15 @@ qRb
 qRb
 qRb
 qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
+jQe
+kRs
+kRs
+wpJ
+qOu
+qOu
+qOu
+kRs
+jQe
 qRb
 qRb
 qRb
@@ -37836,15 +38637,15 @@ qRb
 qRb
 qRb
 qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
+jQe
+kRs
+kRs
+kRs
+ijc
+rhX
+ijc
+kRs
+jQe
 qRb
 qRb
 qRb
@@ -38093,15 +38894,15 @@ qRb
 qRb
 qRb
 qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
+jQe
+jQe
+kRs
+kRs
+kRs
+kRs
+kRs
+kRs
+jQe
 qRb
 qRb
 qRb
@@ -38351,14 +39152,14 @@ qRb
 qRb
 qRb
 qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
-qRb
+jQe
+jQe
+jQe
+jQe
+jQe
+jQe
+jQe
+jQe
 qRb
 qRb
 qRb
@@ -93609,17 +94410,17 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+qSw
+qSw
+qSw
+qSw
+qSw
+qSw
+qSw
+qSw
+qSw
+qSw
 cue
 cue
 igj
@@ -93866,19 +94667,19 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+dpn
+dpn
+dpn
+dpn
+dpn
+dpn
+dpn
+roo
+vYy
+qSw
+qSw
+qSw
 igj
 igj
 igj
@@ -94123,19 +94924,19 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+dpn
+dpn
+dpn
+dpn
+dpn
+dpn
+dpn
+roo
+vYy
+dUv
+gPn
+qSw
 igj
 igj
 igj
@@ -94380,19 +95181,19 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+dpn
+dpn
+dpn
+dpn
+dpn
+dpn
+dpn
+roo
+vYy
+slZ
+slZ
+qSw
 igj
 igj
 igj
@@ -94637,19 +95438,19 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+dpn
+dpn
+dpn
+dpn
+dpn
+dpn
+dpn
+roo
+vYy
+hMa
+ldI
+qSw
 igj
 igj
 igj
@@ -94894,19 +95695,19 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+dpn
+dpn
+dpn
+dpn
+dpn
+dpn
+dpn
+roo
+vYy
+dUv
+gPn
+qSw
 igj
 igj
 igj
@@ -95151,19 +95952,19 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+dpn
+dpn
+dpn
+dpn
+dpn
+dpn
+xBc
+aiI
+vYy
+slZ
+slZ
+qSw
 igj
 igj
 igj
@@ -95408,19 +96209,19 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+dpn
+xBc
+pRG
+pRG
+pRG
+pRG
+aiI
+vYy
+vYy
+hMa
+ldI
+qSw
 igj
 igj
 igj
@@ -95665,24 +96466,24 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+dpn
+roo
+oMK
+vYy
+xwb
+vYy
+vYy
+vYy
+vYy
+qSw
+qSw
+qSw
 igj
 igj
 igj
-iDc
-iDc
+jgg
+jgg
 iDc
 iDc
 iDc
@@ -95922,24 +96723,24 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+lGP
+aiI
+slZ
+vYy
+slZ
+qSw
+nfc
+nfc
+lSs
+qSw
+bXX
 igj
 igj
 igj
 igj
 igj
-iDc
+jgg
 iDc
 iDc
 iDc
@@ -96179,14 +96980,14 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+vYy
+vYy
+qiW
+vYy
+kES
+qSw
+xBk
 igj
 igj
 igj
@@ -96436,13 +97237,13 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+qSw
+qSw
+lSs
+lSs
+lSs
+qSw
 igj
 igj
 igj
@@ -96695,9 +97496,9 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
+qSw
+bXX
+bXX
 igj
 igj
 igj
@@ -96952,8 +97753,8 @@ cue
 cue
 cue
 cue
-cue
-cue
+qSw
+bXX
 igj
 igj
 igj
@@ -96971,7 +97772,7 @@ gIF
 mVs
 igj
 igj
-igj
+vXM
 iDc
 iDc
 iDc
@@ -97209,7 +98010,7 @@ cue
 cue
 cue
 cue
-igj
+mcL
 igj
 igj
 igj
@@ -98234,10 +99035,10 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
+qSw
+qSw
+qSw
+qSw
 igj
 igj
 igj
@@ -98257,13 +99058,13 @@ cgZ
 igj
 igj
 igj
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+bXX
+qSw
+lSs
+lSs
+qSw
+qSw
+qSw
 cue
 cue
 cue
@@ -98491,11 +99292,11 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
+qSw
+krj
+vYy
+qSw
+qSw
 igj
 igj
 igj
@@ -98514,13 +99315,13 @@ eEW
 igj
 igj
 igj
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+bXX
+rBN
+sUi
+sUi
+sUi
+sUi
+qSw
 cue
 cue
 cue
@@ -98748,12 +99549,12 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+krj
+vYy
+qSw
+qSw
+qSw
 igj
 igj
 igj
@@ -98770,14 +99571,14 @@ eEW
 igj
 igj
 igj
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+bXX
+bXX
+rBN
+sUi
+sUi
+bZs
+sUi
+qSw
 cue
 cue
 cue
@@ -99005,14 +99806,14 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+krj
+vYy
+krj
+vYy
+qSw
+qSw
+qSw
 igj
 igj
 igj
@@ -99026,15 +99827,15 @@ igj
 igj
 igj
 igj
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+lSs
+lSs
+lSs
+qSw
+sUi
+tXF
+muE
+sjJ
+qSw
 cue
 cue
 cue
@@ -99261,16 +100062,16 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+qSw
+krj
+vYy
+krj
+vYy
+krj
+vYy
+qSw
+bXX
 igj
 igj
 igj
@@ -99282,16 +100083,16 @@ igj
 igj
 igj
 igj
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+lSs
+lSs
+tXF
+muE
+sjJ
+sUi
+sUi
+iqe
+sUi
+qSw
 cue
 cue
 cue
@@ -99518,37 +100319,37 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+okc
+ldY
+vYy
+krj
+vYy
+krj
+vYy
+qSw
+qSw
+ebw
+ebw
+qSw
+qSw
 igj
 igj
 igj
 igj
 igj
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+bXX
+bXX
+lSs
+sUi
+sUi
+sUi
+sUi
+sUi
+sUi
+sUi
+sUi
+qSw
 cue
 cue
 cue
@@ -99775,37 +100576,37 @@ cue
 cue
 cue
 cue
+qSw
 cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+dzM
+jZi
+jZi
+jZi
+jZi
+jZi
+jZi
+ldY
+mSM
+mSM
+xwb
+qSw
+qSw
 igj
 igj
 igj
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+rBN
+rBN
+qSw
+sUi
+tXF
+muE
+sjJ
+sUi
+sUi
+bZs
+sUi
+qSw
 cue
 cue
 cue
@@ -100032,6 +100833,7 @@ cue
 cue
 cue
 cue
+qSw
 cue
 cue
 cue
@@ -100040,29 +100842,28 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
+roo
+mSM
+mSM
+slZ
+qSw
 cue
 igj
 igj
 igj
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+sUi
+sUi
+sUi
+sUi
+tXF
+muE
+sjJ
+sUi
+tXF
+muE
+sjJ
+qSw
 cue
 cue
 cue
@@ -100289,6 +101090,7 @@ cue
 cue
 cue
 cue
+qSw
 cue
 cue
 cue
@@ -100297,29 +101099,28 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
+roo
+mSM
+mSM
+qiW
+qSw
 cue
 igj
 igj
 igj
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+lSs
+sUi
+sUi
+sUi
+sUi
+sUi
+sUi
+sUi
+sUi
+sUi
+iqe
+sUi
+qSw
 cue
 cue
 cue
@@ -100546,6 +101347,7 @@ cue
 cue
 cue
 cue
+qSw
 cue
 cue
 cue
@@ -100554,29 +101356,28 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
+roo
+mSM
+mSM
+vYy
+qSw
 cue
 igj
 igj
 igj
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+lSs
+pnR
+oVC
+sUi
+sUi
+sUi
+dfy
+dfy
+dfy
+sUi
+sUi
+sUi
+qSw
 cue
 cue
 cue
@@ -100802,38 +101603,38 @@ cue
 cue
 cue
 cue
+qSw
+qSw
 cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+xBc
+pRG
+pRG
+pRG
+pRG
+pRG
+pRG
+aiI
+slZ
+slZ
+vYy
+qSw
+qSw
 igj
 igj
 igj
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+muE
+muE
+sUi
+sUi
+eTw
+jja
+dVc
+dVc
+jju
+hFK
+qSw
+qSw
 cue
 cue
 cue
@@ -101059,38 +101860,38 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+vYy
+lGP
+aiI
+wAB
+vYy
+vYy
+vYy
+wAB
+vYy
+vYy
+fzG
+nCR
+nCR
+nCR
+qSw
 igj
 igj
 igj
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+oyn
+hwR
+sUi
+sUi
+eTw
+dVc
+gJV
+gJV
+gJV
+gJV
+gSB
+qSw
 cue
 cue
 cue
@@ -101316,38 +102117,38 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+vYy
+vYy
+qBy
+slZ
+lyC
+vYy
+qBy
+slZ
+lyC
+vYy
+slZ
+nCR
+nCR
+nCR
+qSw
 igj
 igj
 igj
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+lSs
+pnR
+oVC
+sUi
+sUi
+eTw
+dVc
+gJV
+dVc
+dVc
+gJV
+bFr
+qSw
 cue
 cue
 cue
@@ -101573,38 +102374,38 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+vYy
+vYy
+vYy
+aPN
+vYy
+vYy
+vYy
+aPN
+vYy
+vYy
+slZ
+nCR
+nCR
+nCR
+qSw
 igj
 igj
 igj
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+lSs
+muE
+muE
+sUi
+sUi
+eTw
+dVc
+gJV
+dVc
+dVc
+gJV
+pWt
+qSw
 cue
 cue
 cue
@@ -101830,38 +102631,38 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+qSw
+qSw
+qSw
+qSw
+qSw
+qSw
+vYy
+vYy
+vYy
+qSw
+qSw
+qSw
+vYy
+qSw
+qSw
 igj
 igj
 igj
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+oyn
+hwR
+sUi
+sUi
+sUi
+dVc
+gJV
+dVc
+gIi
+gJV
+vhN
+qSw
 cue
 cue
 cue
@@ -102093,32 +102894,32 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+qSw
+qSw
+qSw
+qSw
+vYy
+vYy
+vYy
+vYy
+qSw
 igj
 igj
 igj
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+qSw
+qSw
+clZ
+muE
+ccD
+qSw
+gJV
+kyh
+gcw
+gJV
+iQM
+qSw
 cue
 cue
 cue
@@ -102354,28 +103155,28 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+vYy
+vYy
+vYy
+vYy
+qSw
 igj
 igj
 igj
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+aTb
+muE
+eEu
+qSw
+gJV
+gJV
+gJV
+gJV
+iMY
+qSw
 cue
 cue
 cue
@@ -102611,28 +103412,28 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+vYy
+vYy
+vYy
+vYy
+qSw
 igj
 igj
 igj
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+qSw
+qSw
+qSw
+qSw
+bqk
+dQw
+gJV
+gJV
+oos
+qSw
 cue
 cue
 cue
@@ -102868,12 +103669,12 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+qSw
+qSw
+qSw
+qSw
+qSw
 igj
 igj
 igj
@@ -102883,13 +103684,13 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+qSw
+qSw
+jBA
+qSw
+qSw
+qSw
 cue
 cue
 cue
@@ -103140,13 +103941,13 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+ehD
+jBA
+jBA
+jBA
+dxi
+qSw
 cue
 cue
 cue
@@ -103397,13 +104198,13 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+ehD
+jBA
+nDZ
+jBA
+jBA
+qSw
 cue
 cue
 cue
@@ -103654,13 +104455,13 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+qSw
+fdS
+fdS
+jBA
+vDo
+qSw
 cue
 cue
 cue
@@ -103911,13 +104712,13 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+eie
+qSw
+qSw
+qSw
+qSw
+qSw
+qSw
 cue
 cue
 cue
