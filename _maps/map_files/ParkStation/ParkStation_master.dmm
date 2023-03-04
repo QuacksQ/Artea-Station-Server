@@ -170,6 +170,10 @@
 	},
 /turf/open/floor/iron/checker,
 /area/station/service/hydroponics)
+"cGd" = (
+/obj/machinery/modular_computer/console/preset/cargochat/service,
+/turf/open/floor/iron/smooth_large,
+/area/station/service/hydroponics)
 "cOq" = (
 /turf/open/space/basic,
 /area/space)
@@ -389,6 +393,12 @@
 /obj/machinery/hydroponics/constructable,
 /turf/open/floor/grass,
 /area/station/service/hydroponics)
+"fMz" = (
+/obj/effect/turf_decal/tile/dark_green/half/contrasted{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/station/service/hydroponics)
 "gcw" = (
 /obj/structure/closet/secure_closet/freezer/kitchen,
 /obj/item/reagent_containers/condiment/sugar,
@@ -543,6 +553,12 @@
 "hUH" = (
 /turf/open/floor/carpet/royalblack,
 /area/station/cargo)
+"hUU" = (
+/obj/effect/turf_decal/tile/dark_green{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/station/service/hydroponics)
 "ibK" = (
 /obj/structure/bodycontainer/crematorium{
 	id = "crematoriumChapel";
@@ -681,6 +697,12 @@
 "jgg" = (
 /turf/closed/wall,
 /area/station/medical/medbay)
+"jhF" = (
+/obj/effect/turf_decal/tile/dark_green/half/contrasted{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/station/service/hydroponics)
 "jja" = (
 /obj/structure/table/reinforced,
 /obj/structure/desk_bell{
@@ -744,6 +766,10 @@
 /obj/structure/chair/office,
 /turf/open/floor/wood/large,
 /area/station/science)
+"jLK" = (
+/obj/structure/chair,
+/turf/open/floor/iron/dark,
+/area/station/service/hydroponics)
 "jQe" = (
 /turf/closed/wall,
 /area/station/science)
@@ -830,6 +856,10 @@
 	},
 /turf/open/floor/wood/large,
 /area/station/medical/medbay)
+"kNo" = (
+/obj/machinery/vending/cigarette,
+/turf/open/floor/iron/smooth_large,
+/area/station/service/hydroponics)
 "kOi" = (
 /obj/structure/closet/crate/coffin,
 /turf/open/floor/iron/chapel{
@@ -889,6 +919,10 @@
 	},
 /turf/open/floor/iron,
 /area/station/service/hydroponics)
+"lhb" = (
+/obj/effect/turf_decal/tile/dark_green/half/contrasted,
+/turf/open/floor/iron/dark,
+/area/station/service/hydroponics)
 "liv" = (
 /obj/structure/window/reinforced/fulltile,
 /obj/effect/turf_decal/siding/dark/end{
@@ -930,6 +964,10 @@
 /obj/structure/railing/corner,
 /turf/open/floor/iron,
 /area/space)
+"luI" = (
+/obj/structure/table,
+/turf/open/floor/iron/dark,
+/area/station/service/hydroponics)
 "lvz" = (
 /turf/closed/wall,
 /area/station/cargo)
@@ -945,6 +983,12 @@
 	dir = 1
 	},
 /turf/open/floor/iron/checker,
+/area/station/service/hydroponics)
+"lCv" = (
+/obj/effect/turf_decal/tile/dark_green/anticorner/contrasted{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
 /area/station/service/hydroponics)
 "lGB" = (
 /obj/effect/turf_decal/tile/dark_blue/opposingcorners,
@@ -981,6 +1025,10 @@
 	},
 /turf/open/floor/stone,
 /area/station/maintenance)
+"lYr" = (
+/obj/structure/table,
+/turf/open/floor/iron/smooth_large,
+/area/station/service/hydroponics)
 "mcL" = (
 /turf/closed/wall,
 /area/space)
@@ -1074,6 +1122,10 @@
 	},
 /turf/open/floor/wood/large,
 /area/station/service/hydroponics)
+"njF" = (
+/obj/machinery/disposal/bin,
+/turf/open/floor/iron/smooth_large,
+/area/station/service/hydroponics)
 "nmj" = (
 /turf/open/floor/iron/grimy,
 /area/station/cargo)
@@ -1108,6 +1160,14 @@
 	},
 /turf/open/floor/iron,
 /area/station/service/hydroponics)
+"ntw" = (
+/obj/structure/table,
+/obj/machinery/fax{
+	fax_name = "Service Hallway";
+	name = "Service Fax Machine"
+	},
+/turf/open/floor/iron/smooth_large,
+/area/station/service/hydroponics)
 "nvE" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -1133,6 +1193,12 @@
 /obj/structure/chair/stool/directional/west,
 /turf/open/floor/wood/parquet,
 /area/station/service/hydroponics)
+"nLA" = (
+/obj/structure/chair{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/station/service/hydroponics)
 "nQh" = (
 /turf/open/floor/iron/chapel{
 	dir = 1
@@ -1153,6 +1219,12 @@
 "ooD" = (
 /turf/open/space/basic,
 /area/station/maintenance)
+"ooZ" = (
+/obj/machinery/door/airlock/public/glass{
+	name = "Service Hall"
+	},
+/turf/open/floor/iron/dark,
+/area/station/service/hydroponics)
 "oyn" = (
 /obj/structure/chair/sofa/bench/right{
 	dir = 8
@@ -1271,6 +1343,12 @@
 "pWt" = (
 /obj/machinery/oven,
 /turf/open/floor/iron/kitchen,
+/area/station/service/hydroponics)
+"pXF" = (
+/obj/effect/turf_decal/tile/dark_green/half/contrasted{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
 /area/station/service/hydroponics)
 "qbE" = (
 /turf/open/openspace,
@@ -1424,6 +1502,10 @@
 	dir = 1
 	},
 /area/station/service/hydroponics)
+"scH" = (
+/obj/machinery/vending/coffee,
+/turf/open/floor/iron/smooth_large,
+/area/station/service/hydroponics)
 "sgi" = (
 /obj/structure/bed/pod{
 	dir = 1
@@ -1482,6 +1564,10 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/wood/tile,
 /area/station/maintenance)
+"sIO" = (
+/obj/effect/turf_decal/tile/dark_green/anticorner/contrasted,
+/turf/open/floor/iron/dark,
+/area/station/service/hydroponics)
 "sOp" = (
 /obj/structure/chair/pew/right{
 	dir = 4
@@ -1529,6 +1615,10 @@
 /obj/item/kirbyplants/random,
 /turf/open/floor/iron/checker,
 /area/station/medical/medbay)
+"trD" = (
+/obj/machinery/computer/department_orders/service,
+/turf/open/floor/iron/smooth_large,
+/area/station/service/hydroponics)
 "tyw" = (
 /obj/effect/turf_decal/tile/green{
 	dir = 1
@@ -1552,6 +1642,12 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/station/maintenance)
+"tMD" = (
+/obj/effect/turf_decal/tile/dark_green/anticorner/contrasted{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/station/service/hydroponics)
 "tRB" = (
 /obj/structure/chair/office{
 	dir = 4
@@ -1619,6 +1715,12 @@
 	},
 /turf/open/floor/iron/grimy,
 /area/station/maintenance)
+"usM" = (
+/obj/effect/turf_decal/tile/dark_green/anticorner/contrasted{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/station/service/hydroponics)
 "uvk" = (
 /obj/machinery/door/airlock/public{
 	name = "Massage Room"
@@ -1696,6 +1798,10 @@
 /obj/effect/turf_decal/siding/dark/corner,
 /turf/open/floor/iron,
 /area/station/service/hydroponics)
+"uVF" = (
+/obj/machinery/photocopier,
+/turf/open/floor/iron/smooth_large,
+/area/station/service/hydroponics)
 "vdR" = (
 /obj/structure/table/reinforced/rglass,
 /obj/effect/turf_decal/siding/dark{
@@ -1736,6 +1842,10 @@
 "vyF" = (
 /turf/open/space/basic,
 /area/station/security)
+"vzG" = (
+/obj/machinery/rnd/production/techfab/department/service,
+/turf/open/floor/iron/smooth_large,
+/area/station/service/hydroponics)
 "vAw" = (
 /obj/structure/railing{
 	dir = 8
@@ -1923,6 +2033,10 @@
 	dir = 6
 	},
 /turf/open/floor/iron/dark/smooth_large,
+/area/station/service/hydroponics)
+"wSk" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/iron/smooth_large,
 /area/station/service/hydroponics)
 "wVS" = (
 /obj/machinery/door/airlock/public/glass{
@@ -96704,12 +96818,12 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+jsq
+qSw
+qSw
+qSw
+qSw
 qSw
 dpn
 dpn
@@ -96961,12 +97075,12 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+tMD
+lCv
+vzG
+wSk
+njF
 qSw
 dpn
 dpn
@@ -97217,13 +97331,13 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+qSw
+pXF
+hUU
+fMz
+fMz
+lCv
 qSw
 dpn
 xBc
@@ -97474,13 +97588,13 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+cGd
+pXF
+jsq
+jsq
+jsq
+lhb
 qSw
 dpn
 roo
@@ -97731,13 +97845,13 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+trD
+pXF
+jLK
+luI
+nLA
+lhb
 qSw
 lGP
 aiI
@@ -97988,13 +98102,13 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+ntw
+pXF
+jLK
+luI
+nLA
+lhb
 qSw
 vYy
 vYy
@@ -98245,13 +98359,13 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+lYr
+pXF
+jLK
+luI
+nLA
+lhb
 qSw
 qSw
 qSw
@@ -98502,15 +98616,15 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+uVF
+pXF
+jsq
+jsq
+jsq
+lhb
+scH
+qSw
 qSw
 bXX
 bXX
@@ -98757,17 +98871,17 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+qSw
+qSw
+qSw
+usM
+jhF
+jsq
+jhF
+sIO
+kNo
+qSw
 qSw
 bXX
 igj
@@ -99014,17 +99128,17 @@ cue
 cue
 cue
 cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
-cue
+qSw
+bXX
+bXX
+qSw
+qSw
+lSs
+ooZ
+lSs
+qSw
+qSw
+qSw
 mcL
 igj
 igj
