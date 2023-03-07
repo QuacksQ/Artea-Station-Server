@@ -97,6 +97,20 @@
 	},
 /turf/open/floor/wood/tile,
 /area/station/service/hydroponics)
+"blp" = (
+/obj/structure/table/reinforced/plastitaniumglass,
+/turf/open/floor/iron/dark,
+/area/station/security)
+"blr" = (
+/obj/structure/chair/office{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/station/security)
+"boV" = (
+/obj/machinery/pdapainter/security,
+/turf/open/floor/iron/dark,
+/area/station/security)
 "bqk" = (
 /obj/machinery/vending/dinnerware,
 /turf/open/floor/iron/kitchen,
@@ -187,6 +201,12 @@
 	},
 /turf/open/floor/iron,
 /area/space)
+"ckY" = (
+/obj/structure/chair/office{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/station/security)
 "clZ" = (
 /obj/structure/chair/sofa/bench/right,
 /obj/effect/turf_decal/tile/dark_blue/opposingcorners{
@@ -543,6 +563,12 @@
 	dir = 6
 	},
 /area/station/service/hydroponics)
+"fIC" = (
+/obj/machinery/modular_computer/console/preset/id{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/station/security)
 "fLk" = (
 /obj/effect/turf_decal/siding/dark{
 	dir = 5
@@ -684,6 +710,10 @@
 /obj/structure/railing,
 /turf/open/floor/catwalk_floor/iron_smooth,
 /area/station/maintenance)
+"gTs" = (
+/obj/machinery/photocopier,
+/turf/open/floor/iron/dark,
+/area/station/security)
 "hkp" = (
 /obj/machinery/smartfridge,
 /turf/open/floor/iron/checker,
@@ -719,6 +749,10 @@
 	},
 /turf/open/floor/iron/checker,
 /area/station/service/hydroponics)
+"htY" = (
+/obj/machinery/rnd/production/techfab/department/security,
+/turf/open/floor/iron/dark,
+/area/station/security)
 "huk" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/turf_decal/siding/wood/corner{
@@ -792,6 +826,10 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/stone,
 /area/station/maintenance)
+"hPh" = (
+/obj/structure/bed/dogbed,
+/turf/open/floor/iron/dark,
+/area/station/security)
 "hPJ" = (
 /turf/open/floor/iron,
 /area/station/maintenance)
@@ -1389,6 +1427,10 @@
 	},
 /turf/open/floor/stone,
 /area/station/maintenance)
+"lXQ" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/iron/dark,
+/area/station/security)
 "lYr" = (
 /obj/structure/table,
 /turf/open/floor/iron/smooth_large,
@@ -1437,6 +1479,16 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/space)
+"mPk" = (
+/obj/structure/table/reinforced,
+/obj/item/paper_bin{
+	pixel_y = 4
+	},
+/obj/item/pen{
+	pixel_y = 4
+	},
+/turf/open/floor/iron/dark,
+/area/station/security)
 "mQR" = (
 /obj/structure/chair/comfy/brown{
 	dir = 8
@@ -1655,6 +1707,16 @@
 /obj/structure/flora/bush/jungle/c/style_random,
 /turf/open/floor/grass,
 /area/space)
+"oiS" = (
+/obj/machinery/computer/security/hos,
+/turf/open/floor/iron/dark,
+/area/station/security)
+"ojO" = (
+/obj/machinery/computer/secure_data{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/station/security)
 "okc" = (
 /obj/structure/railing/corner,
 /turf/open/floor/wood/large,
@@ -1681,6 +1743,10 @@
 	},
 /turf/open/floor/iron/cafeteria,
 /area/station/service/hydroponics)
+"oAS" = (
+/obj/machinery/computer/prisoner/management,
+/turf/open/floor/iron/dark,
+/area/station/security)
 "oFn" = (
 /obj/structure/chair/office{
 	dir = 8
@@ -1864,6 +1930,14 @@
 	dir = 10
 	},
 /area/station/service/hydroponics)
+"qrd" = (
+/obj/machinery/recharger{
+	pixel_x = 6;
+	pixel_y = 4
+	},
+/obj/structure/table/reinforced,
+/turf/open/floor/iron/dark,
+/area/station/security)
 "qBy" = (
 /obj/structure/chair/wood,
 /turf/open/floor/wood/large,
@@ -1929,6 +2003,13 @@
 "qSw" = (
 /turf/closed/wall,
 /area/station/service/hydroponics)
+"qWA" = (
+/obj/structure/chair/comfy/brown{
+	buildstackamount = 0;
+	color = "#DE3A3A"
+	},
+/turf/open/floor/iron/dark,
+/area/station/security)
 "qWI" = (
 /obj/effect/spawner/random/structure/musician/piano/random_piano,
 /turf/open/floor/wood/parquet,
@@ -2102,6 +2183,12 @@
 "szw" = (
 /turf/open/floor/stone,
 /area/station/science)
+"szy" = (
+/obj/machinery/computer/security{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/station/security)
 "sBF" = (
 /obj/structure/chair,
 /obj/effect/turf_decal/tile/purple/opposingcorners,
@@ -2197,6 +2284,10 @@
 /obj/item/kirbyplants/random,
 /turf/open/floor/iron/checker,
 /area/station/medical/medbay)
+"tre" = (
+/obj/machinery/disposal/bin,
+/turf/open/floor/iron/dark,
+/area/station/security)
 "trD" = (
 /obj/machinery/computer/department_orders/service,
 /turf/open/floor/iron/smooth_large,
@@ -2465,6 +2556,14 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/station/maintenance)
+"vkB" = (
+/obj/structure/table/reinforced,
+/obj/machinery/recharger{
+	pixel_x = 6;
+	pixel_y = 4
+	},
+/turf/open/floor/iron/dark,
+/area/station/security)
 "vwd" = (
 /obj/structure/flora/tree/jungle/style_random{
 	pixel_y = -10
@@ -2685,6 +2784,15 @@
 	},
 /turf/open/floor/wood/large,
 /area/station/medical/medbay)
+"wLp" = (
+/obj/structure/table/reinforced,
+/obj/machinery/fax{
+	fax_name = "Security Office";
+	name = "Security Office Fax Machine";
+	pixel_y = 3
+	},
+/turf/open/floor/iron/dark,
+/area/station/security)
 "wLO" = (
 /obj/machinery/disposal/bin,
 /obj/effect/turf_decal/tile/green/full,
@@ -2707,6 +2815,10 @@
 /obj/structure/table/wood,
 /turf/open/floor/wood/parquet,
 /area/station/service/hydroponics)
+"xiX" = (
+/obj/structure/table,
+/turf/open/floor/iron/dark,
+/area/station/security)
 "xkH" = (
 /obj/item/kirbyplants/random,
 /obj/effect/turf_decal/tile/purple/opposingcorners,
@@ -2723,6 +2835,10 @@
 /obj/item/storage/book/bible,
 /turf/open/floor/carpet/royalblack,
 /area/station/cargo)
+"xuI" = (
+/obj/machinery/computer/secure_data,
+/turf/open/floor/iron/dark,
+/area/station/security)
 "xwb" = (
 /obj/structure/chair/comfy/beige{
 	dir = 4
@@ -90803,19 +90919,19 @@ bJt
 bJt
 bJt
 bJt
+rja
 tPT
 tPT
 tPT
 tPT
-tPT
 cWX
 cWX
 cWX
 tPT
-cWX
-cWX
-cWX
-cWX
+tre
+ojO
+qrd
+szy
 tPT
 tPT
 tPT
@@ -91057,22 +91173,22 @@ bJt
 bJt
 bJt
 bJt
-bJt
-bJt
-bJt
-tPT
-cWX
-cWX
-cWX
+xrI
+xrI
+xrI
 tPT
 tPT
+boV
+gTs
 tPT
 tPT
 tPT
+tPT
+tPT
 cWX
+blr
 cWX
-cWX
-cWX
+blr
 cWX
 cWX
 cWX
@@ -91314,25 +91430,25 @@ bJt
 bJt
 bJt
 bJt
-bJt
-bJt
-bJt
+xrI
+vOy
+vOy
+cWX
 tPT
 cWX
 cWX
-cWX
-cWX
-cWX
-cWX
+tre
+blp
+blp
+blp
 vDs
 cWX
 cWX
 cWX
 cWX
 cWX
-cWX
-cWX
-cWX
+xiX
+ckY
 cWX
 tPT
 cWX
@@ -91570,11 +91686,12 @@ bJt
 bJt
 bJt
 bJt
+bJt
 xrI
-xrI
-xrI
-xrI
-tPT
+vOy
+vOy
+cWX
+cWX
 cWX
 cWX
 cWX
@@ -91583,13 +91700,12 @@ cWX
 cWX
 vDs
 cWX
+mPk
+lXQ
+ckY
 cWX
-cWX
-cWX
-cWX
-cWX
-cWX
-cWX
+xiX
+ckY
 cWX
 tPT
 cWX
@@ -91827,10 +91943,11 @@ bJt
 bJt
 bJt
 bJt
+bJt
 xrI
 vOy
 vOy
-vOy
+cWX
 tPT
 cWX
 cWX
@@ -91841,9 +91958,8 @@ cWX
 cWX
 cWX
 cWX
-cWX
-cWX
-cWX
+lXQ
+ckY
 cWX
 cWX
 cWX
@@ -92084,26 +92200,26 @@ bJt
 bJt
 bJt
 bJt
+bJt
 xrI
 vOy
 vOy
-vOy
 cWX
+tPT
+oiS
 cWX
-cWX
-cWX
-cWX
+blp
+ckY
 cWX
 cWX
 vDs
 cWX
+lXQ
+wLp
+ckY
 cWX
-cWX
-cWX
-cWX
-cWX
-cWX
-cWX
+xiX
+ckY
 cWX
 tPT
 cWX
@@ -92341,26 +92457,26 @@ bJt
 bJt
 bJt
 bJt
+bJt
 xrI
-vOy
-vOy
-vOy
+xrI
+xrI
 tPT
+tPT
+xuI
+qWA
+blp
+ckY
 cWX
-cWX
-cWX
-cWX
-cWX
-cWX
+hPh
 vDs
 cWX
 cWX
 cWX
 cWX
 cWX
-cWX
-cWX
-cWX
+xiX
+ckY
 cWX
 tPT
 cWX
@@ -92598,20 +92714,20 @@ bJt
 bJt
 bJt
 bJt
-xrI
+bJt
+rja
+rja
+rja
+rja
+tPT
+oAS
 cWX
-cWX
-cWX
-tPT
-cWX
-cWX
+fIC
 tPT
 tPT
 tPT
 tPT
 tPT
-tPT
-cWX
 cWX
 cWX
 cWX
@@ -92855,9 +92971,11 @@ bJt
 bJt
 bJt
 bJt
-xrI
-tPT
-tPT
+bJt
+rja
+rja
+rja
+rja
 tPT
 tPT
 tPT
@@ -92866,11 +92984,9 @@ tPT
 rja
 rja
 rja
-rja
 tPT
-cWX
-cWX
-cWX
+vkB
+htY
 cWX
 tPT
 tPT
@@ -93124,7 +93240,7 @@ rja
 rja
 rja
 rja
-tPT
+rja
 tPT
 tPT
 tPT
