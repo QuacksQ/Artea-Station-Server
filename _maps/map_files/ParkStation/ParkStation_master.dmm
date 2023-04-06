@@ -1651,11 +1651,6 @@
 /obj/structure/cable,
 /turf/open/floor/engine,
 /area/station/engineering/supermatter/room)
-"gvo" = (
-/obj/structure/reagent_dispensers/fueltank,
-/obj/effect/turf_decal/bot,
-/turf/open/floor/iron/dark,
-/area/station/service/hydroponics)
 "gvT" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -2856,10 +2851,9 @@
 /turf/open/floor/iron/dark/side,
 /area/station/engineering/lobby)
 "kNc" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/turf/open/floor/iron,
+/obj/effect/turf_decal/bot,
+/obj/structure/reagent_dispensers/fueltank,
+/turf/open/floor/iron/dark,
 /area/station/service/hydroponics)
 "kNo" = (
 /obj/machinery/vending/cigarette,
@@ -4050,12 +4044,6 @@
 	},
 /turf/open/floor/engine,
 /area/station/engineering/supermatter/room)
-"pDn" = (
-/obj/effect/turf_decal/stripes/corner{
-	dir = 4
-	},
-/turf/open/floor/iron,
-/area/station/service/hydroponics)
 "pHw" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -4091,12 +4079,6 @@
 	dir = 8
 	},
 /area/station/engineering/gravity_generator)
-"pJl" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
-/turf/open/floor/iron,
-/area/station/service/hydroponics)
 "pJD" = (
 /obj/machinery/power/emitter/welded{
 	dir = 4
@@ -5696,9 +5678,6 @@
 /turf/open/floor/iron,
 /area/space)
 "vCu" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
 /obj/machinery/disposal/bin,
 /turf/open/floor/iron,
 /area/station/service/hydroponics)
@@ -105547,10 +105526,10 @@ bXX
 wpJ
 lSs
 vCu
-pJl
-pJl
-pJl
-pDn
+bXX
+bXX
+bXX
+bXX
 bXX
 bXX
 vdR
@@ -105803,11 +105782,11 @@ bXX
 bXX
 ueZ
 odC
+kNc
+jsq
 dzM
 iWj
-jsq
-jsq
-kNc
+bXX
 bXX
 bXX
 vdR
@@ -106060,11 +106039,11 @@ rhX
 rhX
 vZc
 odC
-gvo
+xIH
 jsq
 jsq
 jsq
-kNc
+bXX
 bXX
 bXX
 tjk
@@ -106317,11 +106296,11 @@ odC
 odC
 odC
 odC
+lyC
+jsq
 dzM
 iWj
-jsq
-jsq
-kNc
+bXX
 bXX
 bXX
 ijc
@@ -106574,11 +106553,11 @@ cue
 cue
 cue
 odC
-odC
-xIH
+lyC
 jsq
 jsq
-kNc
+jsq
+bXX
 bXX
 bXX
 byY
@@ -106830,12 +106809,12 @@ bJt
 cue
 cue
 cue
-cue
+odC
 odC
 lyC
 lyC
-lyC
-kNc
+jsq
+bXX
 bXX
 bXX
 odC
