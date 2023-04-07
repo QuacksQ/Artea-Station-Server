@@ -158,11 +158,9 @@
 	},
 /area/station/engineering/lobby)
 "aCG" = (
-/obj/machinery/door/firedoor,
-/turf/open/floor/iron/stairs/right{
-	dir = 1
-	},
-/area/station/maintenance)
+/obj/machinery/vending/wardrobe/robo_wardrobe,
+/turf/open/floor/iron/dark,
+/area/station/service/hydroponics)
 "aDT" = (
 /obj/structure/table/wood,
 /turf/open/floor/iron/chapel{
@@ -376,8 +374,8 @@
 /turf/open/floor/engine,
 /area/station/engineering/supermatter/room)
 "byY" = (
-/obj/machinery/vending/wardrobe/robo_wardrobe,
-/turf/open/floor/iron,
+/obj/machinery/rnd/production/circuit_imprinter/department/science,
+/turf/open/floor/iron/dark,
 /area/station/service/hydroponics)
 "bzZ" = (
 /obj/effect/turf_decal/stripes/line{
@@ -746,9 +744,10 @@
 /area/station/security)
 "dar" = (
 /obj/machinery/door/firedoor,
-/turf/open/floor/iron/stairs/medium{
-	dir = 1
-	},
+/obj/effect/turf_decal/delivery,
+/obj/effect/mapping_helpers/airlock/access/any/engineering/general,
+/obj/machinery/door/airlock/atmos/glass,
+/turf/open/floor/iron/dark,
 /area/station/maintenance)
 "daK" = (
 /obj/structure/table/wood/fancy/royalblack,
@@ -2638,12 +2637,6 @@
 	dir = 9
 	},
 /area/station/engineering/gravity_generator)
-"jQe" = (
-/obj/machinery/door/firedoor,
-/turf/open/floor/iron/stairs/left{
-	dir = 1
-	},
-/area/station/maintenance)
 "jQO" = (
 /obj/structure/closet/emcloset,
 /obj/effect/turf_decal/delivery,
@@ -3876,9 +3869,9 @@
 /area/station/service/hydroponics)
 "oUE" = (
 /obj/machinery/modular_computer/console/preset/civilian{
-	dir = 4
+	dir = 1
 	},
-/turf/open/floor/iron,
+/turf/open/floor/iron/dark,
 /area/station/service/hydroponics)
 "oVC" = (
 /obj/structure/chair/sofa/bench/right{
@@ -39969,7 +39962,7 @@ oMO
 oMO
 oMO
 oMO
-jQe
+kIo
 upM
 hPJ
 hPJ
@@ -40483,7 +40476,7 @@ oMO
 oMO
 oMO
 oMO
-aCG
+kIo
 upM
 hPJ
 hPJ
@@ -40994,9 +40987,9 @@ tfM
 qMH
 qMH
 qMH
-qMH
-qMH
-qMH
+oMO
+oMO
+oMO
 xrI
 xrI
 xrI
@@ -41251,11 +41244,11 @@ kQP
 kQP
 kQP
 qMH
-oMO
-oMO
-oMO
-ooD
-ooD
+qMH
+fwM
+qMH
+xrI
+exA
 xrI
 xrI
 xrI
@@ -41511,9 +41504,9 @@ qMH
 oMO
 oMO
 oMO
-ooD
-ooD
-ooD
+xrI
+xrI
+xrI
 ooD
 ooD
 ooD
@@ -96503,10 +96496,10 @@ vXM
 vXM
 vXM
 vXM
-vXM
-vXM
-vXM
-vXM
+mcL
+mcL
+mcL
+mcL
 vXM
 vXM
 vXM
@@ -96758,9 +96751,9 @@ vXM
 vXM
 vXM
 vXM
-vXM
-vXM
-vXM
+mcL
+mcL
+mcL
 vXM
 vXM
 vXM
@@ -97014,8 +97007,8 @@ vXM
 vXM
 vXM
 vXM
-vXM
-vXM
+mcL
+mcL
 vXM
 vXM
 vXM
@@ -97271,7 +97264,7 @@ vXM
 vXM
 vXM
 vXM
-vXM
+mcL
 vXM
 vXM
 vXM
@@ -97527,8 +97520,8 @@ vXM
 vXM
 vXM
 vXM
-vXM
-vXM
+mcL
+mcL
 vXM
 vXM
 vXM
@@ -97784,7 +97777,7 @@ vXM
 vXM
 vXM
 vXM
-vXM
+mcL
 vXM
 vXM
 vXM
@@ -98041,7 +98034,7 @@ vXM
 vXM
 vXM
 vXM
-vXM
+mcL
 vXM
 vXM
 vXM
@@ -98298,7 +98291,7 @@ vXM
 vXM
 vXM
 vXM
-vXM
+mcL
 vXM
 vXM
 vXM
@@ -98555,7 +98548,7 @@ vXM
 vXM
 vXM
 vXM
-vXM
+mcL
 vXM
 vXM
 uEJ
@@ -98812,7 +98805,7 @@ vXM
 vXM
 vXM
 vXM
-vXM
+mcL
 vXM
 vXM
 uEJ
@@ -99069,7 +99062,7 @@ vXM
 vXM
 vXM
 vXM
-vXM
+mcL
 vXM
 vXM
 uEJ
@@ -99326,7 +99319,7 @@ vXM
 vXM
 vXM
 vXM
-vXM
+mcL
 vXM
 vXM
 uEJ
@@ -105014,10 +105007,10 @@ lSs
 ndc
 esk
 bAf
+bAf
+rhX
+bXX
 ijc
-bXX
-bXX
-oUE
 alI
 fNH
 odC
@@ -106035,7 +106028,7 @@ exA
 exA
 vQw
 aTF
-rhX
+bXX
 rhX
 vZc
 odC
@@ -106303,7 +106296,7 @@ iWj
 bXX
 bXX
 bXX
-ijc
+oUE
 odC
 odC
 cue
@@ -106811,12 +106804,12 @@ cue
 cue
 odC
 odC
+aCG
 lyC
 lyC
-jsq
 bXX
 bXX
-bXX
+ijc
 odC
 odC
 cue
