@@ -10423,7 +10423,6 @@
 /obj/effect/turf_decal/trimline/red/filled/line{
 	dir = 4
 	},
-/obj/effect/landmark/start/prisoner,
 /turf/open/floor/iron,
 /area/station/security/prison/safe)
 "dJV" = (
@@ -12765,7 +12764,6 @@
 /obj/effect/turf_decal/trimline/red/filled/line{
 	dir = 4
 	},
-/obj/effect/landmark/start/prisoner,
 /turf/open/floor/iron,
 /area/station/security/prison/safe)
 "eBF" = (
@@ -14820,9 +14818,8 @@
 /area/station/maintenance/tram/mid)
 "foD" = (
 /obj/structure/table/glass,
-/obj/item/computer_hardware/hard_drive/portable/chemistry,
-/obj/item/computer_hardware/hard_drive/portable/medical,
-/obj/item/computer_hardware/hard_drive/portable/medical,
+/obj/item/computer_disk/medical,
+/obj/item/computer_disk/medical,
 /obj/effect/turf_decal/tile/blue/fourcorners,
 /turf/open/floor/iron/dark,
 /area/station/command/heads_quarters/cmo)
@@ -16621,9 +16618,9 @@
 /area/station/security/prison/mess)
 "fZz" = (
 /obj/structure/table/reinforced,
-/obj/item/computer_hardware/hard_drive/portable/ordnance,
-/obj/item/computer_hardware/hard_drive/portable/ordnance,
-/obj/item/computer_hardware/hard_drive/portable/ordnance,
+/obj/item/computer_disk/ordnance,
+/obj/item/computer_disk/ordnance,
+/obj/item/computer_disk/ordnance,
 /obj/effect/landmark/event_spawn,
 /obj/structure/window/reinforced/spawner,
 /turf/open/floor/iron/cafeteria{
@@ -19415,7 +19412,6 @@
 /area/station/command/heads_quarters/cmo)
 "gYl" = (
 /obj/structure/chair/stool/bar/directional/west,
-/obj/effect/landmark/start/prisoner,
 /turf/open/floor/iron,
 /area/station/security/prison)
 "gYz" = (
@@ -19861,8 +19857,8 @@
 	dir = 5
 	},
 /obj/item/clipboard,
-/obj/item/computer_hardware/hard_drive/portable/quartermaster,
-/obj/item/computer_hardware/hard_drive/portable/quartermaster,
+/obj/item/computer_disk/quartermaster,
+/obj/item/computer_disk/quartermaster,
 /turf/open/floor/carpet,
 /area/station/command/heads_quarters/qm)
 "hhI" = (
@@ -24483,10 +24479,10 @@
 /area/station/cargo/miningdock)
 "iSX" = (
 /obj/structure/table,
-/obj/item/computer_hardware/hard_drive/portable{
+/obj/item/computer_disk{
 	pixel_x = -2
 	},
-/obj/item/computer_hardware/hard_drive/portable{
+/obj/item/computer_disk{
 	pixel_x = 7;
 	pixel_y = 2
 	},
@@ -30268,7 +30264,6 @@
 /obj/effect/turf_decal/trimline/red/filled/line{
 	dir = 8
 	},
-/obj/effect/landmark/start/prisoner,
 /turf/open/floor/iron,
 /area/station/security/prison/safe)
 "kTy" = (
@@ -45499,7 +45494,6 @@
 /area/station/commons/dorms)
 "qpj" = (
 /obj/structure/chair/stool/bar/directional/east,
-/obj/effect/landmark/start/prisoner,
 /turf/open/floor/iron,
 /area/station/security/prison)
 "qpl" = (
@@ -49688,11 +49682,11 @@
 /area/station/security/processing)
 "rLy" = (
 /obj/structure/table,
-/obj/item/computer_hardware/hard_drive/portable{
+/obj/item/computer_disk{
 	pixel_x = -4;
 	pixel_y = -3
 	},
-/obj/item/computer_hardware/hard_drive/portable{
+/obj/item/computer_disk{
 	pixel_x = 2;
 	pixel_y = 8
 	},
@@ -49764,7 +49758,7 @@
 /obj/structure/chair{
 	dir = 8
 	},
-/obj/effect/landmark/start/atmospheric_technician,
+/obj/effect/landmark/start/station_engineer,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -50344,10 +50338,6 @@
 /obj/effect/mapping_helpers/airlock/access/all/security/entrance,
 /turf/open/floor/iron,
 /area/station/security/brig)
-"rUi" = (
-/obj/structure/disposalpipe/segment,
-/turf/open/floor/iron,
-/area/station/science/ordnance/testlab)
 "rUn" = (
 /obj/effect/turf_decal/stripes{
 	dir = 4
@@ -52142,10 +52132,10 @@
 	dir = 1
 	},
 /obj/structure/window/reinforced/spawner/west,
-/obj/item/computer_hardware/hard_drive/portable/engineering,
-/obj/item/computer_hardware/hard_drive/portable/engineering,
-/obj/item/computer_hardware/hard_drive/portable/engineering,
-/obj/item/computer_hardware/hard_drive/portable/atmos,
+/obj/item/computer_disk/engineering,
+/obj/item/computer_disk/engineering,
+/obj/item/computer_disk/engineering,
+/obj/item/computer_disk/atmos,
 /turf/open/floor/iron,
 /area/station/command/heads_quarters/ce)
 "sGu" = (
@@ -59422,7 +59412,7 @@
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/turret_protected/aisat/maint)
 "vkO" = (
-/obj/effect/landmark/start/atmospheric_technician,
+/obj/effect/landmark/start/station_engineer,
 /turf/open/floor/iron,
 /area/station/engineering/atmos)
 "vkZ" = (
@@ -61401,10 +61391,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/hallway/secondary/entry)
-"vVC" = (
-/obj/structure/table,
-/turf/open/floor/iron/white,
-/area/station/service/kitchen)
 "vVD" = (
 /obj/effect/turf_decal/stripes/corner{
 	dir = 1
@@ -66903,7 +66889,7 @@
 /turf/open/floor/iron,
 /area/station/hallway/primary/tram/left)
 "xWc" = (
-/obj/effect/landmark/start/atmospheric_technician,
+/obj/effect/landmark/start/station_engineer,
 /obj/effect/landmark/navigate_destination/incinerator,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
@@ -116573,10 +116559,10 @@ kTf
 rLJ
 dUa
 kBY
-rUi
-rUi
-rUi
-rUi
+dUa
+dUa
+dUa
+dUa
 ptL
 xmc
 dhe
@@ -164075,7 +164061,7 @@ dhe
 eSx
 eSx
 vSf
-vVC
+mdp
 fqU
 uzM
 mdp
