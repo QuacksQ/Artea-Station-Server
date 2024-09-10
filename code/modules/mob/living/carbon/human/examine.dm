@@ -186,7 +186,7 @@
 	else if(l_limbs_missing >= 2 && r_limbs_missing >= 2)
 		msg += "[t_He] [p_do()]n't seem all there.\n"
 
-var/temp
+	var/temp
 	temp = getCloneLoss()
 	if(temp)
 		if(temp < 25)

@@ -1439,7 +1439,7 @@
 
 /datum/reagent/medicine/coagulant/on_mob_life(mob/living/carbon/affected_mob, delta_time, times_fired)
 	. = ..()
-	iif(!M.blood_volume)
+	if(!M.blood_volume)
 		return
 
 	for(var/obj/item/bodypart/BP as anything in M.bodyparts)
