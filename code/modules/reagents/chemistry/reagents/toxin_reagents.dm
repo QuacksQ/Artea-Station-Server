@@ -1142,7 +1142,7 @@
 			playsound(affected_mob, get_sfx(SFX_DESECRATION), 50, TRUE, -1)
 			affected_mob.visible_message(span_warning("[affected_mob]'s bones hurt too much!!"), span_danger("Your bones hurt too much!!"))
 			affected_mob.say("OOF!!", forced = /datum/reagent/toxin/bonehurtingjuice)
-			BP.receive_damage(20, 0, 200, wound_bonus = rand(30, 130))
+			BP.receive_damage(20, 0, 200)
 		else //SUCH A LUST FOR REVENGE!!!
 			to_chat(affected_mob, span_warning("A phantom limb hurts!"))
 			affected_mob.say("Why are we still here, just to suffer?", forced = /datum/reagent/toxin/bonehurtingjuice)

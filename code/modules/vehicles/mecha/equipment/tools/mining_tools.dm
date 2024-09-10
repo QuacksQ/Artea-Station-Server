@@ -142,7 +142,7 @@
 
 		//organs go everywhere
 		if(target_part && prob(10 * drill_level))
-			target_part.dismember(BRUTE)
+			target_part.dismember(DROPLIMB_BLUNT)
 
 /obj/item/mecha_parts/mecha_equipment/drill/diamonddrill
 	name = "diamond-tipped exosuit drill"
@@ -153,7 +153,6 @@
 	drill_level = DRILL_HARDENED
 	force = 15
 	toolspeed = 0.7
-
 
 /obj/item/mecha_parts/mecha_equipment/mining_scanner
 	name = "exosuit mining scanner"

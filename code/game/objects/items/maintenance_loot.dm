@@ -16,8 +16,7 @@
 	force = 15
 	throwforce = 12
 	throw_range = 4
-	w_class = WEIGHT_CLASS_BULKY
-	wound_bonus = 20
+	w_class = WEIGHT_CLASS_NORMAL
 	demolition_mod = 1.25
 	grind_results = list(/datum/reagent/lead = 20)
 

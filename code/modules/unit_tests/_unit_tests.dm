@@ -119,7 +119,6 @@
 #include "machine_disassembly.dm"
 #include "mapping.dm"
 #include "mecha_damage.dm"
-#include "medical_wounds.dm"
 #include "merge_type.dm"
 #include "metabolizing.dm"
 #include "mindbound_actions.dm"

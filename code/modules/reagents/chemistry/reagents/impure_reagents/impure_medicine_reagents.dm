@@ -519,6 +519,11 @@ Basically, we fill the time between now and 2s from now with hands based off the
 	if(!back_from_the_dead)
 		return ..()
 	//Following is for those brought back from the dead only
+
+	for(var/datum/wound/iter_wound as anything in owner.get_wounds())
+		if(iter_wound.bleed_timer)
+			iter_wound.bleed_timer--
+
 	REMOVE_TRAIT(affected_mob, TRAIT_KNOCKEDOUT, CRIT_HEALTH_TRAIT)
 	REMOVE_TRAIT(affected_mob, TRAIT_KNOCKEDOUT, OXYLOSS_TRAIT)
 	for(var/datum/wound/iter_wound as anything in affected_mob.all_wounds)

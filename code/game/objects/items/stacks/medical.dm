@@ -149,11 +149,13 @@
 		return
 
 	var/gauzeable_wound = FALSE
-	for(var/i in limb.wounds)
-		var/datum/wound/woundies = i
-		if(woundies.wound_flags & ACCEPTS_GAUZE)
+
+	for(var/datum/wound/W in limb.wounds)
+		if(W.bleeding())
 			gauzeable_wound = TRUE
 			break
+
+
 	if(!gauzeable_wound)
 		to_chat(user, span_notice("There's no wounds that require bandaging on [user==M ? "your" : "[M]'s"] [limb.plaintext_zone]!")) // good problem to have imo
 		return
@@ -391,12 +393,6 @@
 		return (BRUTELOSS)
 
 	C.emote("scream")
-	for(var/i in C.bodyparts)
-		var/obj/item/bodypart/bone = i
-		var/datum/wound/blunt/bone/severe/oof_ouch = new
-		oof_ouch.apply_wound(bone, wound_source = "bone gel")
-		var/datum/wound/blunt/bone/critical/oof_OUCH = new
-		oof_OUCH.apply_wound(bone, wound_source = "bone gel")
 
 	for(var/i in C.bodyparts)
 		var/obj/item/bodypart/bone = i

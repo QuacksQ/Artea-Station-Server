@@ -607,7 +607,7 @@ GLOBAL_LIST_EMPTY(features_by_species)
 			add_pixel_y += height_offset
 
 			if(!eye_organ)
-				no_eyeslay = mutable_appearance('icons/mob/species/human/human_face.dmi', "eyes_missing", -BODY_LAYER)
+				no_eyeslay = mutable_appearance('icons/mob/species/human/human_face.dmi', "eyes_missing_both", -BODY_LAYER)
 				no_eyeslay.pixel_x += add_pixel_x
 				no_eyeslay.pixel_y += add_pixel_y
 				standing += no_eyeslay
@@ -1202,9 +1202,13 @@ GLOBAL_LIST_EMPTY(features_by_species)
 
 		playsound(target.loc, attacking_bodypart.unarmed_attack_sound, 25, TRUE, -1)
 
-		target.visible_message(span_danger("[user] [atk_verb]ed [target]!"), \
-						span_userdanger("You're [atk_verb]ed by [user]!"), span_hear("You hear a sickening sound of flesh hitting flesh!"), COMBAT_MESSAGE_RANGE, user)
-		to_chat(user, span_danger("You [atk_verb] [target]!"))
+		user.visible_message(
+			span_danger("<b>[user]</b> [atk_verb]ed <b>[target]</b>!"),
+			null,
+			span_hear("You hear a sickening sound of flesh hitting flesh!"),
+			COMBAT_MESSAGE_RANGE,
+			user
+		)
 
 		target.lastattacker = user.real_name
 		target.lastattackerckey = user.ckey
@@ -1316,11 +1320,6 @@ GLOBAL_LIST_EMPTY(features_by_species)
 
 	var/armor_block = human.run_armor_check(affecting, MELEE, span_notice("Your armor has protected your [hit_area]!"), span_warning("Your armor has softened a hit to your [hit_area]!"),weapon.armour_penetration, weak_against_armour = weapon.weak_against_armour)
 	armor_block = min(ARMOR_MAX_BLOCK, armor_block) //cap damage reduction at 90%
-	var/Iwound_bonus = weapon.wound_bonus
-
-	// this way, you can't wound with a surgical tool on help intent if they have a surgery active and are lying down, so a misclick with a circular saw on the wrong limb doesn't bleed them dry (they still get hit tho)
-	if((weapon.item_flags & SURGICAL_TOOL) && !user.combat_mode && human.body_position == LYING_DOWN && (LAZYLEN(human.surgeries) > 0))
-		Iwound_bonus = CANT_WOUND
 
 	var/weakness = check_species_weakness(weapon, user)
 
@@ -1328,7 +1327,7 @@ GLOBAL_LIST_EMPTY(features_by_species)
 
 
 	var/attack_direction = get_dir(user, human)
-	apply_damage(weapon.force * weakness, weapon.damtype, def_zone, armor_block, human, wound_bonus = Iwound_bonus, bare_wound_bonus = weapon.bare_wound_bonus, sharpness = weapon.get_sharpness(), attack_direction = attack_direction, attacking_item = weapon)
+	apply_damage(weapon.force * weakness, weapon.damtype, def_zone, armor_block, human, sharpness = weapon.get_sharpness(), attack_direction = attack_direction, attacking_item = weapon)
 
 	if(!weapon.force)
 		return FALSE //item force is zero
@@ -1502,8 +1501,8 @@ GLOBAL_LIST_EMPTY(features_by_species)
 #undef HEADSMASH_BLOCK_ARMOR
 
 
-/datum/species/proc/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked, mob/living/carbon/human/H, forced = FALSE, spread_damage = FALSE, wound_bonus = 0, bare_wound_bonus = 0, sharpness = NONE, attack_direction = null, attacking_item)
-	SEND_SIGNAL(H, COMSIG_MOB_APPLY_DAMAGE, damage, damagetype, def_zone, blocked, wound_bonus, bare_wound_bonus, sharpness, attack_direction, attacking_item)
+/datum/species/proc/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked, mob/living/carbon/human/H, forced = FALSE, spread_damage = FALSE, sharpness = NONE, attack_direction = null, attacking_item)
+	SEND_SIGNAL(H, COMSIG_MOB_APPLY_DAMAGE, damage, damagetype, def_zone, blocked, sharpness, attack_direction, attacking_item)
 	var/hit_percent = (100-(blocked+armor))/100
 	hit_percent = (hit_percent * (100-H.physiology.damage_resistance))/100
 	if(!damage || (!forced && hit_percent <= 0))
@@ -1525,7 +1524,7 @@ GLOBAL_LIST_EMPTY(features_by_species)
 			H.damageoverlaytemp = 20
 			var/damage_amount = forced ? damage : damage * hit_percent * brutemod * H.physiology.brute_mod
 			if(BP)
-				if(BP.receive_damage(damage_amount, 0, wound_bonus = wound_bonus, bare_wound_bonus = bare_wound_bonus, sharpness = sharpness, attack_direction = attack_direction, damage_source = attacking_item))
+				if(BP.receive_damage(damage_amount, 0, sharpness = sharpness, damage_source = attacking_item))
 					H.update_damage_overlays()
 			else//no bodypart, we deal damage with a more general method.
 				H.adjustBruteLoss(damage_amount)
@@ -1533,7 +1532,7 @@ GLOBAL_LIST_EMPTY(features_by_species)
 			H.damageoverlaytemp = 20
 			var/damage_amount = forced ? damage : damage * hit_percent * burnmod * H.physiology.burn_mod
 			if(BP)
-				if(BP.receive_damage(0, damage_amount, wound_bonus = wound_bonus, bare_wound_bonus = bare_wound_bonus, sharpness = sharpness, attack_direction = attack_direction, damage_source = attacking_item))
+				if(BP.receive_damage(0, damage_amount, sharpness = sharpness, damage_source = attacking_item))
 					H.update_damage_overlays()
 			else
 				H.adjustFireLoss(damage_amount)
@@ -1743,17 +1742,6 @@ GLOBAL_LIST_EMPTY(features_by_species)
  */
 /datum/species/proc/body_temperature_damage(mob/living/carbon/human/humi, delta_time, times_fired)
 
-	//If the body temp is above the wound limit start adding exposure stacks
-	if(humi.bodytemperature > BODYTEMP_HEAT_WOUND_LIMIT)
-		humi.heat_exposure_stacks = min(humi.heat_exposure_stacks + (0.5 * delta_time), 40)
-	else //When below the wound limit, reduce the exposure stacks fast.
-		humi.heat_exposure_stacks = max(humi.heat_exposure_stacks - (2 * delta_time), 0)
-
-	//when exposure stacks are greater then 10 + rand20 try to apply wounds and reset stacks
-	if(humi.heat_exposure_stacks > (10 + rand(0, 20)))
-		apply_burn_wounds(humi, delta_time, times_fired)
-		humi.heat_exposure_stacks = 0
-
 	// Body temperature is too hot, and we do not have resist traits
 	// Apply some burn damage to the body
 	if(humi.coretemperature > bodytemp_heat_damage_limit && !HAS_TRAIT(humi, TRAIT_RESISTHEAT))
@@ -1784,55 +1772,6 @@ GLOBAL_LIST_EMPTY(features_by_species)
 		else
 			humi.adjustFireLoss(COLD_DAMAGE_LEVEL_3 * damage_mod * delta_time)
 		return TRUE
-
-/**
- * Used to apply burn wounds on random limbs
- *
- * This is called from body_temperature_damage when exposure to extream heat adds up and causes a wound.
- * The wounds will increase in severity as the temperature increases.
- * vars:
- * * humi (required) The mob we will targeting
- */
-/datum/species/proc/apply_burn_wounds(mob/living/carbon/human/humi, delta_time, times_fired)
-	// If we are resistant to heat exit
-	if(HAS_TRAIT(humi, TRAIT_RESISTHEAT))
-		return
-
-	// If our body temp is to low for a wound exit
-	if(humi.bodytemperature < BODYTEMP_HEAT_WOUND_LIMIT)
-		return
-
-	// Lets pick a random body part and check for an existing burn
-	var/obj/item/bodypart/bodypart = pick(humi.bodyparts)
-	var/datum/wound/existing_burn
-	for (var/datum/wound/iterated_wound as anything in bodypart.wounds)
-		var/datum/wound_pregen_data/pregen_data = iterated_wound.get_pregen_data()
-		if (pregen_data.wound_series in GLOB.wounding_types_to_series[WOUND_BURN])
-			existing_burn = iterated_wound
-			break
-	// If we have an existing burn try to upgrade it
-	var/severity
-	if(existing_burn)
-		switch(existing_burn.severity)
-			if(WOUND_SEVERITY_MODERATE)
-				if(humi.bodytemperature > BODYTEMP_HEAT_WOUND_LIMIT + 400) // 800k
-					severity = WOUND_SEVERITY_SEVERE
-			if(WOUND_SEVERITY_SEVERE)
-				if(humi.bodytemperature > BODYTEMP_HEAT_WOUND_LIMIT + 2800) // 3200k
-					severity = WOUND_SEVERITY_CRITICAL
-	else // If we have no burn apply the lowest level burn
-		severity = WOUND_SEVERITY_MODERATE
-
-	humi.cause_wound_of_type_and_severity(WOUND_BURN, bodypart, severity, wound_source = "hot temperatures")
-
-	// always take some burn damage
-	var/burn_damage = HEAT_DAMAGE_LEVEL_1
-	if(humi.bodytemperature > BODYTEMP_HEAT_WOUND_LIMIT + 400)
-		burn_damage = HEAT_DAMAGE_LEVEL_2
-	if(humi.bodytemperature > BODYTEMP_HEAT_WOUND_LIMIT + 2800)
-		burn_damage = HEAT_DAMAGE_LEVEL_3
-
-	humi.apply_damage(burn_damage * delta_time, BURN, bodypart)
 
 /// Handle the air pressure of the environment
 /datum/species/proc/handle_environment_pressure(mob/living/carbon/human/H, datum/gas_mixture/environment, delta_time, times_fired)

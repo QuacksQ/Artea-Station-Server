@@ -411,18 +411,20 @@
 	duration = -1
 
 /datum/status_effect/neck_slice/tick()
+
 	var/mob/living/carbon/human/H = owner
 	var/obj/item/bodypart/throat = H.get_bodypart(BODY_ZONE_HEAD)
 	if(H.stat == DEAD || !throat)
 		H.remove_status_effect(/datum/status_effect/neck_slice)
 
 	var/still_bleeding = FALSE
-	for(var/datum/wound/bleeding_thing as anything in throat.wounds)
-		var/datum/wound_pregen_data/pregen_data = GLOB.all_wound_pregen_data[bleeding_thing.type]
+	for(var/datum/wound/cut/W in throat.wounds)
+		if(W.current_stage > 3)
 
 		if(pregen_data.wounding_types_valid(list(WOUND_SLASH)) && bleeding_thing.severity > WOUND_SEVERITY_MODERATE && bleeding_thing.blood_flow > 0)
 			still_bleeding = TRUE
 			break
+
 	if(!still_bleeding)
 		H.remove_status_effect(/datum/status_effect/neck_slice)
 

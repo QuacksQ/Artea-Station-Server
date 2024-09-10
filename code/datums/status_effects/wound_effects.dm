@@ -54,11 +54,11 @@
 	right = C.get_bodypart(BODY_ZONE_R_LEG)
 	update_limp()
 	RegisterSignal(C, COMSIG_MOVABLE_MOVED, PROC_REF(check_step))
-	RegisterSignal(C, list(COMSIG_CARBON_GAIN_WOUND, COMSIG_CARBON_LOSE_WOUND, COMSIG_CARBON_ATTACH_LIMB, COMSIG_CARBON_REMOVE_LIMB), PROC_REF(update_limp))
+	RegisterSignal(C, list(COMSIG_CARBON_BREAK_BONE, COMSIG_CARBON_HEAL_BONE, COMSIG_CARBON_ATTACH_LIMB, COMSIG_CARBON_REMOVE_LIMB), .proc/update_limp)
 	return TRUE
 
 /datum/status_effect/limp/on_remove()
-	UnregisterSignal(owner, list(COMSIG_MOVABLE_MOVED, COMSIG_CARBON_GAIN_WOUND, COMSIG_CARBON_POST_LOSE_WOUND, COMSIG_CARBON_ATTACH_LIMB, COMSIG_CARBON_REMOVE_LIMB))
+	UnregisterSignal(owner, list(COMSIG_MOVABLE_MOVED, COMSIG_CARBON_BREAK_BONE, COMSIG_CARBON_HEAL_BONE, COMSIG_CARBON_ATTACH_LIMB, COMSIG_CARBON_REMOVE_LIMB))
 
 /atom/movable/screen/alert/status_effect/limp
 	name = "Limping"
@@ -100,16 +100,8 @@
 
 	// technically you can have multiple wounds causing limps on the same limb, even if practically only bone wounds cause it in normal gameplay
 	if(left)
-		for(var/thing in left.wounds)
-			var/datum/wound/W = thing
-			slowdown_left += W.limp_slowdown
-			limp_chance_left = max(limp_chance_left, W.limp_chance)
 
 	if(right)
-		for(var/thing in right.wounds)
-			var/datum/wound/W = thing
-			slowdown_right += W.limp_slowdown
-			limp_chance_right = max(limp_chance_right, W.limp_chance)
 
 	// this handles losing your leg with the limp and the other one being in good shape as well
 	if(!slowdown_left && !slowdown_right)
@@ -133,85 +125,3 @@
 
 	var/mob/living/carbon/carbon_owner = owner
 	carbon_owner.check_self_for_injuries()
-
-// wound status effect base
-/datum/status_effect/wound
-	id = "wound"
-	status_type = STATUS_EFFECT_MULTIPLE
-	var/obj/item/bodypart/linked_limb
-	var/datum/wound/linked_wound
-	alert_type = NONE
-
-/datum/status_effect/wound/on_creation(mob/living/new_owner, incoming_wound)
-	linked_wound = incoming_wound
-	linked_limb = linked_wound.limb
-	return ..()
-
-/datum/status_effect/wound/on_remove()
-	linked_wound = null
-	linked_limb = null
-	UnregisterSignal(owner, COMSIG_CARBON_LOSE_WOUND)
-
-/datum/status_effect/wound/on_apply()
-	if(!iscarbon(owner))
-		return FALSE
-	RegisterSignal(owner, COMSIG_CARBON_LOSE_WOUND, PROC_REF(check_remove))
-	return TRUE
-
-/// check if the wound getting removed is the wound we're tied to
-/datum/status_effect/wound/proc/check_remove(mob/living/L, datum/wound/W)
-	SIGNAL_HANDLER
-
-	if(W == linked_wound)
-		qdel(src)
-
-/datum/status_effect/wound/nextmove_modifier()
-	var/mob/living/carbon/C = owner
-
-	if(C.get_active_hand() == linked_limb)
-		return linked_wound.get_action_delay_mult()
-
-	return ..()
-
-/datum/status_effect/wound/nextmove_adjust()
-	var/mob/living/carbon/C = owner
-
-	if(C.get_active_hand() == linked_limb)
-		return linked_wound.get_action_delay_increment()
-
-	return ..()
-
-
-// bones
-/datum/status_effect/wound/blunt/bone
-
-// blunt
-/datum/status_effect/wound/blunt/bone/moderate
-	id = "disjoint"
-/datum/status_effect/wound/blunt/bone/severe
-	id = "hairline"
-/datum/status_effect/wound/blunt/bone/critical
-	id = "compound"
-
-// slash
-
-/datum/status_effect/wound/slash/flesh/moderate
-	id = "abrasion"
-/datum/status_effect/wound/slash/flesh/severe
-	id = "laceration"
-/datum/status_effect/wound/slash/flesh/critical
-	id = "avulsion"
-// pierce
-/datum/status_effect/wound/pierce/moderate
-	id = "breakage"
-/datum/status_effect/wound/pierce/severe
-	id = "puncture"
-/datum/status_effect/wound/pierce/critical
-	id = "rupture"
-// burns
-/datum/status_effect/wound/burn/flesh/moderate
-	id = "seconddeg"
-/datum/status_effect/wound/burn/flesh/severe
-	id = "thirddeg"
-/datum/status_effect/wound/burn/flesh/critical
-	id = "fourthdeg"

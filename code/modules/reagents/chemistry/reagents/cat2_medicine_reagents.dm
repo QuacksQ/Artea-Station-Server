@@ -453,9 +453,6 @@
 		return
 	var/harmies = min(carbies.getBruteLoss(), carbies.adjustBruteLoss(-1.25 * reac_volume, required_bodytype = affected_bodytype)*-1)
 	var/burnies = min(carbies.getFireLoss(), carbies.adjustFireLoss(-1.25 * reac_volume, required_bodytype = affected_bodytype)*-1)
-	for(var/i in carbies.all_wounds)
-		var/datum/wound/iter_wound = i
-		iter_wound.on_synthflesh(reac_volume)
 	carbies.adjustToxLoss((harmies+burnies)*0.5, required_biotype = affected_biotype) //0.5 - 0.75
 	if(show_message)
 		to_chat(carbies, span_danger("You feel your burns and bruises healing! It stings like hell!"))

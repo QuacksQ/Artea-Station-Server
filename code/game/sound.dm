@@ -527,6 +527,13 @@
 					'sound/effects/atmospherics/glass_crack3.ogg',
 					'sound/effects/atmospherics/glass_crack4.ogg',
 				)
+			if(SFX_BREAK_BONE)
+				soundin= pick(
+					'sound/effects/bonebreak1.ogg',
+					'sound/effects/bonebreak2.ogg',
+					'sound/effects/bonebreak3.ogg',
+					'sound/effects/bonebreak4.ogg'
+				)
 	return soundin
 
 #undef LOBBYMUSIC_VOLUME

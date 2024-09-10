@@ -25,6 +25,8 @@
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
 	dmg_overlay_type = "robotic"
 
+	bodypart_flags = STOCK_BP_FLAGS_ARMS & ~(BP_HAS_BLOOD|BP_HAS_BONES|BP_HAS_TENDON|BP_HAS_ARTERY)
+
 	brute_reduction = 5
 	burn_reduction = 4
 
@@ -56,6 +58,8 @@
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
 	dmg_overlay_type = "robotic"
 
+	bodypart_flags = STOCK_BP_FLAGS_ARMS & ~(BP_HAS_BLOOD|BP_HAS_BONES|BP_HAS_TENDON|BP_HAS_ARTERY)
+
 	brute_reduction = 5
 	burn_reduction = 4
 
@@ -86,6 +90,8 @@
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+
+	bodypart_flags = STOCK_BP_FLAGS_LEGS & ~(BP_HAS_BLOOD|BP_HAS_BONES|BP_HAS_TENDON|BP_HAS_ARTERY)
 
 	dmg_overlay_type = "robotic"
 
@@ -130,6 +136,8 @@
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
 	dmg_overlay_type = "robotic"
 
+	bodypart_flags = STOCK_BP_FLAGS_LEGS & ~(BP_HAS_BLOOD|BP_HAS_BONES|BP_HAS_TENDON|BP_HAS_ARTERY)
+
 	brute_reduction = 5
 	burn_reduction = 4
 
@@ -169,6 +177,8 @@
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
 	dmg_overlay_type = "robotic"
+
+	bodypart_flags = STOCK_BP_FLAGS_CHEST & ~(BP_HAS_BLOOD|BP_HAS_BONES|BP_HAS_TENDON|BP_HAS_ARTERY)
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -295,6 +305,8 @@
 	should_draw_greyscale = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
 	dmg_overlay_type = "robotic"
+
+	bodypart_flags = STOCK_BP_FLAGS_HEAD & ~(BP_HAS_BLOOD|BP_HAS_BONES|BP_HAS_TENDON|BP_HAS_ARTERY)
 
 	brute_reduction = 5
 	burn_reduction = 4

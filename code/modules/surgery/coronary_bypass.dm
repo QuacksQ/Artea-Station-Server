@@ -9,6 +9,7 @@
 		/datum/surgery_step/clamp_bleeders,
 		/datum/surgery_step/incise_heart,
 		/datum/surgery_step/coronary_bypass,
+		/datum/surgery_step/repair_bone,
 		/datum/surgery_step/close,
 	)
 

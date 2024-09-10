@@ -136,9 +136,10 @@
 /datum/species/plasmaman/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H, delta_time, times_fired)
 	. = ..()
 	if(istype(chem, /datum/reagent/toxin/plasma) || istype(chem, /datum/reagent/toxin/hot_ice))
-		for(var/i in H.all_wounds)
-			var/datum/wound/iter_wound = i
-			iter_wound.on_xadone(4 * REAGENTS_EFFECT_MULTIPLIER * delta_time) // plasmamen use plasma to reform their bones or whatever
+		if(prob(10))
+			for(var/obj/item/bodypart/BP as anything in H.bodyparts)
+				BP.heal_bones()
+
 		return FALSE // do normal metabolism
 
 	if(istype(chem, /datum/reagent/toxin/bonehurtingjuice))

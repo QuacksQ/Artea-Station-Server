@@ -126,11 +126,6 @@
 	if(!(target?.get_bodypart(BODY_ZONE_HEAD)) || user.pulling != target || user.grab_state < GRAB_AGGRESSIVE || user.getStaminaLoss() > 80)
 		return FALSE
 
-	var/obj/item/bodypart/head/the_head = target.get_bodypart(BODY_ZONE_HEAD)
-	if(!(the_head.biological_state & BIO_FLESH))
-		to_chat(user, span_warning("You can't noogie [target], [target.p_they()] [target.p_have()] no skin on [target.p_their()] head!"))
-		return
-
 	// [user] gives [target] a [prefix_desc] noogie[affix_desc]!
 	var/brutal_noogie = FALSE // was it an extra hard noogie?
 	var/prefix_desc = "rough"
@@ -516,7 +511,6 @@
 	name = "kiss of death"
 	nodamage = FALSE // okay i kinda lied about love not being able to hurt you
 	damage = 35
-	wound_bonus = 0
 	sharpness = SHARP_POINTY
 	color = COLOR_BLACK
 

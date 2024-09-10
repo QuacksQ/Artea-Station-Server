@@ -26,8 +26,6 @@
 	var/obj/item/bodypart/operated_bodypart
 	///The wound datum that is being operated on.
 	var/datum/wound/operated_wound
-	///Types of wounds this surgery can target.
-	var/datum/wound/targetable_wound
 
 	///The types of bodyparts that this surgery can have performed on it. Used for augmented surgeries.
 	var/requires_bodypart_type = BODYTYPE_ORGANIC
@@ -51,16 +49,10 @@
 	if(!surgery_bodypart)
 		return
 	operated_bodypart = surgery_bodypart
-	if(targetable_wound)
-		operated_wound = operated_bodypart.get_wound_type(targetable_wound)
-		operated_wound.attached_surgery = src
 
 	SEND_SIGNAL(surgery_target, COMSIG_MOB_SURGERY_STARTED, src, surgery_location, surgery_bodypart)
 
 /datum/surgery/Destroy()
-	if(operated_wound)
-		operated_wound.attached_surgery = null
-		operated_wound = null
 	if(target)
 		target.surgeries -= src
 	target = null

@@ -258,7 +258,7 @@
 
 	var/mob/living/carbon/carbon_target = target
 	var/obj/item/bodypart/bodypart = pick(carbon_target.bodyparts)
-	carbon_target.cause_wound_of_type_and_severity(WOUND_SLASH, bodypart, WOUND_SEVERITY_SEVERE, WOUND_SEVERITY_CRITICAL)
+	bodypart.adjustBleedStacks(10)
 
 /datum/heretic_knowledge/summon/stalker
 	name = "Lonely Ritual"

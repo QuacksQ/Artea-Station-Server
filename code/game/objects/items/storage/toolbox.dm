@@ -22,7 +22,6 @@
 	material_flags = MATERIAL_EFFECTS | MATERIAL_COLOR
 	var/latches = "single_latch"
 	var/has_latches = TRUE
-	wound_bonus = 5
 	rustle_sound = 'sound/items/storage/metal_box.ogg'
 
 /obj/item/storage/toolbox/Initialize(mapload)
