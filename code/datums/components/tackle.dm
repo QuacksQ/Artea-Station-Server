@@ -289,7 +289,7 @@
 			defense_mod += 2
 
 
-		var/obj/item/organ/external/tail/lizard/el_tail = tackle_target.getorganslot(ORGAN_SLOT_EXTERNAL_TAIL)
+		var/obj/item/organ/tail/lizard/el_tail = tackle_target.getorganslot(ORGAN_SLOT_EXTERNAL_TAIL)
 		if(HAS_TRAIT(tackle_target, TRAIT_TACKLING_TAILED_DEFENDER) && !el_tail)
 			defense_mod -= 1
 		if(el_tail && (el_tail.wag_flags & WAG_WAGGING)) // lizard tail wagging is robust and can swat away assailants!

@@ -691,18 +691,6 @@
 /// Fire layer when you're on fire
 #define FIRE_LAYER 1
 
-//Bitflags for the layers an external organ can draw on (organs can be drawn on multiple layers)
-/// Draws organ on the BODY_FRONT_LAYER
-#define EXTERNAL_FRONT (1 << 1)
-/// Draws organ on the BODY_ADJ_LAYER
-#define EXTERNAL_ADJACENT (1 << 2)
-/// Draws organ on the BODY_BEHIND_LAYER
-#define EXTERNAL_BEHIND (1 << 3)
-/// Draws organ just under clothes. Uses BODY_FRONT_UNDER_CLOTHES.
-#define EXTERNAL_FRONT_UNDER_CLOTHES (1 << 4)
-/// Draws organ on all EXTERNAL layers
-#define ALL_EXTERNAL_OVERLAYS EXTERNAL_FRONT | EXTERNAL_ADJACENT | EXTERNAL_BEHIND | EXTERNAL_FRONT_UNDER_CLOTHES
-
 // Bitflags for external organs restylability
 /// This organ allows restyle through plant restyling (like secateurs)
 #define EXTERNAL_RESTYLE_PLANT (1 << 1)

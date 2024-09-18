@@ -615,8 +615,8 @@
 	name = "Kitty Ears"
 	result = /obj/item/clothing/head/kitty/genuine
 	time = 1 SECONDS
-	reqs = list(/obj/item/organ/external/tail/cat = 1,
-				/obj/item/organ/internal/ears/cat = 1)
+	reqs = list(/obj/item/organ/tail/cat = 1,
+				/obj/item/organ/ears/cat = 1)
 	category = CAT_CLOTHING
 
 /datum/crafting_recipe/radiogloves
@@ -638,7 +638,7 @@
 	name = "Moth Plushie"
 	result = /obj/item/toy/plush/moth
 	reqs = list(/obj/item/stack/sheet/animalhide/mothroach = 1,
-				/obj/item/organ/internal/heart = 1,
+				/obj/item/organ/heart = 1,
 				/obj/item/stack/sheet/cloth = 3)
 	category = CAT_ENTERTAINMENT
 
@@ -756,7 +756,7 @@
 
 /datum/crafting_recipe/flashlight_eyes
 	name = "Flashlight Eyes"
-	result = /obj/item/organ/internal/eyes/robotic/flashlight
+	result = /obj/item/organ/eyes/robotic/flashlight
 	time = 10
 	reqs = list(
 		/obj/item/flashlight = 2,
@@ -1260,7 +1260,7 @@
 	reqs = list(/obj/item/stack/cable_coil = 5,
 				/obj/item/stack/rods = 2,
 				/obj/item/stack/sheet/glass = 1,
-				/obj/item/organ/internal/heart/ethereal = 1,
+				/obj/item/organ/heart/ethereal = 1,
 				)
 	category = CAT_ROBOT
 

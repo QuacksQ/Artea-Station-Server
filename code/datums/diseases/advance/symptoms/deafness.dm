@@ -42,7 +42,7 @@
 	if(!.)
 		return
 	var/mob/living/carbon/infected_mob = A.affected_mob
-	var/obj/item/organ/internal/ears/ears = infected_mob.getorganslot(ORGAN_SLOT_EARS)
+	var/obj/item/organ/ears/ears = infected_mob.getorganslot(ORGAN_SLOT_EARS)
 	if(!ears)
 		return //cutting off your ears to cure the deafness: the ultimate own
 	switch(A.stage)

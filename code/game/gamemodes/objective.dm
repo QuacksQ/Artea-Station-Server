@@ -316,7 +316,7 @@ GLOBAL_LIST_EMPTY(active_antag_objectives)
 
 
 /datum/objective/protect/check_completion()
-	var/obj/item/organ/internal/brain/brain_target
+	var/obj/item/organ/brain/brain_target
 	if(human_check)
 		brain_target = target.current?.getorganslot(ORGAN_SLOT_BRAIN)
 	//Protect will always suceed when someone suicides
