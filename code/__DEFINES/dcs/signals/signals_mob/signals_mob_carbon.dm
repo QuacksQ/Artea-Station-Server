@@ -38,8 +38,20 @@
 #define COMSIG_CARBON_ATTACH_LIMB "carbon_attach_limb"
 ///from base of /obj/item/bodypart/proc/try_attach_limb(): (new_limb, special)
 #define COMSIG_CARBON_POST_ATTACH_LIMB "carbon_post_attach_limb"
-#define COMSIG_BODYPART_GAUZED "bodypart_gauzed" // from /obj/item/bodypart/proc/apply_gauze(/obj/item/stack/gauze)
-#define COMSIG_BODYPART_GAUZE_DESTROYED "bodypart_degauzed" // from [/obj/item/bodypart/proc/seep_gauze] when it runs out of absorption
+
+#define COMSIG_CARBON_REMOVED_LIMB "carbon_remove_limb" //from base of /obj/item/bodypart/proc/drop_limb(lost_limb, dismembered)
+
+/// From /obj/item/bodypart/proc/attach_limb(/mob/living/carbon/C, special)
+#define COMSIG_LIMB_ATTACH "limb_attach"
+/// From /obj/item/bodypart/proc/drop_limb(/mob/living/carbon/C, special)
+#define COMSIG_LIMB_REMOVE "limb_remove"
+/// From /obj/item/bodypart/proc/apply_splint()
+#define COMSIG_LIMB_SPLINTED "limb_splinted"
+/// From /obj/item/bodypart/proc/remove_splint()
+#define COMSIG_LIMB_UNSPLINTED "limb_unsplinted"
+
+#define COMSIG_LIMB_UPDATE_INTERACTION_SPEED "limb_interact_speed_change"
+#define COMSIG_LIMB_EMBED_RIP "limb_embed_rip"
 
 /// Called from update_health_hud, whenever a bodypart is being updated on the health doll
 #define COMSIG_BODYPART_UPDATING_HEALTH_HUD "bodypart_updating_health_hud"
@@ -51,8 +63,6 @@
 /// Called from /obj/item/bodypart/check_for_injuries (obj/item/bodypart/examined, list/check_list)
 #define COMSIG_CARBON_CHECKING_BODYPART "carbon_checking_injury"
 
-/// Called from carbon losing a limb /obj/item/bodypart/proc/drop_limb(obj/item/bodypart/lost_limb, dismembered)
-#define COMSIG_CARBON_REMOVE_LIMB "carbon_remove_limb"
 /// Called from carbon losing a limb /obj/item/bodypart/proc/drop_limb(obj/item/bodypart/lost_limb, dismembered)
 #define COMSIG_CARBON_POST_REMOVE_LIMB "carbon_post_remove_limb"
 /// Called from bodypart being removed /obj/item/bodypart/proc/drop_limb(mob/living/carbon/old_owner, dismembered)
@@ -71,8 +81,6 @@
 ///from /mob/living/carbon/doUnEquip(obj/item/I, force, newloc, no_move, invdrop, silent)
 #define COMSIG_CARBON_UNEQUIP_SHOECOVER "carbon_unequip_shoecover"
 #define COMSIG_CARBON_EQUIP_SHOECOVER "carbon_equip_shoecover"
-///defined twice, in carbon and human's topics, fired when interacting with a valid embedded_object to pull it out (mob/living/carbon/target, /obj/item, /obj/item/bodypart/L)
-#define COMSIG_CARBON_EMBED_RIP "item_embed_start_rip"
 ///called when removing a given item from a mob, from mob/living/carbon/remove_embedded_object(mob/living/carbon/target, /obj/item)
 #define COMSIG_CARBON_EMBED_REMOVAL "item_embed_remove_safe"
 ///Called when someone attempts to cuff a carbon

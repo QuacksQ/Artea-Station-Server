@@ -151,7 +151,7 @@
 
 	else if(implement_type in implements_extract)
 		current_type = "extract"
-		var/list/unfiltered_organs = target.getorganszone(target_zone)
+		var/list/organs = target.getorganszone(target_zone, FALSE, TRUE)
 		var/list/organs = list()
 		for(var/organ in unfiltered_organs)
 			if(can_use_organ(user, organ))

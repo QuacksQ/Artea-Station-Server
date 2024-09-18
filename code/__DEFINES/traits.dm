@@ -142,6 +142,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_EXPERIENCING_AIRFLOW "experiencing_airflow"
 /// Trait associated with airflow/spacewind
 #define AIRFLOW_TRAIT "airflow"
+/// Trait on stumps
+#define STUMP_TRAIT "stump"
 /// In some kind of critical condition. Is able to succumb.
 #define TRAIT_CRITICAL_CONDITION "critical-condition"
 /// Whitelist for mobs that can read or write
@@ -279,6 +281,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_MESON_VISION "meson_vision"
 /// Gives us Night vision
 #define TRAIT_TRUE_NIGHT_VISION "true_night_vision"
+/// Prevents direction changes done by face_atom()
+#define TRAIT_CANNOTFACE "cannotface"
 /// Negates our gravity, letting us move normally on floors in 0-g
 #define TRAIT_NEGATES_GRAVITY "negates_gravity"
 /// Lets us scan reagents
@@ -847,6 +851,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define ORBITING_TRAIT "orbiting"
 /// From the item_scaling element
 #define ITEM_SCALING_TRAIT "item_scaling"
+/// Given by the operating table
+#define OPTABLE_TRAIT "optable"
 /// Trait given by Objects that provide blindsight
 #define ITEM_BLIND_TRAIT "blind_item_trait"
 /// Trait given by choking

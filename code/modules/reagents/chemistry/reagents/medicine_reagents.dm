@@ -1450,7 +1450,6 @@
 				if(W.bleeding())
 					W.bleed_timer = 0
 					W.clamp_wound()
-					BP.bodypart_flags &= ~BP_BLEEDING
 
 /datum/reagent/medicine/coagulant/overdose_process(mob/living/affected_mob, delta_time, times_fired)
 	. = ..()
