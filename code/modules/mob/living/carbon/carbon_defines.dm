@@ -11,12 +11,14 @@
 	usable_hands = 0 //Populated on init through list/bodyparts
 	mobility_flags = MOBILITY_FLAGS_CARBON_DEFAULT
 	blocks_emissive = NONE
-	///List of [/obj/item/organ/internal] in the mob. They don't go in the contents for some reason I don't want to know.
-	var/list/obj/item/organ/internal/internal_organs = list()
-	///Same as [above][/mob/living/carbon/var/internal_organs], but stores "slot ID" - "organ" pairs for easy access.
-	var/list/internal_organs_slot = list()
-	///List of [/obj/item/organ/external] in the mob, similarly used as internal_organs.
-	var/list/obj/item/organ/external/external_organs = list()
+	///List of [/obj/item/organ] in the mob.
+	var/list/obj/item/organ/organs = list()
+	///List of [/obj/item/organ] in the mob.
+	var/list/obj/item/organ/cosmetic_organs = list()
+	///Stores "slot ID" - "organ" pairs for easy access. Contains both functional and cosmetic organs
+	var/list/organs_by_slot = list()
+	///A list of organs that process, used to keep life() fast!
+	var/list/obj/item/organ/processing_organs = list()
 	///How many dream images we have left to send
 	var/dreaming = 0
 

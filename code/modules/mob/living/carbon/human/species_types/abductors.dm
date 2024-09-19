@@ -14,7 +14,7 @@
 		TRAIT_NODISMEMBER,
 		TRAIT_NEVER_WOUNDED,
 	)
-	mutanttongue = /obj/item/organ/internal/tongue/abductor
+	mutanttongue = /obj/item/organ/tongue/abductor
 	mutantstomach = null
 	mutantheart = null
 	mutantlungs = null

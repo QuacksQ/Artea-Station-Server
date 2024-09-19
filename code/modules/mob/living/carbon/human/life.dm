@@ -104,8 +104,8 @@
 
 		return FALSE
 	else
-		if(istype(L, /obj/item/organ/internal/lungs))
-			var/obj/item/organ/internal/lungs/lun = L
+		if(istype(L, /obj/item/organ/lungs))
+			var/obj/item/organ/lungs/lun = L
 			return lun.check_breath(breath,src)
 
 /// Environment handlers for species
