@@ -7,7 +7,6 @@
 	zone = BODY_ZONE_CHEST
 	slot = ORGAN_SLOT_HEART
 
-	healing_factor = STANDARD_ORGAN_HEALING
 	decay_factor = 2.5 * STANDARD_ORGAN_DECAY //designed to fail around 6 minutes after death
 
 	low_threshold_passed = "<span class='info'>Prickles of pain appear then die out from within your chest...</span>"

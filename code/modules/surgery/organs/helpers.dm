@@ -26,6 +26,9 @@
 /mob/proc/getorgansofzone(zone)
 	return
 
+/mob/proc/getorganslot(slot)
+	return
+
 /mob/living/carbon/getorgan(typepath)
 	return (locate(typepath) in organs)
 

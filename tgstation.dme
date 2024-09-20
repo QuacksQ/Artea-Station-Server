@@ -277,7 +277,6 @@
 #include "code\__DEFINES\dcs\signals\signals_movetype.dm"
 #include "code\__DEFINES\dcs\signals\signals_music.dm"
 #include "code\__DEFINES\dcs\signals\signals_object.dm"
-#include "code\__DEFINES\dcs\signals\signals_operating_computer.dm"
 #include "code\__DEFINES\dcs\signals\signals_overmap.dm"
 #include "code\__DEFINES\dcs\signals\signals_painting.dm"
 #include "code\__DEFINES\dcs\signals\signals_proxmonitor.dm"
