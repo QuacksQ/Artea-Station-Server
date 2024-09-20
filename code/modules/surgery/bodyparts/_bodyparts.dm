@@ -140,6 +140,9 @@
 	/// NOT wounds.len! Multiple wounds of the same type compress onto the same wound datum.
 	var/real_wound_count = 0
 
+	///The description used when the bones are broken.
+	var/broken_description
+
 	//Damage messages used by examine(). the desc that is most common accross all bodyparts gets shown
 	var/list/damage_examines = list(
 		BRUTE = DEFAULT_BRUTE_EXAMINE_TEXT,
