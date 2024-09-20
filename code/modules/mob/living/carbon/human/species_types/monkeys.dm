@@ -2,8 +2,8 @@
 	name = "Monkey"
 	id = SPECIES_MONKEY
 	bodytype = BODYTYPE_ORGANIC | BODYTYPE_MONKEY
-	external_organs = list(
-		/obj/item/organ/external/tail/monkey = "Monkey"
+	cosmetic_organs = list(
+		/obj/item/organ/tail/monkey = "Monkey"
 	)
 	mutanttongue = /obj/item/organ/internal/tongue/monkey
 	mutantbrain = /obj/item/organ/internal/brain/primate

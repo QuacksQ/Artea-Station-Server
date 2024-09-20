@@ -13,7 +13,7 @@
 	)
 
 /datum/surgery/lobectomy/can_start(mob/user, mob/living/carbon/target)
-	var/obj/item/organ/internal/lungs/target_lungs = target.getorganslot(ORGAN_SLOT_LUNGS)
+	var/obj/item/organ/lungs/target_lungs = target.getorganslot(ORGAN_SLOT_LUNGS)
 	if(target_lungs)
 		if(target_lungs.damage > 60 && !target_lungs.operated)
 			return TRUE
@@ -46,7 +46,7 @@
 /datum/surgery_step/lobectomy/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	if(ishuman(target))
 		var/mob/living/carbon/human/human_target = target
-		var/obj/item/organ/internal/lungs/target_lungs = human_target.getorganslot(ORGAN_SLOT_LUNGS)
+		var/obj/item/organ/lungs/target_lungs = human_target.getorganslot(ORGAN_SLOT_LUNGS)
 		target_lungs.operated = TRUE
 		human_target.setOrganLoss(ORGAN_SLOT_LUNGS, 60)
 		display_results(

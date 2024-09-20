@@ -51,8 +51,8 @@
 //Start of a breath chain, calls breathe()
 /mob/living/carbon/handle_breathing(delta_time, times_fired)
 	var/next_breath = 4
-	var/obj/item/organ/internal/lungs/L = getorganslot(ORGAN_SLOT_LUNGS)
-	var/obj/item/organ/internal/heart/H = getorganslot(ORGAN_SLOT_HEART)
+	var/obj/item/organ/lungs/L = getorganslot(ORGAN_SLOT_LUNGS)
+	var/obj/item/organ/heart/H = getorganslot(ORGAN_SLOT_HEART)
 	if(L)
 		if(L.damage > L.high_threshold)
 			next_breath--
@@ -73,7 +73,7 @@
 
 //Second link in a breath chain, calls check_breath()
 /mob/living/carbon/proc/breathe(delta_time, times_fired)
-	var/obj/item/organ/internal/lungs = getorganslot(ORGAN_SLOT_LUNGS)
+	var/obj/item/organ/lungs = getorganslot(ORGAN_SLOT_LUNGS)
 	if(SEND_SIGNAL(src, COMSIG_CARBON_ATTEMPT_BREATHE) & COMSIG_CARBON_BLOCK_BREATH)
 		return
 
@@ -327,7 +327,7 @@
 	if(stat == DEAD)
 		if(reagents.has_reagent(/datum/reagent/toxin/formaldehyde, 1) || reagents.has_reagent(/datum/reagent/cryostylane)) // No organ decay if the body contains formaldehyde.
 			return
-		for(var/obj/item/organ/internal/organ in internal_organs)
+		for(var/obj/item/organ/organ as anything in processing_organs)
 			// On-death is where organ decay is handled
 			organ?.on_death(delta_time, times_fired) // organ can be null due to reagent metabolization causing organ shuffling
 			// We need to re-check the stat every organ, as one of our others may have revived us
@@ -335,11 +335,8 @@
 				break
 		return
 
-	// NOTE: internal_organs_slot is sorted by GLOB.organ_process_order on insertion
-	for(var/slot in internal_organs_slot)
-		// We don't use getorganslot here because we know we have the organ we want, since we're iterating the list containing em already
-		// This code is hot enough that it's just not worth the time
-		var/obj/item/organ/internal/organ = internal_organs_slot[slot]
+	// NOTE: processing_organs is sorted by GLOB.organ_process_order on insertion
+	for(var/obj/item/organ/organ as anything in processing_organs)
 		if(organ?.owner) // This exist mostly because reagent metabolization can cause organ reshuffling
 			organ.on_life(delta_time, times_fired)
 
@@ -541,7 +538,7 @@
 /mob/living/carbon/get_fullness()
 	var/fullness = nutrition
 
-	var/obj/item/organ/internal/stomach/belly = getorganslot(ORGAN_SLOT_STOMACH)
+	var/obj/item/organ/stomach/belly = getorganslot(ORGAN_SLOT_STOMACH)
 	if(!belly) //nothing to see here if we do not have a stomach
 		return fullness
 
@@ -559,7 +556,7 @@
 	. = ..()
 	if(.)
 		return
-	var/obj/item/organ/internal/stomach/belly = getorganslot(ORGAN_SLOT_STOMACH)
+	var/obj/item/organ/stomach/belly = getorganslot(ORGAN_SLOT_STOMACH)
 	if(!belly)
 		return FALSE
 	return belly.reagents.has_reagent(reagent, amount, needs_metabolizing)
@@ -574,7 +571,7 @@
 	if(!dna)
 		return
 
-	var/obj/item/organ/internal/liver/liver = getorganslot(ORGAN_SLOT_LIVER)
+	var/obj/item/organ/liver/liver = getorganslot(ORGAN_SLOT_LIVER)
 	if(liver)
 		return
 
@@ -588,7 +585,7 @@
 	adjustOrganLoss(pick(ORGAN_SLOT_HEART, ORGAN_SLOT_LUNGS, ORGAN_SLOT_STOMACH, ORGAN_SLOT_EYES, ORGAN_SLOT_EARS), 0.5* delta_time)
 
 /mob/living/carbon/proc/undergoing_liver_failure()
-	var/obj/item/organ/internal/liver/liver = getorganslot(ORGAN_SLOT_LIVER)
+	var/obj/item/organ/liver/liver = getorganslot(ORGAN_SLOT_LIVER)
 	if(liver?.organ_flags & ORGAN_FAILING)
 		return TRUE
 
@@ -663,7 +660,7 @@
 /mob/living/carbon/proc/can_heartattack()
 	if(!needs_heart())
 		return FALSE
-	var/obj/item/organ/internal/heart/heart = getorganslot(ORGAN_SLOT_HEART)
+	var/obj/item/organ/heart/heart = getorganslot(ORGAN_SLOT_HEART)
 	if(!heart || (heart.organ_flags & ORGAN_SYNTHETIC))
 		return FALSE
 	return TRUE
@@ -683,7 +680,7 @@
  * related situations (i.e not just cardiac arrest)
  */
 /mob/living/carbon/proc/undergoing_cardiac_arrest()
-	var/obj/item/organ/internal/heart/heart = getorganslot(ORGAN_SLOT_HEART)
+	var/obj/item/organ/heart/heart = getorganslot(ORGAN_SLOT_HEART)
 	if(istype(heart) && heart.beating)
 		return FALSE
 	else if(!needs_heart())
@@ -694,7 +691,7 @@
 	if(!can_heartattack())
 		return FALSE
 
-	var/obj/item/organ/internal/heart/heart = getorganslot(ORGAN_SLOT_HEART)
+	var/obj/item/organ/heart/heart = getorganslot(ORGAN_SLOT_HEART)
 	if(!istype(heart))
 		return
 

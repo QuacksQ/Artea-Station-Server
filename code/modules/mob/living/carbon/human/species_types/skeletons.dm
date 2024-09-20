@@ -30,8 +30,8 @@
 		TRAIT_NOBLOOD,
 	)
 	inherent_biotypes = MOB_UNDEAD|MOB_HUMANOID
-	mutanttongue = /obj/item/organ/internal/tongue/bone
-	mutantstomach = /obj/item/organ/internal/stomach/bone
+	mutanttongue = /obj/item/organ/tongue/bone
+	mutantstomach = /obj/item/organ/stomach/bone
 	mutantappendix = null
 	mutantheart = null
 	mutantliver = null

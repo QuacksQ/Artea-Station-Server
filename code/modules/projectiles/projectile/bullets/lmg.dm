@@ -40,7 +40,6 @@
 	damage = 50
 	sharpness = SHARP_EDGED
 	weak_against_armour = TRUE
-	wound_falloff_tile = -8
 
 /obj/projectile/bullet/incendiary/mm712x82
 	name = "7.12x82mm incendiary bullet"

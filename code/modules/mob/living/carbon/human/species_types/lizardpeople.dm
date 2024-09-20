@@ -22,7 +22,7 @@
 		MUTANT_SPINES = "Long",
 		MUTANT_LIZARD_TAIL = "Smooth",
 		)
-	mutanttongue = /obj/item/organ/internal/tongue/lizard
+	mutanttongue = /obj/item/organ/tongue/lizard
 	coldmod = 1.5
 	heatmod = 0.67
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
@@ -119,8 +119,8 @@ Lizard subspecies: ASHWALKERS
 /datum/species/lizard/ashwalker
 	name = "Ash Walker"
 	id = SPECIES_LIZARD_ASH
-	mutantlungs = /obj/item/organ/internal/lungs/ashwalker
-	mutantbrain = /obj/item/organ/internal/brain/primitive
+	mutantlungs = /obj/item/organ/lungs/ashwalker
+	mutantbrain = /obj/item/organ/brain/primitive
 	species_traits = list(
 		MUTCOLORS,
 		EYECOLOR,
@@ -160,7 +160,7 @@ Lizard subspecies: SILVER SCALED
 	)
 	mutantlungs = null
 	species_language_holder = /datum/language_holder/lizard/silver
-	mutanttongue = /obj/item/organ/internal/tongue/lizard/silver
+	mutanttongue = /obj/item/organ/tongue/lizard/silver
 	armor = 10 //very light silvery scales soften blows
 	changesource_flags = MIRROR_BADMIN | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN
 	examine_limb_id = SPECIES_LIZARD

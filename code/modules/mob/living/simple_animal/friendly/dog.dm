@@ -722,7 +722,7 @@ GLOBAL_LIST_INIT(strippable_corgi_items, create_strippable_list(list(
 	maxHealth = 50
 	gender = NEUTER
 	harm_intent_damage = 10
-	butcher_results = list(/obj/item/organ/internal/brain = 1, /obj/item/organ/internal/heart = 1, /obj/item/food/breadslice = 3,  \
+	butcher_results = list(/obj/item/organ/brain = 1, /obj/item/organ/heart = 1, /obj/item/food/breadslice = 3,  \
 	/obj/item/food/meat/slab = 2)
 	response_harm_continuous = "takes a bite out of"
 	response_harm_simple = "take a bite out of"
@@ -735,7 +735,7 @@ GLOBAL_LIST_INIT(strippable_corgi_items, create_strippable_list(list(
 
 /mob/living/simple_animal/pet/dog/breaddog/CheckParts(list/parts)
 	..()
-	var/obj/item/organ/internal/brain/candidate = locate(/obj/item/organ/internal/brain) in contents
+	var/obj/item/organ/brain/candidate = locate(/obj/item/organ/brain) in contents
 	if(!candidate || !candidate.brainmob || !candidate.brainmob.mind)
 		return
 	candidate.brainmob.mind.transfer_to(src)

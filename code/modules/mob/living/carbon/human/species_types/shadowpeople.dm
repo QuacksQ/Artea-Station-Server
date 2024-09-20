@@ -19,8 +19,8 @@
 	inherent_factions = list("faithless")
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC
 
-	mutantbrain = /obj/item/organ/internal/brain/shadow
-	mutanteyes = /obj/item/organ/internal/eyes/night_vision/shadow
+	mutantbrain = /obj/item/organ/brain/shadow
+	mutanteyes = /obj/item/organ/eyes/night_vision/shadow
 	mutantheart = null
 	mutantlungs = null
 

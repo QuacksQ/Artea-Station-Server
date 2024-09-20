@@ -3,7 +3,7 @@
 #define SYNTH_BRAIN_WAKE_THRESHOLD 50
 #define SYNTH_BRAIN_DAMAGE_MESSAGE_INTERVAL 20 SECONDS
 
-/obj/item/organ/internal/brain/synth
+/obj/item/organ/brain/synth
 	name = "compact positronic brain"
 	slot = ORGAN_SLOT_BRAIN
 	zone = BODY_ZONE_CHEST
@@ -16,7 +16,7 @@
 	var/last_message_time = 0
 	manufacturer = MANUFACTURER_RYOSHI_INDUSTRIES
 
-/obj/item/organ/internal/brain/synth/Insert(mob/living/carbon/user, special = FALSE, drop_if_replaced = TRUE, no_id_transfer = FALSE)
+/obj/item/organ/brain/synth/Insert(mob/living/carbon/user, special = FALSE, drop_if_replaced = TRUE, no_id_transfer = FALSE)
 	. = ..()
 
 	if(user.stat != DEAD || !ishuman(user))
@@ -26,7 +26,7 @@
 	if(user_human?.dna?.species && (REVIVES_BY_HEALING in user_human.dna.species.species_traits) && user_human.health > SYNTH_BRAIN_WAKE_THRESHOLD)
 		user_human.revive(FALSE)
 
-/obj/item/organ/internal/brain/synth/emp_act(severity)
+/obj/item/organ/brain/synth/emp_act(severity)
 	// This value is the protection value!
 	. = ..()
 
@@ -36,7 +36,7 @@
 
 	applyOrganDamage(SYNTH_EMP_BRAIN_DAMAGE, SYNTH_EMP_BRAIN_DAMAGE_MAXIMUM)
 
-/obj/item/organ/internal/brain/synth/applyOrganDamage(damage_amount, maximumm, required_organtype)
+/obj/item/organ/brain/synth/applyOrganDamage(damage_amount, maximumm, required_organtype)
 	. = ..()
 
 	if(owner && damage > 0 && (world.time - last_message_time) > SYNTH_BRAIN_DAMAGE_MESSAGE_INTERVAL)
@@ -49,7 +49,7 @@
 		if(damage > BRAIN_DAMAGE_MILD)
 			to_chat(owner, span_warning("Alert: Minor corruption in central processing unit."))
 
-/obj/item/organ/internal/brain/synth/circuit
+/obj/item/organ/brain/synth/circuit
 	name = "compact AI circuit"
 	desc = "A compact and extremely complex circuit, perfectly dimensioned to fit in the same slot as a synthetic-compatible positronic brain. It is usually slotted into the chest of synthetic crewmembers."
 	icon_state = "circuit-occupied"
@@ -57,7 +57,7 @@
 	lefthand_file = 'icons/mob/inhands/items/devices_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/items/devices_righthand.dmi'
 
-/obj/item/organ/internal/brain/synth/mmi
+/obj/item/organ/brain/synth/mmi
 	name = "compact man-machine interface"
 	desc = "A compact man-machine interface, perfectly dimensioned to fit in the same slot as a synthetic-compatible positronic brain. Unfortunately, the brain seems to be permanently attached to the circuitry, and it seems relatively sensitive to it's environment. It is usually slotted into the chest of synthetic crewmembers."
 	icon = 'icons/mob/species/synth/surgery.dmi'

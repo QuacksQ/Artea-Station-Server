@@ -3,129 +3,28 @@
 * Works in tandem with the /datum/sprite_accessory datum to generate sprites
 * Unlike normal organs, we're actually inside a persons limbs at all times
 */
-/obj/item/organ/external
-	name = "external organ"
-	desc = "An external organ that is too external."
-
-	organ_flags = ORGAN_EDIBLE
-	visual = TRUE
-
-	///The overlay datum that actually draws stuff on the limb
-	var/datum/bodypart_overlay/mutant/bodypart_overlay
-	///Reference to the limb we're inside of
-	var/obj/item/bodypart/ownerlimb
-	///If not null, overrides the appearance with this sprite accessory datum
-	var/sprite_accessory_override
-
-	/// The savefile_key of the preference this relates to. Used for the preferences UI.
-	var/preference
-	///With what DNA block do we mutate in mutate_feature() ? For genetics
-	var/dna_block
-
-	///Set to EXTERNAL_BEHIND, EXTERNAL_FRONT or EXTERNAL_ADJACENT if you want to draw one of those layers as the object sprite. FALSE to use your own
-	///This will not work if it doesn't have a limb to generate it's icon with
-	var/use_mob_sprite_as_obj_sprite = FALSE
-	///Does this organ have any bodytypes to pass to it's ownerlimb?
-	var/external_bodytypes = NONE
-	///Which flags does a 'modification tool' need to have to restyle us, if it all possible (located in code/_DEFINES/mobs)
-	var/restyle_flags = NONE
 
 /**mob_sprite is optional if you havent set sprite_datums for the object, and is used mostly to generate sprite_datums from a persons DNA
 * For _mob_sprite we make a distinction between "Round Snout" and "round". Round Snout is the name of the sprite datum, while "round" would be part of the sprite
 * I'm sorry
 */
-/obj/item/organ/external/Initialize(mapload, accessory_type)
-	. = ..()
 
-	bodypart_overlay = new bodypart_overlay()
+/obj/item/organ/proc/set_sprite(sprite_name)
+	stored_feature_id = sprite_name
+	sprite_datum = get_global_feature_list()[sprite_name]
+	if(!sprite_datum && stored_feature_id)
+		stack_trace("External organ has no valid sprite datum for name [sprite_name]")
 
-	accessory_type = accessory_type ? accessory_type : sprite_accessory_override
-	var/update_overlays = TRUE
-	if(accessory_type)
-		bodypart_overlay.set_appearance(accessory_type)
-		bodypart_overlay.imprint_on_next_insertion = FALSE
-	else if(loc) //we've been spawned into the world, and not in nullspace to be added to a limb (yes its fucking scuffed)
-		bodypart_overlay.randomize_appearance()
-	else
-		update_overlays = FALSE
+///Return a dumb glob list for this specific feature (called from parse_sprite)
+/obj/item/organ/proc/get_global_feature_list()
+	CRASH("External organ has no feature list, it will render invisible")
 
-	if(use_mob_sprite_as_obj_sprite && update_overlays)
-		update_appearance(UPDATE_OVERLAYS)
-
-	if(restyle_flags)
-		RegisterSignal(src, COMSIG_ATOM_RESTYLE, PROC_REF(on_attempt_feature_restyle))
-
-/obj/item/organ/external/Destroy()
-	if(owner)
-		Remove(owner, special=TRUE)
-	else if(ownerlimb)
-		remove_from_limb()
-
-	return ..()
-
-/obj/item/organ/external/Insert(mob/living/carbon/receiver, special, drop_if_replaced)
-	var/obj/item/bodypart/limb = receiver.get_bodypart(deprecise_zone(zone))
-
-	if(!limb)
-		log_world("No limb found for [zone] | [src.name]")
-		return FALSE
-
-	. = ..()
-
-	if(!.)
-		return FALSE
-
-	if(bodypart_overlay.imprint_on_next_insertion) //We only want this set *once*
-
-		bodypart_overlay.set_appearance_from_name(receiver.dna.features[bodypart_overlay.feature_key])
-		bodypart_overlay.imprint_on_next_insertion = FALSE
-
-	ownerlimb = limb
-	add_to_limb(ownerlimb)
-
-	if(external_bodytypes)
-		limb.synchronize_bodytypes(receiver)
-
-	receiver.update_body_parts()
-
-/obj/item/organ/external/Remove(mob/living/carbon/organ_owner, special, moving)
-	. = ..()
-
-	if(ownerlimb && !moving)
-		remove_from_limb()
-
-		if(use_mob_sprite_as_obj_sprite)
-			update_appearance(UPDATE_OVERLAYS)
-
-	if(organ_owner)
-		organ_owner.update_body_parts()
-
-///Transfers the organ to the limb, and to the limb's owner, if it has one.
-/obj/item/organ/external/transfer_to_limb(obj/item/bodypart/bodypart, mob/living/carbon/bodypart_owner)
-	if(owner)
-		Remove(owner, moving = TRUE)
-	else if(ownerlimb)
-		remove_from_limb()
-
-	if(bodypart_owner)
-		Insert(bodypart_owner, TRUE)
-	else
-		add_to_limb(bodypart)
-
-/obj/item/organ/external/add_to_limb(obj/item/bodypart/bodypart)
-	ownerlimb = bodypart
-	ownerlimb.add_bodypart_overlay(bodypart_overlay)
-	return ..()
-
-/obj/item/organ/external/remove_from_limb()
-	ownerlimb.remove_bodypart_overlay(bodypart_overlay)
-	if(ownerlimb.owner && external_bodytypes)
-		ownerlimb.synchronize_bodytypes(ownerlimb.owner)
-	ownerlimb = null
-	return ..()
+///Check whether we can draw the overlays. You generally don't want lizard snouts to draw over an EVA suit
+/obj/item/organ/proc/can_draw_on_bodypart(mob/living/carbon/human/human)
+	return TRUE
 
 ///Update our features after something changed our appearance
-/obj/item/organ/external/proc/mutate_feature(features, mob/living/carbon/human/human)
+/obj/item/organ/proc/mutate_feature(features, mob/living/carbon/human/human)
 	if(!dna_block)
 		return
 
@@ -134,7 +33,7 @@
 	bodypart_overlay.set_appearance_from_name(feature_list[deconstruct_block(get_uni_feature_block(features, dna_block), feature_list.len)])
 
 ///If you need to change an external_organ for simple one-offs, use this. Pass the accessory type : /datum/accessory/something
-/obj/item/organ/external/proc/simple_change_sprite(accessory_type)
+/obj/item/organ/proc/simple_change_sprite(accessory_type)
 	var/datum/sprite_accessory/typed_accessory = accessory_type //we only take types for maintainability
 
 	bodypart_overlay.set_appearance(typed_accessory)
@@ -145,10 +44,10 @@
 		ownerlimb.update_icon_dropped()
 	//else if(use_mob_sprite_as_obj_sprite) //are we out in the world, unprotected by flesh?
 
-/obj/item/organ/external/on_life(delta_time, times_fired)
+/obj/item/organ/on_life(delta_time, times_fired)
 	return
 
-/obj/item/organ/external/update_overlays()
+/obj/item/organ/update_overlays()
 	. = ..()
 
 	if(!use_mob_sprite_as_obj_sprite)
@@ -160,13 +59,18 @@
 			. += bodypart_overlay.get_overlay(external_layer, limb = null)
 
 ///The horns of uhh... someone!
-/obj/item/organ/external/horns
+/obj/item/organ/horns
 	name = "horns"
 	desc = "Horns. Seems like someone got horny... or unhorny- I don't know."
 	icon_state = "horns"
+	///Unremovable is until the features are completely finished
+	organ_flags = ORGAN_UNREMOVABLE | ORGAN_EDIBLE
+	visual = TRUE
+	cosmetic_only = TRUE
 
 	zone = BODY_ZONE_HEAD
 	slot = ORGAN_SLOT_EXTERNAL_HORNS
+	layers = list(BODY_ADJ_LAYER)
 
 	preference = "feature_lizard_horns"
 	dna_block = DNA_HORNS_BLOCK

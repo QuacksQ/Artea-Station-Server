@@ -13,7 +13,7 @@
 	)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_BUG
 	mutant_bodyparts = list("moth_markings" = "None")
-	external_organs = list(/obj/item/organ/external/wings/moth = "Plain", /obj/item/organ/external/antennae = "Plain")
+	cosmetic_organs = list(/obj/item/organ/wings/moth = "Plain", /obj/item/organ/antennae = "Plain")
 	meat = /obj/item/food/meat/slab/human/mutant/moth
 	liked_food = VEGETABLES | DAIRY | CLOTH
 	disliked_food = FRUIT | GROSS | BUGS | GORE
@@ -22,7 +22,7 @@
 	mutanteyes = /obj/item/organ/internal/eyes/moth
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	species_language_holder = /datum/language_holder/moth
-	wing_types = list(/obj/item/organ/external/wings/functional/moth/megamoth, /obj/item/organ/external/wings/functional/moth/mothra)
+	wing_types = list(/obj/item/organ/wings/functional/moth/megamoth, /obj/item/organ/wings/functional/moth/mothra)
 	family_heirlooms = list(/obj/item/flashlight/lantern/heirloom_moth)
 
 	bodypart_overrides = list(

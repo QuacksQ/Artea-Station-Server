@@ -365,10 +365,8 @@
 		. += "-[draw_color]"
 	if(is_invisible)
 		. += "-invisible"
-	for(var/datum/bodypart_overlay/overlay as anything in bodypart_overlays)
-		if(!overlay.can_draw_on_bodypart(owner))
-			continue
-		. += "-[jointext(overlay.generate_icon_cache(), "-")]"
+	for(var/obj/item/organ/O as anything in cosmetic_organs)
+		. += "-[json_encode(O.build_cache_key())]"
 
 	return .
 

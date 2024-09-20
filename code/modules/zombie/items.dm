@@ -50,13 +50,11 @@
 	if(istype(target) && target.reagents.has_reagent(/datum/reagent/medicine/spaceacillin) && prob(75))
 		return
 
-	var/obj/item/organ/internal/zombie_infection/infection
+	var/obj/item/organ/zombie_infection/infection
 	infection = target.getorganslot(ORGAN_SLOT_ZOMBIE)
 	if(!infection)
 		infection = new()
 		infection.Insert(target)
-
-
 
 /obj/item/zombie_hand/suicide_act(mob/user)
 	user.visible_message(span_suicide("[user] is ripping [user.p_their()] brains out! It looks like [user.p_theyre()] trying to commit suicide!"))

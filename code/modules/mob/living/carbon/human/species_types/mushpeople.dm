@@ -25,8 +25,8 @@
 	burnmod = 1.25
 	heatmod = 1.5
 
-	mutanttongue = /obj/item/organ/internal/tongue/mush
-	mutanteyes = /obj/item/organ/internal/eyes/night_vision/mushroom
+	mutanttongue = /obj/item/organ/tongue/mush
+	mutanteyes = /obj/item/organ/eyes/night_vision/mushroom
 	mutantlungs = null
 	use_skintones = FALSE
 	var/datum/martial_art/mushpunch/mush

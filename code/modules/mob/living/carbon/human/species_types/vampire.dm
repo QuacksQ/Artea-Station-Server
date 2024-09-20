@@ -24,8 +24,8 @@
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | ERT_SPAWN
 	exotic_bloodtype = "U"
 	use_skintones = TRUE
-	mutantheart = /obj/item/organ/internal/heart/vampire
-	mutanttongue = /obj/item/organ/internal/tongue/vampire
+	mutantheart = /obj/item/organ/heart/vampire
+	mutanttongue = /obj/item/organ/tongue/vampire
 	mutantstomach = null
 	mutantlungs = null
 	examine_limb_id = SPECIES_HUMAN
@@ -140,7 +140,7 @@
 
 	return to_add
 
-/obj/item/organ/internal/tongue/vampire
+/obj/item/organ/tongue/vampire
 	name = "vampire tongue"
 	actions_types = list(/datum/action/item_action/organ_action/vampire)
 	color = "#1C1C1C"
@@ -154,7 +154,7 @@
 	. = ..()
 	if(iscarbon(owner))
 		var/mob/living/carbon/H = owner
-		var/obj/item/organ/internal/tongue/vampire/V = target
+		var/obj/item/organ/tongue/vampire/V = target
 		if(!COOLDOWN_FINISHED(V, drain_cooldown))
 			to_chat(H, span_warning("You just drained blood, wait a few seconds!"))
 			return
@@ -190,7 +190,7 @@
 			if(!victim.blood_volume)
 				to_chat(H, span_notice("You finish off [victim]'s blood supply."))
 
-/obj/item/organ/internal/heart/vampire
+/obj/item/organ/heart/vampire
 	name = "vampire heart"
 	color = "#1C1C1C"
 

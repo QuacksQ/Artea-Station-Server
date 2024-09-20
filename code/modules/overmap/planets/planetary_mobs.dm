@@ -6,8 +6,6 @@
 	obj_damage = 40
 	melee_damage_lower = 15
 	melee_damage_upper = 15
-	wound_bonus = 5
-	bare_wound_bonus = 10
 	sharpness = SHARP_EDGED
 	attack_verb_continuous = "claws"
 	attack_verb_simple = "claw"

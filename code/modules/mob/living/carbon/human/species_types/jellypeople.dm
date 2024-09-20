@@ -11,8 +11,8 @@
 		TRAIT_TOXINLOVER,
 		TRAIT_NOBLOOD,
 	)
-	mutanttongue = /obj/item/organ/internal/tongue/jelly
-	mutantlungs = /obj/item/organ/internal/lungs/slime
+	mutanttongue = /obj/item/organ/tongue/jelly
+	mutantlungs = /obj/item/organ/lungs/slime
 	mutantheart = null
 	meat = /obj/item/food/meat/slab/human/mutant/slime
 	exotic_blood = /datum/reagent/toxin/slimejelly

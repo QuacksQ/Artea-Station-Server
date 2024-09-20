@@ -10,8 +10,8 @@
 	inherent_traits = list(
 		TRAIT_PLANT_SAFE,
 	)
-	external_organs = list(
-		/obj/item/organ/external/pod_hair = "None",
+	cosmetic_organs = list(
+		/obj/item/organ/pod_hair = "None",
 	)
 	inherent_biotypes = MOB_ORGANIC | MOB_HUMANOID | MOB_PLANT
 	inherent_factions = list("plants", "vines")

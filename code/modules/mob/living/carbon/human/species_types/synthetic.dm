@@ -41,15 +41,15 @@
 	)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	species_language_holder = /datum/language_holder/synthetic
-	mutant_organs = list(/obj/item/organ/internal/cyberimp/arm/power_cord)
-	mutantbrain = /obj/item/organ/internal/brain/synth
-	mutantstomach = /obj/item/organ/internal/stomach/synth
-	mutantears = /obj/item/organ/internal/ears/synth
-	mutanttongue = /obj/item/organ/internal/tongue/synth
-	mutanteyes = /obj/item/organ/internal/eyes/synth
-	mutantlungs = /obj/item/organ/internal/lungs/synth
-	mutantheart = /obj/item/organ/internal/heart/synth
-	mutantliver = /obj/item/organ/internal/liver/synth
+	mutant_organs = list(/obj/item/organ/cyberimp/arm/power_cord)
+	mutantbrain = /obj/item/organ/brain/synth
+	mutantstomach = /obj/item/organ/stomach/synth
+	mutantears = /obj/item/organ/ears/synth
+	mutanttongue = /obj/item/organ/tongue/synth
+	mutanteyes = /obj/item/organ/eyes/synth
+	mutantlungs = /obj/item/organ/lungs/synth
+	mutantheart = /obj/item/organ/heart/synth
+	mutantliver = /obj/item/organ/liver/synth
 	exotic_blood = /datum/reagent/fuel/oil
 	bodypart_overrides = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/robot/synth,

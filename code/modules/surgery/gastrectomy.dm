@@ -16,7 +16,7 @@
 	)
 
 /datum/surgery/gastrectomy/can_start(mob/user, mob/living/carbon/target)
-	var/obj/item/organ/internal/stomach/target_stomach = target.getorganslot(ORGAN_SLOT_STOMACH)
+	var/obj/item/organ/stomach/target_stomach = target.getorganslot(ORGAN_SLOT_STOMACH)
 	if(target_stomach)
 		if(target_stomach.damage > 50 && !target_stomach.operated)
 			return TRUE
@@ -48,7 +48,7 @@
 
 /datum/surgery_step/gastrectomy/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	var/mob/living/carbon/human/target_human = target
-	var/obj/item/organ/internal/stomach/target_stomach = target.getorganslot(ORGAN_SLOT_STOMACH)
+	var/obj/item/organ/stomach/target_stomach = target.getorganslot(ORGAN_SLOT_STOMACH)
 	target_human.setOrganLoss(ORGAN_SLOT_STOMACH, 20) // Stomachs have a threshold for being able to even digest food, so I might tweak this number
 	if(target_stomach)
 		target_stomach.operated = TRUE

@@ -173,9 +173,8 @@
 	/// If something is currently grasping this bodypart and trying to staunch bleeding (see [/obj/item/hand_item/self_grasp])
 	var/obj/item/hand_item/self_grasp/grasped_by
 
-	///A list of all the external organs we've got stored to draw horns, wings and stuff with (special because we are actually in the limbs unlike normal organs :/ )
-	///If someone ever comes around to making all organs exist in the bodyparts, you can just remove this and use a typed loop
-	var/list/obj/item/organ/external/external_organs = list()
+	///A list of all the cosmetic organs we've got stored to draw horns, wings and stuff with (special because we are actually in the limbs unlike normal organs :/ )
+	var/list/obj/item/organ/cosmetic_organs = list()
 	///A list of all bodypart overlays to draw
 	var/list/bodypart_overlays = list()
 
@@ -240,6 +239,8 @@
 		wounds.Cut()
 	if(owner)
 		drop_limb(TRUE)
+	for(var/external_organ in cosmetic_organs)
+		qdel(external_organ)
 	return ..()
 
 /obj/item/bodypart/forceMove(atom/destination) //Please. Never forcemove a limb if its's actually in use. This is only for borgs.
@@ -441,7 +442,7 @@
 	seep_gauze(9999) // destroy any existing gauze if any exists
 
 	for(var/obj/item/organ/bodypart_organ in get_organs())
-		bodypart_organ.transfer_to_limb(src, owner)
+		bodypart_organ.transfer_to_limb(src, null)
 
 	for(var/obj/item/item_in_bodypart in src)
 		if(istype(item_in_bodypart, /obj/item/organ))
@@ -468,7 +469,7 @@
 		return FALSE
 
 	var/list/bodypart_organs
-	for(var/obj/item/organ/organ_check as anything in owner.internal_organs) //internal organs inside the dismembered limb are dropped.
+	for(var/obj/item/organ/organ_check as anything in owner.processing_organs) //internal organs inside the dismembered limb are dropped.
 		if(check_zone(organ_check.zone) == body_zone)
 			LAZYADD(bodypart_organs, organ_check) // this way if we don't have any, it'll just return null
 
@@ -1031,7 +1032,7 @@
 	if(should_draw_greyscale) //Should the limb be colored?
 		draw_color ||= (skin_tone && skintone2hex(skin_tone))
 
-	recolor_external_organs()
+	recolor_cosmetic_organs()
 	return TRUE
 
 //to update the bodypart's icon when not attached to a mob
@@ -1144,10 +1145,11 @@
 	// And finally put bodypart_overlays on if not husked
 	if(!is_husked)
 		//Draw external organs like horns and frills
-		for(var/datum/bodypart_overlay/overlay as anything in bodypart_overlays)
-			if(!dropped && !overlay.can_draw_on_bodypart(owner)) //if you want different checks for dropped bodyparts, you can insert it here
+		for(var/obj/item/organ/visual_organ in cosmetic_organs)
+			if(!dropped && !visual_organ.can_draw_on_bodypart(owner)) //if you want different checks for dropped bodyparts, you can insert it here
 				continue
 			//Some externals have multiple layers for background, foreground and between
+			. += visual_organ.get_overlays(limb_gender, image_dir)
 			for(var/external_layer in overlay.all_layers)
 				if(overlay.layers & external_layer)
 					. += overlay.get_overlay(external_layer, src)
@@ -1351,8 +1353,8 @@
 		SEND_SIGNAL(src, COMSIG_BODYPART_GAUZE_DESTROYED)
 
 ///Loops through all of the bodypart's external organs and update's their color.
-/obj/item/bodypart/proc/recolor_external_organs()
-	for(var/datum/bodypart_overlay/mutant/overlay in bodypart_overlays)
+/obj/item/bodypart/proc/recolor_cosmetic_organs()
+	for(var/obj/item/organ/ext_organ as anything in cosmetic_organs)
 		overlay.inherit_color(src, force = TRUE)
 
 ///A multi-purpose setter for all things immediately important to the icon and iconstate of the limb.

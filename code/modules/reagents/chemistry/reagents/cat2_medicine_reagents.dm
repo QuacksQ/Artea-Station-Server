@@ -136,7 +136,7 @@
 	. = TRUE
 
 /datum/reagent/medicine/c2/probital/on_transfer(atom/A, methods=INGEST, trans_volume)
-	if(!(methods & INGEST) || (!iscarbon(A) && !istype(A, /obj/item/organ/internal/stomach)) )
+	if(!(methods & INGEST) || (!iscarbon(A) && !istype(A, /obj/item/organ/stomach)) )
 		return
 
 	A.reagents.remove_reagent(/datum/reagent/medicine/c2/probital, trans_volume * 0.05)
@@ -370,7 +370,7 @@
 	var/mob/living/carbon/C = A
 	if(trans_volume >= 0.6) //prevents cheesing with ultralow doses.
 		C.adjustToxLoss((-1.5 * min(2, trans_volume) * REM), FALSE, required_biotype = affected_biotype)	  //This is to promote iv pole use for that chemotherapy feel.
-	var/obj/item/organ/internal/liver/L = C.internal_organs_slot[ORGAN_SLOT_LIVER]
+	var/obj/item/organ/liver/L = C.organs_by_slot[ORGAN_SLOT_LIVER]
 	if((L.organ_flags & ORGAN_FAILING) || !L)
 		return
 	conversion_amount = (trans_volume * (min(100 -C.getOrganLoss(ORGAN_SLOT_LIVER), 80) / 100)) //the more damaged the liver the worse we metabolize.

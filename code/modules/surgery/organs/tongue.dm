@@ -1,4 +1,4 @@
-/obj/item/organ/internal/tongue
+/obj/item/organ/tongue
 	name = "tongue"
 	desc = "A fleshy muscle mostly used for lying."
 	icon_state = "tongue"
@@ -37,21 +37,23 @@
 		/datum/language/nekomimetic
 	))
 
-/obj/item/organ/internal/tongue/Initialize(mapload)
+/obj/item/organ/tongue/Initialize(mapload)
 	. = ..()
 	languages_possible = languages_possible_base
 
-/obj/item/organ/internal/tongue/proc/handle_speech(datum/source, list/speech_args)
+/obj/item/organ/tongue/proc/handle_speech(datum/source, list/speech_args)
 	SIGNAL_HANDLER
 	if(speech_args[SPEECH_LANGUAGE] in languages_native)
 		return FALSE //no changes
 	modify_speech(source, speech_args)
 
-/obj/item/organ/internal/tongue/proc/modify_speech(datum/source, list/speech_args)
+/obj/item/organ/tongue/proc/modify_speech(datum/source, list/speech_args)
 	return speech_args[SPEECH_MESSAGE]
 
-/obj/item/organ/internal/tongue/Insert(mob/living/carbon/tongue_owner, special = FALSE, drop_if_replaced = TRUE)
+/obj/item/organ/tongue/Insert(mob/living/carbon/tongue_owner, special = FALSE, drop_if_replaced = TRUE)
 	. = ..()
+	if(!.)
+		return
 	ADD_TRAIT(tongue_owner, TRAIT_SPEAKS_CLEARLY, SPEAKING_FROM_TONGUE)
 	if (modifies_speech)
 		RegisterSignal(tongue_owner, COMSIG_MOB_SAY, PROC_REF(handle_speech))
@@ -65,7 +67,7 @@
 	if(!sense_of_taste)
 		ADD_TRAIT(tongue_owner, TRAIT_AGEUSIA, ORGAN_TRAIT)
 
-/obj/item/organ/internal/tongue/Remove(mob/living/carbon/tongue_owner, special = FALSE)
+/obj/item/organ/tongue/Remove(mob/living/carbon/tongue_owner, special = FALSE)
 	. = ..()
 	REMOVE_TRAIT(tongue_owner, TRAIT_SPEAKS_CLEARLY, SPEAKING_FROM_TONGUE)
 	temp_say_mod = ""
@@ -74,13 +76,13 @@
 	// Carbons by default start with NO_TONGUE_TRAIT caused TRAIT_AGEUSIA
 	ADD_TRAIT(tongue_owner, TRAIT_AGEUSIA, NO_TONGUE_TRAIT)
 
-/obj/item/organ/internal/tongue/could_speak_language(language)
+/obj/item/organ/tongue/could_speak_language(language)
 	return is_type_in_typecache(language, languages_possible)
 
-/obj/item/organ/internal/tongue/get_availability(datum/species/owner_species, mob/living/owner_mob)
+/obj/item/organ/tongue/get_availability(datum/species/owner_species, mob/living/owner_mob)
 	return owner_species.mutanttongue
 
-/obj/item/organ/internal/tongue/lizard
+/obj/item/organ/tongue/lizard
 	name = "forked tongue"
 	desc = "A thin and long muscle typically found in reptilian races, apparently moonlights as a nose."
 	icon_state = "tonguelizard"
@@ -89,7 +91,7 @@
 	modifies_speech = TRUE
 	languages_native = list(/datum/language/draconic)
 
-/obj/item/organ/internal/tongue/lizard/modify_speech(datum/source, list/speech_args)
+/obj/item/organ/tongue/lizard/modify_speech(datum/source, list/speech_args)
 	var/static/regex/lizard_hiss = new("s+", "g")
 	var/static/regex/lizard_hiSS = new("S+", "g")
 	var/static/regex/lizard_kss = new(@"(\w)x", "g")
@@ -106,7 +108,7 @@
 		message = lizard_eckS.Replace(message, "ECKS$1")
 	speech_args[SPEECH_MESSAGE] = message
 
-/obj/item/organ/internal/tongue/lizard/silver
+/obj/item/organ/tongue/lizard/silver
 	name = "silver tongue"
 	desc = "A genetic branch of the high society Silver Scales that gives them their silverizing properties. To them, it is everything, and society traitors have their tongue forcibly revoked. Oddly enough, it itself is just blue."
 	icon_state = "silvertongue"
@@ -186,7 +188,7 @@
 				qdel(dropped)
 	qdel(owner)
 
-/obj/item/organ/internal/tongue/fly
+/obj/item/organ/tongue/fly
 	name = "proboscis"
 	desc = "A freakish looking meat tube that apparently can take in liquids."
 	icon = 'icons/obj/medical/organs/fly_organs.dmi'
@@ -211,7 +213,7 @@
 		/datum/language/buzzwords
 	))
 
-/obj/item/organ/internal/tongue/fly/modify_speech(datum/source, list/speech_args)
+/obj/item/organ/tongue/fly/modify_speech(datum/source, list/speech_args)
 	var/static/regex/fly_buzz = new("z+", "g")
 	var/static/regex/fly_buZZ = new("Z+", "g")
 	var/message = speech_args[SPEECH_MESSAGE]
@@ -222,11 +224,11 @@
 		message = replacetext(message, "S", "Z")
 	speech_args[SPEECH_MESSAGE] = message
 
-/obj/item/organ/internal/tongue/fly/Initialize(mapload)
+/obj/item/organ/tongue/fly/Initialize(mapload)
 	. = ..()
 	languages_possible = languages_possible_fly
 
-/obj/item/organ/internal/tongue/abductor
+/obj/item/organ/tongue/abductor
 	name = "superlingual matrix"
 	desc = "A mysterious structure that allows for instant communication between users. Pretty impressive until you need to eat something."
 	icon_state = "tongueayylmao"
@@ -235,11 +237,11 @@
 	modifies_speech = TRUE
 	var/mothership
 
-/obj/item/organ/internal/tongue/abductor/attack_self(mob/living/carbon/human/tongue_holder)
+/obj/item/organ/tongue/abductor/attack_self(mob/living/carbon/human/tongue_holder)
 	if(!istype(tongue_holder))
 		return
 
-	var/obj/item/organ/internal/tongue/abductor/tongue = tongue_holder.getorganslot(ORGAN_SLOT_TONGUE)
+	var/obj/item/organ/tongue/abductor/tongue = tongue_holder.getorganslot(ORGAN_SLOT_TONGUE)
 	if(!istype(tongue))
 		return
 
@@ -251,7 +253,7 @@
 		to_chat(tongue_holder, span_notice("You attune [src] to your own channel."))
 		mothership = tongue.mothership
 
-/obj/item/organ/internal/tongue/abductor/examine(mob/examining_mob)
+/obj/item/organ/tongue/abductor/examine(mob/examining_mob)
 	. = ..()
 	if(HAS_TRAIT(examining_mob, TRAIT_ABDUCTOR_TRAINING) || (examining_mob.mind && HAS_TRAIT(examining_mob.mind, TRAIT_ABDUCTOR_TRAINING)) || isobserver(examining_mob))
 		. += span_notice("It can be attuned to a different channel by using it inhand.")
@@ -260,14 +262,14 @@
 		else
 			. += span_notice("It is attuned to [mothership].")
 
-/obj/item/organ/internal/tongue/abductor/modify_speech(datum/source, list/speech_args)
+/obj/item/organ/tongue/abductor/modify_speech(datum/source, list/speech_args)
 	//Hacks
 	var/message = speech_args[SPEECH_MESSAGE]
 	var/mob/living/carbon/human/user = source
 	var/rendered = span_abductor("<b>[user.real_name]:</b> [message]")
 	user.log_talk(message, LOG_SAY, tag=SPECIES_ABDUCTOR)
 	for(var/mob/living/carbon/human/living_mob in GLOB.alive_mob_list)
-		var/obj/item/organ/internal/tongue/abductor/tongue = living_mob.getorganslot(ORGAN_SLOT_TONGUE)
+		var/obj/item/organ/tongue/abductor/tongue = living_mob.getorganslot(ORGAN_SLOT_TONGUE)
 		if(!istype(tongue))
 			continue
 		if(mothership == tongue.mothership)
@@ -279,7 +281,7 @@
 
 	speech_args[SPEECH_MESSAGE] = ""
 
-/obj/item/organ/internal/tongue/zombie
+/obj/item/organ/tongue/zombie
 	name = "rotting tongue"
 	desc = "Between the decay and the fact that it's just lying there you doubt a tongue has ever seemed less sexy."
 	icon_state = "tonguezombie"
@@ -290,14 +292,14 @@
 // List of english words that translate to zombie phrases
 GLOBAL_LIST_INIT(english_to_zombie, list())
 
-/obj/item/organ/internal/tongue/zombie/proc/add_word_to_translations(english_word, zombie_word)
+/obj/item/organ/tongue/zombie/proc/add_word_to_translations(english_word, zombie_word)
 	GLOB.english_to_zombie[english_word] = zombie_word
 	// zombies don't care about grammar (any tense or form is all translated to the same word)
 	GLOB.english_to_zombie[english_word + plural_s(english_word)] = zombie_word
 	GLOB.english_to_zombie[english_word + "ing"] = zombie_word
 	GLOB.english_to_zombie[english_word + "ed"] = zombie_word
 
-/obj/item/organ/internal/tongue/zombie/proc/load_zombie_translations()
+/obj/item/organ/tongue/zombie/proc/load_zombie_translations()
 	var/list/zombie_translation = strings("zombie_replacement.json", "zombie")
 	for(var/zombie_word in zombie_translation)
 		// since zombie words are a reverse list, we gotta do this backwards
@@ -306,7 +308,7 @@ GLOBAL_LIST_INIT(english_to_zombie, list())
 			add_word_to_translations(english_word, zombie_word)
 	GLOB.english_to_zombie = sort_list(GLOB.english_to_zombie) // Alphabetizes the list (for debugging)
 
-/obj/item/organ/internal/tongue/zombie/modify_speech(datum/source, list/speech_args)
+/obj/item/organ/tongue/zombie/modify_speech(datum/source, list/speech_args)
 	var/message = speech_args[SPEECH_MESSAGE]
 	if(message[1] != "*")
 		// setup the global list for translation if it hasn't already been done
@@ -344,7 +346,7 @@ GLOBAL_LIST_INIT(english_to_zombie, list())
 		message = capitalize(message)
 		speech_args[SPEECH_MESSAGE] = message
 
-/obj/item/organ/internal/tongue/alien
+/obj/item/organ/tongue/alien
 	name = "alien tongue"
 	desc = "According to leading xenobiologists the evolutionary benefit of having a second mouth in your mouth is \"that it looks badass\"."
 	icon_state = "tonguexeno"
@@ -357,14 +359,14 @@ GLOBAL_LIST_INIT(english_to_zombie, list())
 		/datum/language/draconic,
 		/datum/language/monkey))
 
-/obj/item/organ/internal/tongue/alien/Initialize(mapload)
+/obj/item/organ/tongue/alien/Initialize(mapload)
 	. = ..()
 	languages_possible = languages_possible_alien
 
-/obj/item/organ/internal/tongue/alien/modify_speech(datum/source, list/speech_args)
+/obj/item/organ/tongue/alien/modify_speech(datum/source, list/speech_args)
 	playsound(owner, SFX_HISS, 25, TRUE, TRUE)
 
-/obj/item/organ/internal/tongue/bone
+/obj/item/organ/tongue/bone
 	name = "bone \"tongue\""
 	desc = "Apparently skeletons alter the sounds they produce through oscillation of their teeth, hence their characteristic rattling."
 	icon_state = "tonguebone"
@@ -393,12 +395,12 @@ GLOBAL_LIST_INIT(english_to_zombie, list())
 		/datum/language/calcic
 	))
 
-/obj/item/organ/internal/tongue/bone/Initialize(mapload)
+/obj/item/organ/tongue/bone/Initialize(mapload)
 	. = ..()
 	phomeme_type = pick(phomeme_types)
 	languages_possible = languages_possible_skeleton
 
-/obj/item/organ/internal/tongue/bone/modify_speech(datum/source, list/speech_args)
+/obj/item/organ/tongue/bone/modify_speech(datum/source, list/speech_args)
 	if (chattering)
 		chatter(speech_args[SPEECH_MESSAGE], phomeme_type, source)
 	switch(phomeme_type)
@@ -407,13 +409,13 @@ GLOBAL_LIST_INIT(english_to_zombie, list())
 		if("papyrus")
 			speech_args[SPEECH_SPANS] |= SPAN_PAPYRUS
 
-/obj/item/organ/internal/tongue/bone/plasmaman
+/obj/item/organ/tongue/bone/plasmaman
 	name = "plasma bone \"tongue\""
 	desc = "Like animated skeletons, Plasmamen vibrate their teeth in order to produce speech."
 	icon_state = "tongueplasma"
 	modifies_speech = FALSE
 
-/obj/item/organ/internal/tongue/robot
+/obj/item/organ/tongue/robot
 	name = "robotic voicebox"
 	desc = "A voice synthesizer that can interface with organic lifeforms."
 	status = ORGAN_ROBOTIC
@@ -425,19 +427,19 @@ GLOBAL_LIST_INIT(english_to_zombie, list())
 	modifies_speech = TRUE
 	taste_sensitivity = 25 // not as good as an organic tongue
 
-/obj/item/organ/internal/tongue/robot/can_speak_language(language)
+/obj/item/organ/tongue/robot/can_speak_language(language)
 	return TRUE // THE MAGIC OF ELECTRONICS
 
-/obj/item/organ/internal/tongue/robot/modify_speech(datum/source, list/speech_args)
+/obj/item/organ/tongue/robot/modify_speech(datum/source, list/speech_args)
 	speech_args[SPEECH_SPANS] |= SPAN_ROBOT
 
-/obj/item/organ/internal/tongue/snail
+/obj/item/organ/tongue/snail
 	name = "radula"
 	color = "#96DB00" // TODO proper sprite, rather than recoloured pink tongue
 	desc = "A minutely toothed, chitious ribbon, which as a side effect, makes all snails talk IINNCCRREEDDIIBBLLYY SSLLOOWWLLYY."
 	modifies_speech = TRUE
 
-/obj/item/organ/internal/tongue/snail/modify_speech(datum/source, list/speech_args)
+/obj/item/organ/tongue/snail/modify_speech(datum/source, list/speech_args)
 	var/new_message
 	var/message = speech_args[SPEECH_MESSAGE]
 	for(var/i in 1 to length(message))
@@ -447,7 +449,7 @@ GLOBAL_LIST_INIT(english_to_zombie, list())
 			new_message += message[i]
 	speech_args[SPEECH_MESSAGE] = new_message
 
-/obj/item/organ/internal/tongue/ethereal
+/obj/item/organ/tongue/ethereal
 	name = "electric discharger"
 	desc = "A sophisticated ethereal organ, capable of synthesising speech via electrical discharge."
 	icon_state = "electrotongue"
@@ -472,16 +474,16 @@ GLOBAL_LIST_INIT(english_to_zombie, list())
 		/datum/language/voltaic
 	))
 
-/obj/item/organ/internal/tongue/ethereal/Initialize(mapload)
+/obj/item/organ/tongue/ethereal/Initialize(mapload)
 	. = ..()
 	languages_possible = languages_possible_ethereal
 
-/obj/item/organ/internal/tongue/cat
+/obj/item/orga/tongue/cat
 	name = "felinid tongue"
 	desc = "A fleshy muscle mostly used for meowing."
 	say_mod = "meows"
 
-/obj/item/organ/internal/tongue/bananium
+/obj/item/organ/tongue/bananium
 	name = "bananium tongue"
 	desc = "A bananium geode mostly used for honking."
 	say_mod = "honks"
@@ -491,27 +493,27 @@ GLOBAL_LIST_INIT(english_to_zombie, list())
 	righthand_file = 'icons/mob/inhands/equipment/horns_righthand.dmi'
 	icon_state = "gold_horn"
 
-/obj/item/organ/internal/tongue/jelly
+/obj/item/organ/tongue/jelly
 	name = "jelly tongue"
 	desc = "Ah... That's not the sound I expected it to make. Sounds like a Space Autumn Bird."
 	say_mod = "chirps"
 
-/obj/item/organ/internal/tongue/monkey
+/obj/item/organ/tongue/monkey
 	name = "primitive tongue"
 	desc = "For aggressively chimpering. And consuming bananas."
 	say_mod = "chimpers"
 
-/obj/item/organ/internal/tongue/moth
+/obj/item/organ/tongue/moth
 	name = "moth tongue"
 	desc = "Moths don't have tongues. Someone get god on the phone, tell them I'm not happy."
 	say_mod = "flutters"
 
-/obj/item/organ/internal/tongue/zombie
+/obj/item/organ/tongue/zombie
 	name = "rotting tongue"
 	desc = "Makes you speak like you're at the dentist and you just absolutely refuse to spit because you forgot to mention you were allergic to space shellfish."
 	say_mod = "moans"
 
-/obj/item/organ/internal/tongue/mush
+/obj/item/organ/tongue/mush
 	name = "mush-tongue-room"
 	desc = "You poof with this. Got it?"
 	say_mod = "poofs"
@@ -519,7 +521,7 @@ GLOBAL_LIST_INIT(english_to_zombie, list())
 	icon = 'icons/obj/hydroponics/seeds.dmi'
 	icon_state = "mycelium-angel"
 
-/obj/item/organ/internal/tongue/synth
+/obj/item/organ/tongue/synth
 	name = "synthetic voicebox"
 	desc = "A voice synthesizer that allows synths to communicate with lifeforms. Tuned to sound less agressive than robotic voiceboxes."
 	status = ORGAN_ROBOTIC
@@ -531,5 +533,5 @@ GLOBAL_LIST_INIT(english_to_zombie, list())
 	maxHealth = 100 //RoboTongue!
 	organ_flags = ORGAN_SYNTHETIC
 
-/obj/item/organ/internal/tongue/synth/handle_speech(datum/source, list/speech_args)
+/obj/item/organ/tongue/synth/handle_speech(datum/source, list/speech_args)
 	speech_args[SPEECH_SPANS] |= SPAN_ROBOT

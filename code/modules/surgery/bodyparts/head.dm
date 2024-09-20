@@ -28,10 +28,10 @@
 	bodypart_flags = STOCK_BP_FLAGS_HEAD
 
 	var/mob/living/brain/brainmob //The current occupant.
-	var/obj/item/organ/internal/brain/brain //The brain organ
-	var/obj/item/organ/internal/eyes/eyes
-	var/obj/item/organ/internal/ears/ears
-	var/obj/item/organ/internal/tongue/tongue
+	var/obj/item/organ/brain/brain //The brain organ
+	var/obj/item/organ/eyes/eyes
+	var/obj/item/organ/ears/ears
+	var/obj/item/organ/tongue/tongue
 
 	/// Do we show the information about missing organs upon being examined? Defaults to TRUE, useful for Dullahan heads.
 	var/show_organs_on_examine = TRUE

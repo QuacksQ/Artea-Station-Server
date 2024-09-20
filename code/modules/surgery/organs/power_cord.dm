@@ -5,7 +5,7 @@
 #define SYNTH_DRAW_NUTRITION_BUFFER 30
 #define SYNTH_APC_MINIMUM_PERCENT 20
 
-/obj/item/organ/internal/cyberimp/arm/power_cord
+/obj/item/organ/cyberimp/arm/power_cord
 	name = "power cord implant"
 	desc = "An internal power cord. Useful if you run on elecricity. Not so much otherwise."
 	contents = newlist(/obj/item/apc_powercord)
@@ -24,7 +24,7 @@
 	user.changeNext_move(CLICK_CD_MELEE)
 	var/obj/machinery/power/apc/target_apc = target
 	var/mob/living/carbon/human/ipc = user
-	var/obj/item/organ/internal/stomach/synth/cell = ipc.internal_organs_slot[ORGAN_SLOT_STOMACH]
+	var/obj/item/organ/stomach/synth/cell = ipc.internal_organs_slot[ORGAN_SLOT_STOMACH]
 
 	if(!cell)
 		to_chat(ipc, span_warning("You try to siphon energy from the [target_apc], but you have no stomach! How are you still standing?"))
