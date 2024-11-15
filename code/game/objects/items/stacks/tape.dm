@@ -12,7 +12,7 @@
 	max_amount = 5
 	resistance_flags = FLAMMABLE
 	grind_results = list(/datum/reagent/cellulose = 5)
-	splint_factor = 0.65
+	splint_factor = 4
 	merge_type = /obj/item/stack/sticky_tape
 	var/list/conferred_embed = EMBED_HARMLESS
 	///The tape type you get when ripping off a piece of tape.
@@ -82,7 +82,7 @@
 	desc = "Quite possibly the most mischevious substance in the galaxy. Use with extreme lack of caution."
 	prefix = "super sticky"
 	conferred_embed = EMBED_HARMLESS_SUPERIOR
-	splint_factor = 0.4
+	splint_factor = 6
 	merge_type = /obj/item/stack/sticky_tape/super
 	greyscale_colors = "#4D4D4D#75433F"
 	tape_gag = /obj/item/clothing/mask/muzzle/tape/super
@@ -115,7 +115,7 @@
 	desc = "Made for patching broken bones back together alongside bone gel, not for playing pranks."
 	prefix = "surgical"
 	conferred_embed = list("embed_chance" = 30, "pain_mult" = 0, "jostle_pain_mult" = 0, "ignore_throwspeed_threshold" = TRUE)
-	splint_factor = 0.5
+	splint_factor = 3
 	custom_price = PAYCHECK_CREW
 	merge_type = /obj/item/stack/sticky_tape/surgical
 	greyscale_colors = "#70BAE7#BD6A62"

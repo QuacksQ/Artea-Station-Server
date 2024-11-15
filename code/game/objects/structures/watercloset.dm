@@ -411,8 +411,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sink, (-14))
 		to_chat(user, span_notice("You remove the water reclaimer from [src]"))
 		return
 
-	if(istype(O, /obj/item/stack/medical/gauze))
-		var/obj/item/stack/medical/gauze/G = O
+	if(istype(O, /obj/item/stack/gauze))
+		var/obj/item/stack/gauze/G = O
 		new /obj/item/reagent_containers/cup/rag(src.loc)
 		to_chat(user, span_notice("You tear off a strip of gauze and make a rag."))
 		G.use(1)
@@ -640,8 +640,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sink/kitchen, (-16))
 		playsound(loc, 'sound/effects/slosh.ogg', 25, TRUE)
 		return
 
-	if(istype(O, /obj/item/stack/medical/gauze))
-		var/obj/item/stack/medical/gauze/G = O
+	if(istype(O, /obj/item/stack/gauze))
+		var/obj/item/stack/gauze/G = O
 		new /obj/item/reagent_containers/cup/rag(loc)
 		to_chat(user, span_notice("You tear off a strip of gauze and make a rag."))
 		G.use(1)

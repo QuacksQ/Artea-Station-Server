@@ -50,6 +50,8 @@
 			uplink.uplink_handler = uplink_handler
 		else
 			uplink_handler = uplink.uplink_handler
+		if(isturf(uplink_handler))
+			stack_trace("what")
 		uplink_handler.has_progression = progression_enabled
 		SStraitor.register_uplink_handler(uplink_handler)
 

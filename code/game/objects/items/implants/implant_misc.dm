@@ -31,6 +31,8 @@
 
 /obj/item/implant/radio
 	name = "internal radio implant"
+	implant_flags = IMPLANT_KNOWN
+
 	var/obj/item/radio/radio
 	var/radio_key
 	var/subspace_transmission = FALSE
