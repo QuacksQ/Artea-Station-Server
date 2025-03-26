@@ -740,7 +740,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 							if(O.dismember())
 								C.visible_message(span_danger("[O] explodes in a shower of gore beneath [src]!"), \
 									span_userdanger("Oh f-"))
-								O.drop_organs()
+								O.drop_contents()
 								qdel(O)
 								new /obj/effect/gibspawner/human/bodypartless(get_turf(C))
 

@@ -220,72 +220,6 @@
 	w_class = WEIGHT_CLASS_SMALL
 	toolspeed = 0.5
 
-
-/obj/item/surgical_drapes
-	name = "surgical drapes"
-	desc = "Artea brand surgical drapes provide optimal safety and infection control."
-	icon = 'icons/obj/medical/surgery_tools.dmi'
-	icon_state = "surgical_drapes"
-	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
-	inhand_icon_state = "drapes"
-	w_class = WEIGHT_CLASS_TINY
-	attack_verb_continuous = list("slaps")
-	attack_verb_simple = list("slap")
-
-/obj/item/surgical_drapes/Initialize(mapload)
-	. = ..()
-	AddComponent(/datum/component/surgery_initiator)
-
-
-/obj/item/surgical_processor //allows medical cyborgs to scan and initiate advanced surgeries
-	name = "surgical processor"
-	desc = "A device for scanning and initiating surgeries from a disk or operating computer."
-	icon = 'icons/obj/device.dmi'
-	icon_state = "spectrometer"
-	item_flags = NOBLUDGEON
-	var/list/loaded_surgeries = list()
-
-/obj/item/surgical_processor/equipped(mob/user, slot, initial)
-	. = ..()
-	if(slot != ITEM_SLOT_HANDS)
-		UnregisterSignal(user, COMSIG_SURGERY_STARTING)
-		return
-	RegisterSignal(user, COMSIG_SURGERY_STARTING, PROC_REF(check_surgery))
-
-/obj/item/surgical_processor/dropped(mob/user, silent)
-	. = ..()
-	UnregisterSignal(user, COMSIG_SURGERY_STARTING)
-
-/obj/item/surgical_processor/cyborg_unequip(mob/user)
-	. = ..()
-	UnregisterSignal(user, COMSIG_SURGERY_STARTING)
-
-/obj/item/surgical_processor/afterattack(atom/design_holder, mob/user, proximity)
-	if(!proximity)
-		return ..()
-	if(!istype(design_holder, /obj/item/disk/surgery) && !istype(design_holder, /obj/machinery/computer/operating))
-		return ..()
-	balloon_alert(user, "copying designs...")
-	playsound(src, 'sound/machines/terminal_processing.ogg', 25, TRUE)
-	if(do_after(user, 1 SECONDS, target = design_holder))
-		if(istype(design_holder, /obj/item/disk/surgery))
-			var/obj/item/disk/surgery/surgery_disk = design_holder
-			loaded_surgeries |= surgery_disk.surgeries
-		else
-			var/obj/machinery/computer/operating/surgery_computer = design_holder
-			loaded_surgeries |= surgery_computer.advanced_surgeries
-		playsound(src, 'sound/machines/terminal_success.ogg', 25, TRUE)
-	return TRUE
-
-/obj/item/surgical_processor/proc/check_surgery(mob/user, datum/surgery/surgery, mob/patient)
-	SIGNAL_HANDLER
-
-	if(surgery.replaced_by in loaded_surgeries)
-		return COMPONENT_CANCEL_SURGERY
-	if(surgery.type in loaded_surgeries)
-		return COMPONENT_FORCE_SURGERY
-
 /obj/item/scalpel/advanced
 	name = "laser scalpel"
 	desc = "An advanced scalpel which uses laser technology to cut."
@@ -522,3 +456,12 @@
 			var/chem_name = params["reagent"]
 			var/chem_id = get_chem_id(chem_name)
 			whitelist -= chem_id
+
+/obj/item/fixovein
+	name = "vascular recoupler"
+	desc = "Derived from a Vey-Med design, this miniature 3D printer is used to quickly synthetize and thread new organic tissue during surgical procedures."
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "fixovein"
+	force = 0
+	throwforce = 1.0
+	w_class = WEIGHT_CLASS_SMALL

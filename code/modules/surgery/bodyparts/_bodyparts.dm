@@ -1043,6 +1043,9 @@
 	SHOULD_CALL_PARENT(TRUE)
 
 	cut_overlays()
+	if(is_stump)
+		return
+
 	dir = SOUTH
 	var/list/standing = get_limb_icon(TRUE)
 	if(!standing.len)
