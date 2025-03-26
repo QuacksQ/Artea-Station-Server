@@ -27,6 +27,13 @@
 
 	bodypart_flags = STOCK_BP_FLAGS_HEAD
 
+	amputation_point = "neck"
+	encased = "skull"
+	artery_name = "carotid artery"
+	cavity_name = "cranial"
+
+	minimum_break_damage = 30
+
 	var/mob/living/brain/brainmob //The current occupant.
 	var/obj/item/organ/brain/brain //The brain organ
 	var/obj/item/organ/eyes/eyes
@@ -139,7 +146,7 @@
 		return FALSE
 	return ..()
 
-/obj/item/bodypart/head/drop_organs(mob/user, violent_removal)
+/obj/item/bodypart/head/drop_contents(mob/user, violent_removal)
 	var/atom/drop_loc = drop_location()
 	for(var/obj/item/head_item in src.contents)
 		if(head_item == brain)
@@ -160,11 +167,7 @@
 			if(istype(head_item, /obj/item/reagent_containers/pill))
 				for(var/datum/action/item_action/hands_free/activate_pill/pill_action in head_item.actions)
 					qdel(pill_action)
-			else if(isorgan(head_item))
-				var/obj/item/organ/organ = head_item
-				if(organ.organ_flags & ORGAN_UNREMOVABLE)
-					continue
-			head_item.forceMove(drop_loc)
+
 	eyes = null
 	ears = null
 	tongue = null
