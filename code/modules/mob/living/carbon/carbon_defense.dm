@@ -149,14 +149,6 @@
 		if(D.spread_flags & DISEASE_SPREAD_CONTACT_SKIN)
 			ContactContractDisease(D)
 
-	for(var/datum/surgery/operations as anything in surgeries)
-		if(user.combat_mode)
-			break
-		if(body_position != LYING_DOWN && (operations.surgery_flags & SURGERY_REQUIRE_RESTING))
-			continue
-		if(operations.next_step(user, modifiers))
-			return TRUE
-
 	return FALSE
 
 
@@ -708,7 +700,7 @@
 		to_chat(user, span_warning("You stop holding onto your[grasped_part ? " [grasped_part.name]" : "self"]."))
 		UnregisterSignal(user, COMSIG_PARENT_QDELETING)
 	if(grasped_part)
-		UnregisterSignal(grasped_part, list(COMSIG_CARBON_REMOVE_LIMB, COMSIG_PARENT_QDELETING))
+		UnregisterSignal(grasped_part, list(COMSIG_CARBON_REMOVED_LIMB, COMSIG_PARENT_QDELETING))
 		grasped_part.grasped_by = null
 		grasped_part.refresh_bleed_rate()
 	grasped_part = null
@@ -732,7 +724,7 @@
 	grasped_part.grasped_by = src
 	grasped_part.refresh_bleed_rate()
 	RegisterSignal(user, COMSIG_PARENT_QDELETING, PROC_REF(qdel_void))
-	RegisterSignal(grasped_part, list(COMSIG_CARBON_REMOVE_LIMB, COMSIG_PARENT_QDELETING), PROC_REF(qdel_void))
+	RegisterSignal(grasped_part, list(COMSIG_CARBON_REMOVED_LIMB, COMSIG_PARENT_QDELETING), PROC_REF(qdel_void))
 
 	var/bleed_rate = grasped_part.get_modified_bleed_rate()
 	var/bleeding_text = (bleed_rate ? ", trying to stop the bleeding" : "")

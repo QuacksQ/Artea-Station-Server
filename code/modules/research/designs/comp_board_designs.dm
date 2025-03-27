@@ -88,16 +88,6 @@
 	)
 	departmental_flags = DEPARTMENT_BITFLAG_MEDICAL
 
-/datum/design/board/operating
-	name = "Operating Computer Board"
-	desc = "Allows for the construction of circuit boards used to build an operating computer console."
-	id = "operating"
-	build_path = /obj/item/circuitboard/computer/operating
-	category = list(
-		RND_CATEGORY_COMPUTER + RND_SUBCATEGORY_COMPUTER_MEDICAL
-	)
-	departmental_flags = DEPARTMENT_BITFLAG_MEDICAL | DEPARTMENT_BITFLAG_ENGINEERING
-
 /datum/design/board/pandemic
 	name = "PanD.E.M.I.C. 2200 Board"
 	desc = "Allows for the construction of circuit boards used to build a PanD.E.M.I.C. 2200 console."
@@ -380,6 +370,28 @@
 	id = "chef_order_console"
 	build_path = /obj/item/circuitboard/computer/chef_order
 	category = list(
-		RND_CATEGORY_COMPUTER + RND_SUBCATEGORY_COMPUTER_ENTERTAINMENT
+		RND_CATEGORY_COMPUTE
 	)
 	departmental_flags = DEPARTMENT_BITFLAG_SERVICE
+
+/datum/design/board/bodyscanner
+	name = "Circuit Board (Body Scanner)"
+	desc = "Allows for the construction of circuit boards used to assess the wealth of crewmates on station."
+	id = "bodyscanner"
+	build_type = IMPRINTER
+	build_path = /obj/item/circuitboard/machine/bodyscanner
+	category = list(
+		RND_CATEGORY_COMPUTER + RND_SUBCATEGORY_COMPUTER_MEDICAL
+	)
+	departmental_flags = DEPARTMENT_BITFLAG_MEDICAL
+
+/datum/design/board/bodyscanner_console
+	name = "Circuit Board (Body Scanner)"
+	desc = "Allows for the construction of circuit boards used to assess the wealth of crewmates on station."
+	id = "bodyscanner_console"
+	build_type = IMPRINTER
+	build_path = /obj/item/circuitboard/machine/bodyscanner_console
+	category = list(
+		RND_CATEGORY_COMPUTER + RND_SUBCATEGORY_COMPUTER_MEDICAL
+	)
+	departmental_flags = DEPARTMENT_BITFLAG_MEDICAL

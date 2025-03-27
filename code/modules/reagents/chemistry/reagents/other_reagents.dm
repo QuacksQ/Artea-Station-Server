@@ -983,14 +983,6 @@
 	taste_description = "bitterness"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
-/datum/reagent/space_cleaner/sterilizine/expose_mob(mob/living/carbon/exposed_carbon, methods=TOUCH, reac_volume)
-	. = ..()
-	if(!(methods & (TOUCH|VAPOR|PATCH)))
-		return
-
-	for(var/datum/surgery/surgery as anything in exposed_carbon.surgeries)
-		surgery.speed_modifier = max(0.2, surgery.speed_modifier)
-
 /datum/reagent/iron
 	name = "Iron"
 	description = "Pure iron is a metal."

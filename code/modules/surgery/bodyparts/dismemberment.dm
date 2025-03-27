@@ -30,6 +30,8 @@
 	if (wounding_type)
 		LAZYSET(limb_owner.body_zone_dismembered_by, body_zone, wounding_type)
 
+	// We need to create a stump *now* incase the limb being dropped destroys it or otherwise changes it.
+	var/obj/item/bodypart/stump = create_stump()
 	drop_limb()
 
 	limb_owner.update_equipment_speed_mods() // Update in case speed affecting item unequipped by dismemberment
@@ -37,13 +39,15 @@
 	if(wounding_type != WOUND_BURN && istype(owner_location) && can_bleed())
 		limb_owner.add_splatter_floor(owner_location)
 
+	// * Stumpty Dumpty *//
+	var/obj/item/bodypart/chest/parent_chest = limb_owner.get_bodypart(BODY_ZONE_CHEST)
+	if(!QDELETED(parent_chest) && !QDELETED(limb_owner))
+		var/datum/wound/lost_limb/W = new(stump, dismember_type, clean)
+		LAZYADD(stump.wounds, W)
+		stump.attach_limb(limb_owner)
+
 	if(QDELETED(src)) //Could have dropped into lava/explosion/chasm/whatever
 		return TRUE
-
-	var/obj/item/bodypart/chest/parent_chest = limb_owner.get_bodypart(BODY_ZONE_CHEST)
-	if(!QDELETED(parent_chest))
-		var/datum/wound/lost_limb/W = new(src, dismember_type, clean, parent_chest)
-		LAZYADD(parent_chest.wounds, W)
 
 	if(dismember_type == DROPLIMB_BURN)
 		burn()
@@ -70,39 +74,42 @@
 
 	return TRUE
 
-/obj/item/bodypart/chest/dismember(dam_type = BRUTE, silent=TRUE, wounding_type)
+/obj/item/bodypart/chest/dismember(dismember_type = DROPLIMB_EDGE, silent=TRUE, clean = FALSE)
 	if(!owner)
 		return FALSE
 
 	var/mob/living/carbon/chest_owner = owner
-	if(bodypart_flags & BODYPART_UNREMOVABLE)
+	if(!dismemberable)
 		return FALSE
 
 	if(HAS_TRAIT(chest_owner, TRAIT_NODISMEMBER))
 		return FALSE
+
 	. = list()
-	if(wounding_type != WOUND_BURN && isturf(chest_owner.loc) && can_bleed())
-		chest_owner.add_splatter_floor(chest_owner.loc)
+
+	var/drop_loc = chest_owner.drop_location()
+	if(isturf(drop_loc))
+		chest_owner.add_splatter_floor(drop_loc)
+
 	playsound(get_turf(chest_owner), 'sound/misc/splort.ogg', 80, TRUE)
+
 	for(var/obj/item/organ/organ as anything in chest_owner.processing_organs)
-		var/org_zone = check_zone(organ.zone)
+		var/org_zone = deprecise_zone(organ.zone)
 		if(org_zone != BODY_ZONE_CHEST)
 			continue
 		organ.Remove(chest_owner)
-		organ.forceMove(chest_owner.loc)
+		organ.forceMove(drop_loc)
 		. += organ
 
 	for(var/obj/item/organ/O in src)
 		if((O.organ_flags & ORGAN_UNREMOVABLE))
 			continue
 		O.Remove(chest_owner)
-		O.forceMove(chest_owner.loc)
+		O.forceMove(drop_loc)
 		. += O
 
-	if(cavity_item)
-		cavity_item.forceMove(chest_owner.loc)
-		. += cavity_item
-		cavity_item = null
+	for(var/obj/item/I in cavity_items)
+		I.forceMove(drop_loc)
 
 ///limb removal. The "special" argument is used for swapping a limb with a new one without the effects of losing a limb kicking in.
 /obj/item/bodypart/proc/drop_limb(special, dismembered)
@@ -110,13 +117,13 @@
 		return
 	var/atom/drop_loc = owner.drop_location()
 
-	SEND_SIGNAL(owner, COMSIG_CARBON_REMOVE_LIMB, src, dismembered)
-	SEND_SIGNAL(src, COMSIG_BODYPART_REMOVED, owner, dismembered)
+	SEND_SIGNAL(src, COMSIG_LIMB_REMOVE, owner, dismembered)
 	update_limb(TRUE)
 
 	//limb is out and about, it can't really be considered an implant
 	bodypart_flags &= ~BODYPART_IMPLANTED
 	owner.remove_bodypart(src)
+	SEND_SIGNAL(owner, COMSIG_CARBON_REMOVED_LIMB, src, dismembered)
 
 	if(held_index)
 		if(owner.hand_bodyparts[held_index] == src)
@@ -130,20 +137,22 @@
 
 	var/mob/living/carbon/phantom_owner = set_owner(null) // so we can still refer to the guy who lost their limb after said limb forgets 'em
 
-	for(var/datum/surgery/surgery as anything in phantom_owner.surgeries) //if we had an ongoing surgery on that limb, we stop it.
-		if(surgery.operated_bodypart == src)
-			phantom_owner.surgeries -= surgery
-			qdel(surgery)
-			break
+	// * Remove surgeries on this limb * //
+	remove_surgeries_from_mob(phantom_owner)
 
+	// * Remove embedded objects * //
 	for(var/obj/item/embedded in embedded_objects)
 		embedded.forceMove(src) // It'll self remove via signal reaction, just need to move it
+
 	if(!phantom_owner.has_embedded_objects())
 		phantom_owner.clear_alert(ALERT_EMBEDDED_OBJECT)
 		phantom_owner.clear_mood_event("embedded")
 
+	// * Unregister wounds from parent * //
 	for(var/datum/wound/W as anything in wounds)
 		W.unregister_from_mob(phantom_owner)
+
+	bodypart_flags |= BP_CUT_AWAY
 
 	if(!special)
 		if(phantom_owner.dna)
@@ -167,17 +176,27 @@
 	phantom_owner.update_body()
 	phantom_owner.update_body_parts()
 
-	if(!drop_loc) // drop_loc = null happens when a "dummy human" used for rendering icons on prefs screen gets its limbs replaced.
+	if(!drop_loc || is_stump) // drop_loc = null happens when a "dummy human" used for rendering icons on prefs screen gets its limbs replaced.
 		qdel(src)
 		return
 
 	if(bodypart_flags & BODYPART_PSEUDOPART)
-		drop_organs(phantom_owner) //Psuedoparts shouldn't have organs, but just in case
+		drop_contents(phantom_owner) //Psuedoparts shouldn't have organs, but just in case
 		qdel(src)
 		return
 
 	forceMove(drop_loc)
 	SEND_SIGNAL(phantom_owner, COMSIG_CARBON_POST_REMOVE_LIMB, src, dismembered)
+
+/obj/item/bodypart/proc/remove_surgeries_from_mob(mob/living/carbon/human/H)
+	LAZYREMOVE(H.surgeries_in_progress, body_zone)
+	switch(body_zone)
+		if(BODY_ZONE_HEAD)
+			LAZYREMOVE(H.surgeries_in_progress, BODY_ZONE_PRECISE_EYES)
+			LAZYREMOVE(H.surgeries_in_progress, BODY_ZONE_PRECISE_MOUTH)
+
+		if(BODY_ZONE_CHEST)
+			LAZYREMOVE(H.surgeries_in_progress, BODY_ZONE_PRECISE_GROIN)
 
 ///Transfers the organ to the limb, and to the limb's owner, if it has one. This is done on drop_limb().
 /obj/item/organ/proc/transfer_to_limb(obj/item/bodypart/bodypart, mob/living/carbon/bodypart_owner)
@@ -235,7 +254,7 @@
 	if(special)
 		return ..()
 
-/obj/item/bodypart/arm/right/drop_limb(special)
+/obj/item/bodypart/arm/drop_limb(special)
 	. = ..()
 
 	var/mob/living/carbon/arm_owner = owner
@@ -246,47 +265,18 @@
 			arm_owner.set_handcuffed(null)
 			arm_owner.update_handcuffed()
 		if(arm_owner.hud_used)
-			var/atom/movable/screen/inventory/hand/R_hand = arm_owner.hud_used.hand_slots["[held_index]"]
-			if(R_hand)
-				R_hand.update_appearance()
+			var/atom/movable/screen/inventory/hand/associated_hand = arm_owner.hud_used.hand_slots["[held_index]"]
+			if(associated_hand)
+				associated_hand.update_appearance()
 		if(arm_owner.gloves)
 			arm_owner.dropItemToGround(arm_owner.gloves, TRUE)
 		arm_owner.update_worn_gloves() //to remove the bloody hands overlay
 
 
-/obj/item/bodypart/arm/left/drop_limb(special)
-	var/mob/living/carbon/arm_owner = owner
-	. = ..()
-	if(arm_owner && !special)
-		if(arm_owner.handcuffed)
-			arm_owner.handcuffed.forceMove(drop_location())
-			arm_owner.handcuffed.dropped(arm_owner)
-			arm_owner.set_handcuffed(null)
-			arm_owner.update_handcuffed()
-		if(arm_owner.hud_used)
-			var/atom/movable/screen/inventory/hand/L_hand = arm_owner.hud_used.hand_slots["[held_index]"]
-			if(L_hand)
-				L_hand.update_appearance()
-		if(arm_owner.gloves)
-			arm_owner.dropItemToGround(arm_owner.gloves, TRUE)
-		arm_owner.update_worn_gloves() //to remove the bloody hands overlay
-
-
-/obj/item/bodypart/leg/right/drop_limb(special)
+/obj/item/bodypart/leg/drop_limb(special)
 	if(owner && !special)
 		if(owner.legcuffed)
 			owner.legcuffed.forceMove(owner.drop_location()) //At this point bodypart is still in nullspace
-			owner.legcuffed.dropped(owner)
-			owner.legcuffed = null
-			owner.update_worn_legcuffs()
-		if(owner.shoes)
-			owner.dropItemToGround(owner.shoes, TRUE)
-	return ..()
-
-/obj/item/bodypart/leg/left/drop_limb(special) //copypasta
-	if(owner && !special)
-		if(owner.legcuffed)
-			owner.legcuffed.forceMove(owner.drop_location())
 			owner.legcuffed.dropped(owner)
 			owner.legcuffed = null
 			owner.update_worn_legcuffs()
@@ -323,6 +313,15 @@
 	. = try_attach_limb(limb_owner, special)
 	if(!.) //If it failed to replace, re-attach their old limb as if nothing happened.
 		old_limb.try_attach_limb(limb_owner, TRUE)
+
+	/// Replace organs gracefully
+	for(var/obj/item/organ/O as anything in old_limb?.contained_organs)
+		O.Insert(limb_owner, TRUE)
+
+	/// Transfer cavity items like implants.
+	for(var/obj/item/I in old_limb?.cavity_items)
+		I.forceMove(src)
+		add_cavity_item(I)
 
 ///Checks if a limb qualifies as a BODYPART_IMPLANTED
 /obj/item/bodypart/proc/check_for_frankenstein(mob/living/carbon/human/monster)

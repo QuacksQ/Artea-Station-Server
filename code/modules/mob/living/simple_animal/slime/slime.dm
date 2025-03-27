@@ -343,11 +343,6 @@
 
 				discipline_slime(user)
 	else
-		if(stat == DEAD && surgeries.len)
-			if(!user.combat_mode || LAZYACCESS(modifiers, RIGHT_CLICK))
-				for(var/datum/surgery/operations as anything in surgeries)
-					if(operations.next_step(user, modifiers))
-						return TRUE
 		if(..()) //successful attack
 			attacked += 10
 
@@ -358,12 +353,6 @@
 
 
 /mob/living/simple_animal/slime/attackby(obj/item/W, mob/living/user, params)
-	if(stat == DEAD && surgeries.len)
-		var/list/modifiers = params2list(params)
-		if(!user.combat_mode || (LAZYACCESS(modifiers, RIGHT_CLICK)))
-			for(var/datum/surgery/operations as anything in surgeries)
-				if(operations.next_step(user, modifiers))
-					return TRUE
 	if(istype(W, /obj/item/stack/sheet/mineral/plasma) && !stat) //Let's you feed slimes plasma.
 		add_friendship(user, 1)
 		to_chat(user, span_notice("You feed the slime the plasma. It chirps happily."))

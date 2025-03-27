@@ -78,15 +78,6 @@
 
 	exposed_mob.adjust_fire_stacks(reac_volume / 15)
 
-	if(!iscarbon(exposed_mob))
-		return
-
-	var/mob/living/carbon/exposed_carbon = exposed_mob
-	var/power_multiplier = boozepwr / 65 // Weak alcohol has less sterilizing power
-
-	for(var/datum/surgery/surgery as anything in exposed_carbon.surgeries)
-		surgery.speed_modifier = max(0.1 * power_multiplier, surgery.speed_modifier)
-
 /datum/reagent/consumable/ethanol/beer
 	name = "Beer"
 	description = "An alcoholic beverage brewed since ancient times on Old Earth. Still popular today."

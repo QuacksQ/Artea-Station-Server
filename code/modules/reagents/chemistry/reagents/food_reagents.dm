@@ -695,15 +695,6 @@
 		M.adjustToxLoss(-1, FALSE, required_biotype = affected_biotype)
 	..()
 
-/datum/reagent/consumable/honey/expose_mob(mob/living/exposed_mob, methods=TOUCH, reac_volume)
-	. = ..()
-	if(!iscarbon(exposed_mob) || !(methods & (TOUCH|VAPOR|PATCH)))
-		return
-
-	var/mob/living/carbon/exposed_carbon = exposed_mob
-	for(var/datum/surgery/surgery as anything in exposed_carbon.surgeries)
-		surgery.speed_modifier = max(0.6, surgery.speed_modifier)
-
 /datum/reagent/consumable/mayonnaise
 	name = "Mayonnaise"
 	description = "A white and oily mixture of mixed egg yolks."

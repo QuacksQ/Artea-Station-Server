@@ -1227,6 +1227,7 @@ GLOBAL_LIST_EMPTY(features_by_species)
 				target.force_say()
 			log_combat(user, target, "kicked")
 			target.apply_damage(damage, attack_type, affecting, armor_block, attack_direction = attack_direction)
+			target.stamina.adjust(-1 * (STAMINA_DAMAGE_UNARMED*3)) //Kicks do alot of stamina damage
 		else//other attacks deal full raw damage + 1.5x in stamina damage
 			target.apply_damage(damage, attack_type, affecting, armor_block, attack_direction = attack_direction)
 			target.apply_damage(damage*1.5, STAMINA, affecting, armor_block)

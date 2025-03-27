@@ -68,14 +68,11 @@
 
 /obj/item/organ/body_egg/alien_embryo/egg_process()
 	if(stage == 6 && prob(50))
-		for(var/datum/surgery/operations as anything in owner.surgeries)
-			if(operations.location != BODY_ZONE_CHEST)
-				continue
-			if(!istype(operations.get_surgery_step(), /datum/surgery_step/manipulate_organs/internal))
-				continue
-			attempt_grow(gib_on_success = FALSE)
+		var/obj/item/bodypart/chest = owner.get_bodypart(BODY_ZONE_CHEST)
+		if(chest.how_open() == SURGERY_DEENCASED)
+			AttemptGrow(0)
 			return
-		attempt_grow()
+		AttemptGrow()
 
 ///Attempt to burst an alien outside of the host, getting a ghost to play as the xeno.
 /obj/item/organ/body_egg/alien_embryo/proc/attempt_grow(gib_on_success = TRUE)

@@ -324,14 +324,6 @@
 		if(show_message)
 			to_chat(exposed_mob, span_warning("Your stomach feels empty and cramps!"))
 
-	if(methods & (PATCH|TOUCH))
-		var/mob/living/carbon/exposed_carbon = exposed_mob
-		for(var/datum/surgery/surgery as anything in exposed_carbon.surgeries)
-			surgery.speed_modifier = max(0.1, surgery.speed_modifier)
-
-		if(show_message)
-			to_chat(exposed_carbon, span_danger("You feel your injuries fade away to nothing!") )
-
 /datum/reagent/medicine/mine_salve/on_mob_metabolize(mob/living/metabolizer)
 	. = ..()
 	metabolizer.apply_status_effect(/datum/status_effect/grouped/screwy_hud/fake_healthy, type)

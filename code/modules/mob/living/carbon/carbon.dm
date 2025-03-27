@@ -63,23 +63,6 @@
 	else
 		mode() // Activate held item
 
-/mob/living/carbon/attackby(obj/item/I, mob/living/user, params)
-	for(var/datum/surgery/operations as anything in surgeries)
-		if(user.combat_mode)
-			break
-		if(body_position != LYING_DOWN && (operations.surgery_flags & SURGERY_REQUIRE_RESTING))
-			continue
-		if(!(operations.surgery_flags & SURGERY_SELF_OPERABLE) && (user == src))
-			continue
-		var/list/modifiers = params2list(params)
-		if(operations.next_step(user, modifiers))
-			return TRUE
-
-	if(!(!user.combat_mode || user == src))
-		return ..()
-
-	return ..()
-
 /mob/living/carbon/CtrlShiftClick(mob/user)
 	..()
 	if(iscarbon(user))
@@ -204,25 +187,6 @@
 		return
 
 	create_reagents(1000, REAGENT_HOLDER_ALIVE)
-
-/mob/living/carbon/Topic(href, href_list)
-	..()
-	if(href_list["embedded_object"] && usr.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
-		var/obj/item/bodypart/L = locate(href_list["embedded_limb"]) in bodyparts
-		if(!L)
-			return
-		var/obj/item/I = locate(href_list["embedded_object"]) in L.embedded_objects
-		if(!I || I.loc != src) //no item, no limb, or item is not in limb or in the person anymore
-			return
-		SEND_SIGNAL(src, COMSIG_CARBON_EMBED_RIP, I, L)
-		return
-
-	if(href_list["show_paper_note"])
-		var/obj/item/paper/paper_note = locate(href_list["show_paper_note"])
-		if(!paper_note)
-			return
-
-		paper_note.show_through_camera(usr)
 
 /mob/living/carbon/on_fall()
 	. = ..()
@@ -980,6 +944,7 @@
 				bodypart_instance.held_index = r_arm_index_next //2, 4, 6, 8...
 				hand_bodyparts += bodypart_instance
 
+	sortTim(bodyparts, GLOBAL_PROC_REF(cmp_bodypart_by_body_part_asc))
 
 ///Proc to hook behavior on bodypart additions. Do not directly call. You're looking for [/obj/item/bodypart/proc/try_attach_limb()].
 /mob/living/carbon/proc/add_bodypart(obj/item/bodypart/new_bodypart)
@@ -1000,17 +965,20 @@
 ///Proc to hook behavior on bodypart removals.  Do not directly call. You're looking for [/obj/item/bodypart/proc/drop_limb()].
 /mob/living/carbon/proc/remove_bodypart(obj/item/bodypart/old_bodypart)
 	SHOULD_NOT_OVERRIDE(TRUE)
+
 	old_bodypart.on_removal()
 	bodyparts -= old_bodypart
-	switch(old_bodypart.body_part)
-		if(LEG_LEFT, LEG_RIGHT)
-			set_num_legs(num_legs - 1)
-			if(!old_bodypart.bodypart_disabled)
-				set_usable_legs(usable_legs - 1)
-		if(ARM_LEFT, ARM_RIGHT)
-			set_num_hands(num_hands - 1)
-			if(!old_bodypart.bodypart_disabled)
-				set_usable_hands(usable_hands - 1)
+	new_bodypart.forceMove(src)
+
+	if(old_bodypart.bodypart_flags & BP_IS_MOVEMENT_LIMB)
+		set_num_legs(num_legs - 1)
+		if(!old_bodypart.bodypart_disabled)
+			set_usable_legs(usable_legs - 1)
+
+	if(old_bodypart.bodypart_flags & BP_IS_GRABBY_LIMB)
+		set_num_hands(num_hands - 1)
+		if(!old_bodypart.bodypart_disabled)
+			set_usable_hands(usable_hands - 1)
 
 
 /mob/living/carbon/proc/create_internal_organs()

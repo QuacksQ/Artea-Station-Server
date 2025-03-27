@@ -701,6 +701,25 @@
 
 	return ..()
 
+/mob/living/carbon/human/fully_heal(admin_revive = FALSE)
+	dna?.species.spec_fully_heal(src)
+	if(admin_revive)
+		regenerate_limbs()
+		regenerate_organs()
+
+	for(var/obj/item/bodypart/BP as anything in bodyparts)
+		BP.set_sever_artery(FALSE)
+		BP.set_sever_tendon(FALSE)
+		BP.heal_bones()
+
+	remove_all_embedded_objects()
+	set_heartattack(FALSE)
+	for(var/datum/mutation/human/HM in dna.mutations)
+		if(HM.quality != POSITIVE)
+			dna.remove_mutation(HM.name)
+	set_coretemperature(get_body_temp_normal(apply_change=FALSE))
+	return ..()
+
 /mob/living/carbon/human/is_nearsighted()
 	var/obj/item/clothing/glasses/eyewear = glasses
 	if(istype(eyewear) && eyewear.vision_correction)

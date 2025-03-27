@@ -815,16 +815,6 @@
 	)
 	departmental_flags = DEPARTMENT_BITFLAG_ENGINEERING
 
-/datum/design/board/medical_kiosk
-	name = "Medical Kiosk Board"
-	desc = "The circuit board for a Medical Kiosk."
-	id = "medical_kiosk"
-	build_path = /obj/item/circuitboard/machine/medical_kiosk
-	category = list(
-		RND_CATEGORY_MACHINE + RND_SUBCATEGORY_MACHINE_MEDICAL
-	)
-	departmental_flags = DEPARTMENT_BITFLAG_MEDICAL
-
 /datum/design/board/medipen_refiller
 	name = "Medipen Refiller Board"
 	desc = "The circuit board for a Medipen Refiller."

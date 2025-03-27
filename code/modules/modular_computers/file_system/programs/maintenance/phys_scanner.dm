@@ -17,7 +17,7 @@
 		return
 	var/mob/living/carbon/carbon = tapped_atom
 	carbon.visible_message(span_notice("[user] analyzes [tapped_atom]'s vitals."))
-	last_record = healthscan(user, carbon, 1, tochat = FALSE)
+	last_record = healthscan(user, carbon, 1, chat = FALSE)
 
 /datum/computer_file/program/maintenance/phys_scanner/ui_data(mob/user)
 	var/list/data = list()
