@@ -1396,7 +1396,8 @@
 /obj/item/bodypart/proc/apply_bandage(obj/item/stack/new_bandage)
 	if(bandage || !istype(new_bandage) || !new_bandage.absorption_capacity)
 		return
-bandage = new_bandage.split_stack(null, 1)
+
+	bandage = new_bandage.split_stack(null, 1)
 	bandage.forceMove(src)
 	RegisterSignal(bandage, COMSIG_PARENT_QDELETING, PROC_REF(bandage_gone))
 	if(bandage.absorption_capacity && owner.stat < UNCONSCIOUS)
