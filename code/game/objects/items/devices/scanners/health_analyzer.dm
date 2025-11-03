@@ -164,60 +164,60 @@
 
 		data_string_list += "Brain activity: [brain_activity].\n"
 
-			// Arteries, tendons, and embeds
-			if(!advanced)
-				var/found_bleed = FALSE
-				var/found_tendon = FALSE
-				for(var/obj/item/bodypart/limb as anything in carbon_target.bodyparts)
-					if(!found_bleed && (limb.check_artery() == CHECKARTERY_SEVERED))
-						data_string_list += "<span style='font-weight: bold; color: [COLOR_MEDICAL_INTERNAL_DANGER]'>Arterial bleeding detected. Advanced scanner required for location.</span>\n"
-						found_bleed = TRUE
+		// Arteries, tendons, and embeds
+		if(!advanced)
+			var/found_bleed = FALSE
+			var/found_tendon = FALSE
+			for(var/obj/item/bodypart/limb as anything in carbon_target.bodyparts)
+				if(!found_bleed && (limb.check_artery() == CHECKARTERY_SEVERED))
+					data_string_list += "<span style='font-weight: bold; color: [COLOR_MEDICAL_INTERNAL_DANGER]'>Arterial bleeding detected. Advanced scanner required for location.</span>\n"
+					found_bleed = TRUE
 
-					if(!found_tendon && (limb.check_tendon() == CHECKTENDON_SEVERED))
-						data_string_list += "<span style='font-weight: bold; color: [COLOR_MEDICAL_LIGAMENT]'>Tendon or ligament damage detected. Advanced scanner required for location.</span>\n"
-						found_tendon = TRUE
+				if(!found_tendon && (limb.check_tendon() == CHECKTENDON_SEVERED))
+					data_string_list += "<span style='font-weight: bold; color: [COLOR_MEDICAL_LIGAMENT]'>Tendon or ligament damage detected. Advanced scanner required for location.</span>\n"
+					found_tendon = TRUE
 
-					if(found_bleed && found_tendon)
-						break
+				if(found_bleed && found_tendon)
+					break
 
-			else
-				var/artery_string = ""
-				var/tendon_string = ""
-				for(var/obj/item/bodypart/limb as anything in carbon_target.bodyparts)
-					if(limb.check_artery() == CHECKARTERY_SEVERED)
-						artery_string += "<span style='font-weight: bold; color: [COLOR_MEDICAL_INTERNAL_DANGER]'>Arterial bleeding detected in subject's [limb.plaintext_zone].</span>\n"
+		else
+			var/artery_string = ""
+			var/tendon_string = ""
+			for(var/obj/item/bodypart/limb as anything in carbon_target.bodyparts)
+				if(limb.check_artery() == CHECKARTERY_SEVERED)
+					artery_string += "<span style='font-weight: bold; color: [COLOR_MEDICAL_INTERNAL_DANGER]'>Arterial bleeding detected in subject's [limb.plaintext_zone].</span>\n"
 
-					if(limb.check_tendon() == CHECKTENDON_SEVERED)
-						tendon_string += "<span style='font-weight: bold; color: [COLOR_MEDICAL_LIGAMENT]'>Tendon or ligament damage detected in subject's [limb.plaintext_zone].</span>\n"
+				if(limb.check_tendon() == CHECKTENDON_SEVERED)
+					tendon_string += "<span style='font-weight: bold; color: [COLOR_MEDICAL_LIGAMENT]'>Tendon or ligament damage detected in subject's [limb.plaintext_zone].</span>\n"
 
-				if(artery_string)
-					data_string_list += artery_string
-				if(tendon_string)
-					data_string_list += tendon_string
+			if(artery_string)
+				data_string_list += artery_string
+			if(tendon_string)
+				data_string_list += tendon_string
 
-			// Limb damage
-			if(verbose)
-				data_string_list += span_bold("\nSpecific limb damage:\n")
-				var/list/damaged_limbs = carbon_target.get_damaged_bodyparts(TRUE, TRUE, check_flags = BP_TENDON_CUT|BP_ARTERY_CUT|BP_BROKEN_BONES|BP_BLEEDING)
-				if(!length(damaged_limbs))
-					data_string_list += "No detectable limb injuries.\n"
+		// Limb damage
+		if(verbose)
+			data_string_list += span_bold("\nSpecific limb damage:\n")
+			var/list/damaged_limbs = carbon_target.get_damaged_bodyparts(TRUE, TRUE, check_flags = BP_TENDON_CUT|BP_ARTERY_CUT|BP_BROKEN_BONES|BP_BLEEDING)
+			if(!length(damaged_limbs))
+				data_string_list += "No detectable limb injuries.\n"
 
-				sortTim(damaged_limbs, GLOBAL_PROC_REF(cmp_bodyparts_display_order))
+			sortTim(damaged_limbs, GLOBAL_PROC_REF(cmp_bodyparts_display_order))
 
-				for(var/obj/item/bodypart/limb as anything in damaged_limbs)
-					var/limb_string = "[capitalize(limb.plaintext_zone)][!IS_ORGANIC_LIMB(limb) ? " <span style='font-weight: bold; color: [COLOR_MEDICAL_ROBOTIC]'>(Cybernetic)</span>" : ""]:"
-					if(limb.brute_dam)
-						limb_string += " \[<span style='font-weight: bold; color: [COLOR_MEDICAL_BRUTE]'>[advanced ? "[limb.brute_dam]" + " points of" : get_wound_severity(limb.brute_ratio)] physical trauma</span>\]"
+			for(var/obj/item/bodypart/limb as anything in damaged_limbs)
+				var/limb_string = "[capitalize(limb.plaintext_zone)][!IS_ORGANIC_LIMB(limb) ? " <span style='font-weight: bold; color: [COLOR_MEDICAL_ROBOTIC]'>(Cybernetic)</span>" : ""]:"
+				if(limb.brute_dam)
+					limb_string += " \[<span style='font-weight: bold; color: [COLOR_MEDICAL_BRUTE]'>[advanced ? "[limb.brute_dam]" + " points of" : get_wound_severity(limb.brute_ratio)] physical trauma</span>\]"
 
-					if(limb.burn_dam)
-						limb_string += " \[<span style='font-weight: bold; color: [COLOR_MEDICAL_BURN]'>[advanced ? "[limb.burn_dam]" + " points of": get_wound_severity(limb.burn_ratio)] burns</span>\]"
+				if(limb.burn_dam)
+					limb_string += " \[<span style='font-weight: bold; color: [COLOR_MEDICAL_BURN]'>[advanced ? "[limb.burn_dam]" + " points of": get_wound_severity(limb.burn_ratio)] burns</span>\]"
 
-					if(limb.bodypart_flags & BP_BLEEDING)
-						limb_string += " \[<span style='font-weight: bold; color: [COLOR_MEDICAL_BRUTE]'>bleeding</span>\]"
+				if(limb.bodypart_flags & BP_BLEEDING)
+					limb_string += " \[<span style='font-weight: bold; color: [COLOR_MEDICAL_BRUTE]'>bleeding</span>\]"
 
-					if(limb.bodypart_flags & BP_BROKEN_BONES)
-						limb_string += " \[<span style='font-weight: bold; color: [COLOR_MEDICAL_BROKEN]'>fractured</span>\]"
-					data_string_list += (limb_string + "\n")
+				if(limb.bodypart_flags & BP_BROKEN_BONES)
+					limb_string += " \[<span style='font-weight: bold; color: [COLOR_MEDICAL_BROKEN]'>fractured</span>\]"
+				data_string_list += (limb_string + "\n")
 
 
 	SEND_SIGNAL(target, COMSIG_LIVING_HEALTHSCAN, data_string_list, user, verbose, advanced)

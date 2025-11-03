@@ -174,7 +174,7 @@
 	return COMPONENT_MINDSHIELD_RESISTED
 
 /datum/antagonist/rev/head/on_removal()
-	if(give_hud)s
+	if(give_hud)
 		var/mob/living/carbon/C = owner.current
 		var/obj/item/organ/cyberimp/eyes/hud/security/syndicate/S = C.getorganslot(ORGAN_SLOT_HUD)
 		if(S)
